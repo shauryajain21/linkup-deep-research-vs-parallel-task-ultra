@@ -2,6 +2,737 @@
   "id": "r005",
   "provider": "parallel",
   "query": "Build a comprehensive competitive intelligence profile for the company listed below. Return facts only, not reasoning.\n\nCompanies:\n1. Paradox (https://www.paradox.ai)\n\nGather the following from public sources (company website, Crunchbase, LinkedIn, TechCrunch, G2, Capterra, press releases). For EACH company extract:\n\nIDENTITY\n- name (EXACT match from list above \u2014 CRITICAL for matching)\n- website domain, tagline (one-sentence elevator pitch)\n- category (primary market, e.g. 'HR Technology'), sub_category (specific niche)\n- linkedin_url (linkedin.com/company/<slug>)\n- hq_city, hq_country, founded_year\n- employee_count (LinkedIn About) and employee_growth_yoy as decimal (0.12 = +12%)\n\nPOSITIONING\n- business_model: B2B, B2C, B2B2C, Marketplace, or API/Platform\n- gtm_motion: sales-led, product-led, marketing-led, or community-led\n- geo_coverage: Local, National, Regional, or Global\n- target_segment: Enterprise, Mid-Market, SMB, Consumer, or Mixed\n- target_verticals (3-5 industries)\n- top_3_features, key_differentiator (max 20 words)\n\nPRICING (from /pricing or /plans page)\n- pricing_model_kind: Freemium, Subscription, Usage-based, Enterprise, or Hybrid\n- pricing.free_plan (bool), starts_at_usd (0 if custom), mention\n- pricing.tiers: array of {name, price_monthly_usd, price_annual_usd, target, features[]}\n\nFUNDING (Crunchbase + press releases)\n- funding_stage, funding_total_usd\n- funding_rounds: array of {round, date YYYY-MM-DD, amount_usd, lead}\n- notable_investors: array of {name, domain}\n- acquisition: {acquired (bool), acquirer, year, amount_usd, source_url}\n\nTRACTION (only if explicitly disclosed in press or filings)\n- arr_usd, customer_count, avg_contract_usd \u2014 omit if not stated, do NOT estimate\n\nTEAM\n- key_people: top 5 senior CURRENT employees from LinkedIn People tab. For each: name, current role AT THIS COMPANY, linkedin URL (linkedin.com/in/<slug>), one-sentence background starting with current role at this company. Include only people currently employed at this company \u2014 exclude external partners, advisors, event speakers.\n\nCUSTOMERS\n- notable_customers: 5-10 customers mentioned on company website or case studies. For each: name, domain, segment (Grand compte/ETI/PME/Startup/Consumer), industry, evidence (quote / case-study URL / logo placement)\n\nSIGNALS (last 12 months)\n- recent_news: 5 most recent press items {date YYYY-MM-DD, headline, source_url}\n- growth_signals: 3-5 one-sentence growth events\n- weaknesses: top 3 user complaints from G2 / Capterra / Reddit\n\nOUTPUT FORMAT\nReturn JSON {\"competitors\": [...]} with one entry per company, preserving the input ORDER and EXACT company names. If a field cannot be retrieved, OMIT it from the response \u2014 do NOT pad with null or placeholder values. Do not fabricate data.",
-  "answer": "{\"answer\": \"```json\\n{\\n  \\\"competitors\\\": [\\n    {\\n      \\\"name\\\": \\\"Paradox\\\",\\n      \\\"website_domain\\\": \\\"paradox.ai\\\",\\n      \\\"tagline\\\": \\\"Conversational hiring software that gets work done for you\\\",\\n      \\\"category\\\": \\\"HR Technology\\\",\\n      \\\"sub_category\\\": \\\"Conversational Recruiting\\\",\\n      \\\"linkedin_url\\\": \\\"linkedin.com/company/paradoxolivia\\\",\\n      \\\"hq_city\\\": \\\"Scottsdale\\\",\\n      \\\"hq_country\\\": \\\"United States\\\",\\n      \\\"founded_year\\\": 2016,\\n      \\\"employee_count\\\": 658,\\n      \\\"positioning\\\": {\\n        \\\"business_model\\\": \\\"B2B\\\",\\n        \\\"gtm_motion\\\": \\\"sales-led\\\",\\n        \\\"geo_coverage\\\": \\\"Global\\\",\\n        \\\"target_segment\\\": \\\"Mixed\\\",\\n        \\\"target_verticals\\\": [\\\"Restaurant\\\", \\\"Retail\\\", \\\"Healthcare\\\", \\\"Manufacturing\\\", \\\"Hospitality\\\"],\\n        \\\"top_3_features\\\": [\\n          \\\"Conversational Job Search & Apply\\\",\\n          \\\"AI Applicant Screening\\\",\\n          \\\"Automated Interview Scheduling\\\"\\n        ],\\n        \\\"key_differentiator\\\": \\\"Conversational AI assistant automating entire hiring lifecycle from apply to onboard\\\"\\n      },\\n      \\\"pricing\\\": {\\n        \\\"pricing_model_kind\\\": \\\"Enterprise\\\",\\n        \\\"free_plan\\\": false,\\n        \\\"starts_at_usd\\\": 0,\\n        \\\"mention\\\": \\\"Custom enterprise pricing; entry-level starts at approximately $1,000/month per third-party estimates (Prepzo, index.dev)\\\",\\n        \\\"tiers\\\": [\\n          {\\n            \\\"name\\\": \\\"Enterprise\\\",\\n            \\\"price_monthly_usd\\\": 0,\\n            \\\"price_annual_usd\\\": 0,\\n            \\\"target\\\": \\\"Enterprise\\\",\\n            \\\"features\\\": [\\n              \\\"Conversational AI assistant (Olivia)\\\",\\n              \\\"Automated screening & scheduling\\\",\\n              \\\"Two-way SMS/chat candidate engagement\\\",\\n              \\\"ATS integration (Workday, SAP SuccessFactors, iCIMS)\\\",\\n              \\\"Conversational CRM & talent pipeline management\\\",\\n              \\\"Immersive Job Previews\\\",\\n              \\\"Offer generation & onboarding automation\\\"\\n            ]\\n          }\\n        ]\\n      },\\n      \\\"funding\\\": {\\n        \\\"funding_stage\\\": \\\"Series C\\\",\\n        \\\"funding_total_usd\\\": 253340000,\\n        \\\"funding_rounds\\\": [\\n          {\\n            \\\"round\\\": \\\"Series A\\\",\\n            \\\"date\\\": \\\"2019-03-04\\\",\\n            \\\"amount_usd\\\": 13340000,\\n            \\\"lead\\\": \\\"\\\"\\n          },\\n          {\\n            \\\"round\\\": \\\"Series B\\\",\\n            \\\"date\\\": \\\"2020-05-01\\\",\\n            \\\"amount_usd\\\": 40000000,\\n            \\\"lead\\\": \\\"Brighton Park Capital\\\"\\n          },\\n          {\\n            \\\"round\\\": \\\"Series C\\\",\\n            \\\"date\\\": \\\"2021-12-27\\\",\\n            \\\"amount_usd\\\": 200000000,\\n            \\\"lead\\\": \\\"Stripes, Sapphire Ventures, Thoma Bravo\\\"\\n          }\\n        ],\\n        \\\"notable_investors\\\": [\\n          {\\\"name\\\": \\\"Stripes\\\", \\\"domain\\\": \\\"stripes.com\\\"},\\n          {\\\"name\\\": \\\"Sapphire Ventures\\\", \\\"domain\\\": \\\"sapphireventures.com\\\"},\\n          {\\\"name\\\": \\\"Thoma Bravo\\\", \\\"domain\\\": \\\"thomabravo.com\\\"},\\n          {\\\"name\\\": \\\"Brighton Park Capital\\\", \\\"domain\\\": \\\"brightonparkcapital.com\\\"},\\n          {\\\"name\\\": \\\"Workday Ventures\\\", \\\"domain\\\": \\\"workday.com\\\"},\\n          {\\\"name\\\": \\\"Indeed\\\", \\\"domain\\\": \\\"indeed.com\\\"},\\n          {\\\"name\\\": \\\"Twilio Ventures\\\", \\\"domain\\\": \\\"twilio.com\\\"},\\n          {\\\"name\\\": \\\"Blue Cloud Ventures\\\", \\\"domain\\\": \\\"bluecloudventures.com\\\"},\\n          {\\\"name\\\": \\\"Willoughby Capital\\\", \\\"domain\\\": \\\"willoughbycapital.com\\\"},\\n          {\\\"name\\\": \\\"Geodesic\\\", \\\"domain\\\": \\\"geodesic.com\\\"},\\n          {\\\"name\\\": \\\"Principia\\\", \\\"domain\\\": \\\"principiavc.com\\\"},\\n          {\\\"name\\\": \\\"DLA Piper Venture Fund\\\", \\\"domain\\\": \\\"dlapiper.com\\\"}\\n        ],\\n        \\\"acquisition\\\": {\\n          \\\"acquired\\\": true,\\n          \\\"acquirer\\\": \\\"Workday\\\",\\n          \\\"year\\\": 2025,\\n          \\\"amount_usd\\\": 1000000000,\\n          \\\"source_url\\\": \\\"https://www.marketscreener.com/news/workday-inc-completed-the-acquisition-of-an-unknown-majority-stake-in-paradox-inc-ce7d5bd9de88f321\\\"\\n        }\\n      },\\n      \\\"team\\\": {\\n        \\\"key_people\\\": [\\n          {\\n            \\\"name\\\": \\\"Adam Godson\\\",\\n            \\\"current_role\\\": \\\"Chief Executive Officer\\\",\\n            \\\"linkedin_url\\\": \\\"linkedin.com/in/adamgodson\\\",\\n            \\\"background\\\": \\\"Chief Executive Officer at Paradox, promoted from President in March 2024; previously served as President leading product and go-to-market strategy for the conversational AI recruiting platform\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Aaron Matos\\\",\\n            \\\"current_role\\\": \\\"Executive Chairman\\\",\\n            \\\"linkedin_url\\\": \\\"linkedin.com/in/aaronmatos\\\",\\n            \\\"background\\\": \\\"Executive Chairman at Paradox, founded the company in 2016 and served as CEO until March 2024; studied at Stanford GSB, Harvard Business School, and Northwestern Kellogg\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Ross Grainger\\\",\\n            \\\"current_role\\\": \\\"Chief Financial Officer\\\",\\n            \\\"linkedin_url\\\": \\\"linkedin.com/in/rossgrainger\\\",\\n            \\\"background\\\": \\\"Chief Financial Officer at Paradox, oversees all financial operations for the AI-powered conversational recruiting company\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"John Dalzell\\\",\\n            \\\"current_role\\\": \\\"Chief Client Officer\\\",\\n            \\\"linkedin_url\\\": \\\"linkedin.com/in/johndalzell\\\",\\n            \\\"background\\\": \\\"Chief Client Officer at Paradox, leads client success and retention for the company's enterprise conversational recruiting platform\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Stephanie King\\\",\\n            \\\"current_role\\\": \\\"Chief Legal Officer\\\",\\n            \\\"linkedin_url\\\": \\\"linkedin.com/in/stephanieking\\\",\\n            \\\"background\\\": \\\"Chief Legal Officer at Paradox, oversees legal and compliance for the AI-powered hiring automation company\\\"\\n          }\\n        ]\\n      },\\n      \\\"customers\\\": {\\n        \\\"notable_customers\\\": [\\n          {\\n            \\\"name\\\": \\\"General Motors\\\",\\n            \\\"domain\\\": \\\"gm.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Manufacturing\\\",\\n            \\\"evidence\\\": \\\"Case study at paradox.ai/case-studies/general-motors; GM's Eileen Kovalsky reported $2M savings in first year of interview automation\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"7-Eleven\\\",\\n            \\\"domain\\\": \\\"7-eleven.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Retail\\\",\\n            \\\"evidence\\\": \\\"Case study by Josh Bersin showcasing 85% scheduling automation; mentioned in Yahoo Finance and HR Dive coverage\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Chipotle\\\",\\n            \\\"domain\\\": \\\"chipotle.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Restaurant\\\",\\n            \\\"evidence\\\": \\\"Chipotle CEO discussed AI hiring transformation on CNBC's Mad Money; featured on paradox.ai/news\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"CVS Health\\\",\\n            \\\"domain\\\": \\\"cvshealth.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Healthcare\\\",\\n            \\\"evidence\\\": \\\"Listed as recorded user of Paradox Olivia Chatbot on Apps Run The World\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Nestle\\\",\\n            \\\"domain\\\": \\\"nestle.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Manufacturing\\\",\\n            \\\"evidence\\\": \\\"Featured client on Paradox website client stories page\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Wendy's\\\",\\n            \\\"domain\\\": \\\"wendys.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Restaurant\\\",\\n            \\\"evidence\\\": \\\"Named as a Paradox client in HR Dive coverage of Workday acquisition\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Medtronic\\\",\\n            \\\"domain\\\": \\\"medtronic.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Healthcare\\\",\\n            \\\"evidence\\\": \\\"Featured client on Paradox website client stories page\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Amazon\\\",\\n            \\\"domain\\\": \\\"amazon.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Logistics/Retail\\\",\\n            \\\"evidence\\\": \\\"Listed as recorded user of Paradox Olivia Chatbot on Apps Run The World\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Unilever\\\",\\n            \\\"domain\\\": \\\"unilever.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Manufacturing\\\",\\n            \\\"evidence\\\": \\\"Mentioned as a Paradox client in Prepzo pricing analysis article\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"McDonald's\\\",\\n            \\\"domain\\\": \\\"mcdonalds.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Restaurant\\\",\\n            \\\"evidence\\\": \\\"Mentioned as a Paradox client in Prepzo pricing analysis article\\\"\\n          }\\n        ]\\n      },\\n      \\\"signals\\\": {\\n        \\\"recent_news\\\": [\\n          {\\n            \\\"date\\\": \\\"2025-10-01\\\",\\n            \\\"headline\\\": \\\"Workday Completes Acquisition of Paradox\\\",\\n            \\\"source_url\\\": \\\"https://investor.workday.com/news-and-events/press-releases/news-details/2025/Workday-Completes-Acquisition-of-Paradox-10-01-2025/default.aspx\\\"\\n          },\\n          {\\n            \\\"date\\\": \\\"2025-08-21\\\",\\n            \\\"headline\\\": \\\"Workday Signs Definitive Agreement to Acquire Paradox, the AI Company Redefining the Frontline Candidate Experience\\\",\\n            \\\"source_url\\\": \\\"https://newsroom.workday.com/2025-08-21-Workday-Signs-Definitive-Agreement-to-Acquire-Paradox,-the-AI-Company-Redefining-the-Frontline-Candidate-Experience\\\"\\n          },\\n          {\\n            \\\"date\\\": \\\"2025-08-13\\\",\\n            \\\"headline\\\": \\\"Paradox Named to Its Fifth Consecutive Inc. 5000 List Among the Fastest Growing HR Technology Companies\\\",\\n            \\\"source_url\\\": \\\"https://www.paradox.ai/news/paradox-named-to-its-fifth-consecutive-inc-5000-list-among-the-fastest-growing-hr-technology-companies\\\"\\n          },\\n          {\\n            \\\"date\\\": \\\"2025-08-11\\\",\\n            \\\"headline\\\": \\\"Paradox's New Immersive Job Preview Named 2025 Top HR Product of the Year by HR Executive\\\",\\n            \\\"source_url\\\": \\\"https://www.paradox.ai/news/paradoxs-new-immersive-job-preview-named-2025-top-hr-product-of-the-year-by-hr-executive\\\"\\n          },\\n          {\\n            \\\"date\\\": \\\"2025-02-06\\\",\\n            \\\"headline\\\": \\\"Paradox Buys People Analytics Platform Eqtble to Drive AI Vision\\\",\\n            \\\"source_url\\\": \\\"https://www.unleash.ai/hr-technology/paradox-buys-people-analytics-platform-eqtble-to-drive-ai-vision\\\"\\n          }\\n        ],\\n        \\\"growth_signals\\\": [\\n          \\\"Workday completed acquisition of Paradox for approximately $1 billion in October 2025, marking Arizona tech's largest acquisition\\\",\\n          \\\"Paradox achieved its fifth consecutive Inc. 5000 listing in August 2025, reflecting sustained high revenue growth\\\",\\n          \\\"Paradox launched Immersive Job Preview product in 2025, recognized as Top HR Product of the Year by HR Executive\\\",\\n          \\\"Paradox acquired people analytics platform Eqtble in February 2025 to expand AI capabilities into workforce analytics\\\",\\n          \\\"Paradox reported $115.8M revenue with a 658-person team in 2023 per Getlatka founder interview data\\\"\\n        ],\\n        \\\"weaknesses\\\": [\\n          \\\"Complex and time-consuming implementation process averaging 8-12 weeks, requiring substantial internal resources for workflow configuration (G2, Capterra, Peoplebox reviews)\\\",\\n          \\\"Not suited for complex or executive-level hiring due to limited competency-based interview scoring and shallow adaptive questioning depth (G2, Capterra, index.dev reviews)\\\",\\n          \\\"Opaque enterprise-only pricing that is prohibitive for smaller organizations; no self-serve or free tier available (G2, Prepzo, Toolradar reviews)\\\"\\n        ]\\n      }\\n    }\\n  ]\\n}\\n```\\n\\n## References\\n\\n1. *Funding Round - Series B - Paradox*. https://www.crunchbase.com/funding_round/paradox-olivia-series-b--e5bd7deb\\n2. *Paradox - Crunchbase Company Profile & Funding*. https://www.crunchbase.com/organization/paradox-olivia\\n3. *Paradox | LinkedIn*. http://linkedin.com/company/paradoxolivia\\n4. *Paradox - Financial Details - Crunchbase*. https://www.crunchbase.com/organization/paradox-olivia/financial_details\\n5. *Paradox - 2025 Funding Rounds & List of Investors - Tracxn*. https://tracxn.com/d/companies/paradox/__WUmEpi0uRecFw0sjQk8oJqkOhkaXt9nWAtTuN8Q_cLo/funding-and-investors\\n6. *Has anyone heard of paradox.ai or Paradox Olivia? They ...*. http://reddit.com/r/WorkOnline/comments/f4vj0z/has_anyone_heard_of_paradoxai_or_paradox_olivia\\n7. *Paradox's AI-backed solution for job previews wins HR tech honor*. https://hrexecutive.com/paradox-ai-tool-clinches-2025-excellence-in-hr-tech-innovation-award\\n8. *Paradox named to its fifth consecutive Inc. 5000 list*. http://paradox.ai/news/paradox-named-to-its-fifth-consecutive-inc-5000-list-among-the-fastest-growing-hr-technology-companies\\n9. *Scottsdale AI Paradox firm names new CEO - Arizona Technology ...*. https://www.aztechcouncil.org/paradox-new-ceo/\\n10. *FAQs - Paradox*. http://paradox.ai/faqs\\n11. *Conversational hiring software that gets work done for you \\u2014 Paradox*. https://www.paradox.ai/\\n12. *Olivia by Paradox Ai*. http://olivia.paradox.ai/\\n13. *Paradox AI Pricing 2026: What Olivia Really Costs | Prepzo*. https://prepzo.ai/blog/paradox-ai-pricing\\n14. *Paradox Ai: Paradox Staff*. https://www.paradox.ai/author/paradox-staff\\n15. *Paradox Pricing 2026: Plans, Hidden Costs & Cheaper Alternatives*. https://toolradar.com/tools/paradox/pricing\\n16. *Yam Dvir*. https://linkedin.com/in/yam-dvir\\n17. *Paradox | LinkedIn*. https://www.linkedin.com/company/paradoxolivia\\n18. *Matt Ludwa*. https://linkedin.com/in/mattludwa\\n19. *Paradox | LinkedIn*. https://in.linkedin.com/organization-guest/company/paradoxolivia?_l=en\\n20. *Andr\\u00e9 Martins Dantas*. https://linkedin.com/in/andr%C3%A9-martins-dantas-215438242\\n21. *Paradox AI revenue skyrockets: Startup secures $200M in funding*. https://siliconangle.com/2021/12/28/recruiting-startup-paradox-valued-1-5b-following-200m-funding-round\\n22. *Workday Signs Definitive Agreement to Acquire Paradox, the AI ...*. https://newsroom.workday.com/2025-08-21-Workday-Signs-Definitive-Agreement-to-Acquire-Paradox,-the-AI-Company-Redefining-the-Frontline-Candidate-Experience\\n23. *PR Newswire Unveils Expanded AI Solutions Suite with Additional ...*. https://www.prnewswire.com/news-releases/pr-newswire-unveils-expanded-ai-solutions-suite-with-additional-features-for-strategic-communicators-302333001.html\\n24. *Paradox buys Eqtble to drive AI vision*. http://unleash.ai/hr-technology/paradox-buys-people-analytics-platform-eqtble-to-drive-ai-vision\\n25. *paradox \\u2013 Funding, Valuation, Investors, News*. https://parsers.vc/startup/paradox.ai/\\n26. *Paradox Reviews 2026: Details, Pricing, & Features - G2*. https://www.g2.com/products/paradox/reviews\\n27. *Paradox Price, Features, Reviews & Ratings - Capterra India*. https://www.capterra.in/software/191056/olivia\\n28. *Paradox AI Reviews for Recruitment Automation | Hirevire Blog*. https://hirevire.com/blog/paradox-ai-reviews-for-recruitment-automation\\n29. *5 \\\"Luca Kling\\\" profiles - LinkedIn*. http://linkedin.com/pub/dir/Luca/Kling\\n30. *Josh Zywien | Head of Product and Solution Marketing at Workday*. https://www.linkedin.com/in/joshzywien\\n31. *Ilan Man - Founder & CEO @ Paradox Machines*. http://linkedin.com/in/ilanman\\n32. *AI and the Fractional Executive: A New Operating Model*. https://se.linkedin.com/pulse/ai-fractional-executive-new-operating-model-henning-schwinum-fb5oc?_l=en\\n33. *Creating the Future: Conversational AI Innovator Paradox ...*. https://www.prnewswire.com/news-releases/creating-the-future-conversational-ai-innovator-paradox-promotes-industry-leader-adam-godson-to-ceo-302084835.html\\n34. *Paradox B2B Case Studies & Customer Successes*. https://www.casestudies.com/company/paradox\\n35. *Client Stories*. https://www.paradox.ai/clients-stories\\n36. *Workday pushes AI branding in 'strategic' Paradox ...*. http://hrdive.com/news/workday-pushes-ai-branding-in-strategic-paradox-acquisition/758574\\n37. *Paradox Named to Fifth Consecutive Inc. 5000 List*. http://finance.yahoo.com/news/paradox-named-fifth-consecutive-inc-120100131.html\\n38. *List of Paradox Olivia Chatbot Customers - Apps Run The World*. https://www.appsruntheworld.com/customers-database/products/view/paradox-olivia-chatbot\\n39. *Workday Signs Definitive Agreement to Acquire Paradox, the AI Company Redefining the Frontline Candidate Experience - Aug 21, 2025*. https://newsroom.workday.com/2025-08-21-Workday-Signs-Definitive-Agreement-to-Acquire-Paradox%2C-the-AI-Company-Redefining-the-Frontline-Candidate-Experience\\n40. *http://getlatka.com/companies/paradox.ai*. http://getlatka.com/companies/paradox.ai\\n41. *paradox ai employee count - UMU*. https://www.umu.com/ask/t11122301573854323829\\n42. *Paradox - B2B SaaS software for HR and Recruiting in ...*. https://gregslist.com/phoenix/company/paradox\\n43. *Annual Report on Paradox's Revenue, Growth, SWOT Analysis ...*. https://incfact.com/company/paradox-scottsdale-az/\\n44. *Paradox Interactive 2026 Company Profile*. http://pitchbook.com/profiles/company/94652-20\\n45. *Workday Completes Acquisition of Paradox*. https://investor.workday.com/news-and-events/press-releases/news-details/2025/Workday-Completes-Acquisition-of-Paradox-10-01-2025/default.aspx\\n46. *Workday Completes Acquisition of Paradox*. http://newsroom.workday.com/2025-10-01-Workday-Completes-Acquisition-of-Paradox\\n47. *Workday, Inc. completed the acquisition of Paradox, Inc.*. https://www.marketscreener.com/news/workday-inc-completed-the-acquisition-of-an-unknown-majority-stake-in-paradox-inc-ce7d5bd9de88f321\\n48. *Workday Acquires Paradox, A Bigger Deal Than You Think - YouTube*. http://youtube.com/watch?v=_dOB0TDV0eY\\n49. *Paradox sold to WorkDay: Arizona tech's largest acquisition*. https://www.linkedin.com/posts/jackselby_workday-signs-definitive-agreement-to-acquire-activity-7364387977201930241-ER-G\\n50. *Decision Science Advisors Secures Series A Funding from ...*. https://www.linkedin.com/posts/paradox-principals-llp_decision-science-advisors-secures-series-activity-7449471670215393282-mcQg\\n51. *Series A - Paradox - 2019-03-04 - Crunchbase Funding Round ...*. https://www.crunchbase.com/funding_round/paradox-olivia-series-a--d265ca4a\\n52. *Conversational AI Recruitment Startup Paradox Joins Unicorns with $200M Raise*. http://voicebot.ai/2021/12/30/conversational-ai-recruitment-startup-paradox-joins-unicorns-with-200m-raise\\n53. *CEO, CFO, COO, CTO - we all heard these: But do you ...*. https://www.linkedin.com/posts/igor-buinevici_ceo-cfo-coo-cto-we-all-heard-these-activity-7386374464747278336-qgAt\\n54. *Paradox.ai Org Chart + Executive Team - The Official Board*. https://www.theofficialboard.com/org-chart/paradox-ai\\n55. *Leadership | Cedar AI*. http://cedarai.com/company/leadership\\n56. *Creating the Future: Conversational AI Innovator Paradox Promotes ...*. https://www.paradox.ai/news/creating-the-future-conversational-ai-innovator-paradox-promotes-industry-leader-adam-godson-to-ceo\\n57. *Delinea Demonstrates Strong Growth In Securing AI with Advanced ...*. http://delinea.com/news/delinea-demonstrates-strong-growth-in-securing-ai-with-advanced-identity-security\\n58. [Paradox: 27 Tools Behind $123M Revenue [2026] | TechList.ai](https://techlist.ai/paradox.ai)\\n59. *Paradox AI revenue skyrockets: Startup secures $200M in funding*. http://siliconangle.com/2021/12/28/recruiting-startup-paradox-valued-1-5b-following-200m-funding-round\\n60. *What is Annual Recurring Revenue (ARR)? Klipfolio https://www.klipfolio.com \\u203a Resources \\u203a SaaS*. https://www.klipfolio.com/resources/kpi-examples/saas/annual-recurring-revenue\\n61. *Glean Surpasses $200M in ARR for Enterprise AI ...*. http://glean.com/press/glean-surpasses-200m-in-arr-for-enterprise-ai-doubling-revenue-in-nine-months\\n62. *Has anyone heard of paradox.ai or Paradox Olivia? They ...*. https://www.reddit.com/r/WorkOnline/comments/f4vj0z/has_anyone_heard_of_paradoxai_or_paradox_olivia/\\n63. *Paradox Review 2026: Pricing, Features, Pros, Cons & Best ...*. https://www.peoplebox.ai/blog/paradox-review/\\n64. *Paradox AI Review: Olivia Chatbot Pricing, Features & ROI ...*. https://www.index.dev/blog/paradox-ai-recruitment-chatbot-review\\n65. *Top 10 Paradox.ai Alternatives for AI Recruiting in 2025*. http://homans.ai/blog/top-10-paradox-ai-alternatives-for-ai-recruiting-in-2025\\n66. *Read Customer Service Reviews of www.capterra.com*. https://www.trustpilot.com/review/www.capterra.com?page=10\\n67. *Paradox Technologies - 2026 Funding Rounds & List of ... - Tracxn*. https://tracxn.com/d/companies/paradox-technologies/__x7XcRl4sa4QHv4-72J5uGaNnl3rvCafFF690V8EocKc/funding-and-investors\\n68. *Paradox Company Information - Funding, Investors, and More*. http://seedtable.com/startups/Paradox-DB9GPR6\\n69. *Paradox Technologies - 2026 Company Profile, Team, Funding & Competitors - Tracxn*. https://tracxn.com/d/companies/paradoxtechnologies/__LuZWxkDo5hHy6p7bhjLOu6KyVrsRjPbS7Eq8QSNiBLA\\n70. *Motadata - 2026 Company Profile & Team - Tracxn*. http://tracxn.com/d/companies/motadata/__T6T5O0AgHifgn6C_zpAmDlUbBjhS52hl7ZFCmB-w4jM\\n71. *News \\u2014 Paradox*. https://www.paradox.ai/news\\n72. *AI News Today 2026 | Latest AI Model Releases, Trends & Analysis*. https://www.buildfastwithai.com/blogs/collection/ai-industry-news-trends\\n73. *US DPA \\u2014 Paradox*. https://www.paradox.ai/legal/us-dpa\\n74. *Workday Signs Definitive Agreement to Acquire Paradox, the AI ...*. https://investor.workday.com/news-and-events/press-releases/news-details/2025/Workday-Signs-Definitive-Agreement-to-Acquire-Paradox-the-AI-Company-Redefining-the-Frontline-Candidate-Experience-08-21-2025/default.aspx\\n75. *Aaron Matos - CEO and Founder @ Paradox*. https://www.crunchbase.com/person/aaron-matos\\n76. *Paradox | LinkedIn*. https://cz.linkedin.com/organization-guest/company/paradoxolivia?_l=en\\n77. *Workday Acquires Paradox: CEO Adam Godson ... - WorkTech*. http://1worktech.com/workday-acquires-paradox-ceo-adam-godson-on-conversational-ai-frontline-hiring-and-the-agentic-future-of-recruiting\\n78. *Meet our Leadership Team \\u2014 Paradox*. http://paradox.ai/about/leadership\\n79. *Marta Jamr\\u00f3z-Jasi\\u0144ski, M.F.A.*. https://linkedin.com/in/marta-jamr%C3%B3z-jasi%C5%84ski\\n80. *Paradox company information, funding & investors*. http://radar-innovation.dealroom.co/companies/paradox\\n81. *Paradox raises $200M Series C - GPEC*. https://www.gpec.org/news/paradox-raises-200m-series-c/\\n82. *Most Active AI Investors in 2026 (Complete List)*. https://www.leadloft.com/blog/ai-investors\\n83. *Paradox Olivia - Facebook*. https://www.facebook.com/investclub.sv/photos/paradox-olivia-raises-200-million-at-more-than-15-billion-valuation-for-tech-ind/202348468754936\\n84. *News - Paradox*. http://paradox.ai/news\\n85. *AI paradoxes: Why AI's future isn't straightforward*. https://www.weforum.org/stories/2025/12/ai-paradoxes-in-2026/\\n86. *Paradox's New Immersive Job Preview Named 2025 Top ...*. https://www.paradox.ai/news/paradoxs-new-immersive-job-preview-named-2025-top-hr-product-of-the-year-by-hr-executive\\n87. *AI recruiting for Retail \\u2014 Paradox*. https://www.paradox.ai/solutions/retail\\n88. *eqtble has been acquired by Paradox! When Joseph ...*. http://linkedin.com/posts/ethanveres_big-news-eqtble-has-been-acquired-by-paradox-activity-7292922415871889408-MOC-\\n\"}",
-  "latency_s": 674.4
+  "status": "completed",
+  "answer": "{\"answer\": \"```json\\n{\\n  \\\"competitors\\\": [\\n    {\\n      \\\"name\\\": \\\"Paradox\\\",\\n      \\\"website_domain\\\": \\\"paradox.ai\\\",\\n      \\\"tagline\\\": \\\"Conversational hiring software that gets work done for you\\\",\\n      \\\"category\\\": \\\"HR Technology\\\",\\n      \\\"sub_category\\\": \\\"Conversational Recruiting\\\",\\n      \\\"linkedin_url\\\": \\\"linkedin.com/company/paradoxolivia\\\",\\n      \\\"hq_city\\\": \\\"Scottsdale\\\",\\n      \\\"hq_country\\\": \\\"United States\\\",\\n      \\\"founded_year\\\": 2016,\\n      \\\"employee_count\\\": \\\"501-1000\\\",\\n      \\\"business_model\\\": \\\"B2B\\\",\\n      \\\"gtm_motion\\\": \\\"sales-led\\\",\\n      \\\"geo_coverage\\\": \\\"Global\\\",\\n      \\\"target_segment\\\": \\\"Mixed\\\",\\n      \\\"target_verticals\\\": [\\\"Restaurant\\\", \\\"Retail\\\", \\\"Healthcare\\\", \\\"Hospitality\\\", \\\"Manufacturing\\\"],\\n      \\\"top_3_features\\\": [\\n        \\\"AI-powered candidate screening via chat, SMS, and WhatsApp\\\",\\n        \\\"Automated interview scheduling and coordination\\\",\\n        \\\"Conversational career sites and onboarding document delivery\\\"\\n      ],\\n      \\\"key_differentiator\\\": \\\"Conversational AI automating up to 90% of hiring process end-to-end\\\",\\n      \\\"pricing_model_kind\\\": \\\"Enterprise\\\",\\n      \\\"pricing\\\": {\\n        \\\"free_plan\\\": false,\\n        \\\"starts_at_usd\\\": 1000,\\n        \\\"mention\\\": \\\"Custom enterprise pricing only; no public /pricing page; starts at ~$1,000/month per SoftwareAdvice; mid-market deals typically $30K-$80K/year, enterprise $150K-$500K+/year per Prepzo\\\"\\n      },\\n      \\\"funding_stage\\\": \\\"Series C\\\",\\n      \\\"funding_total_usd\\\": 253000000,\\n      \\\"funding_rounds\\\": [\\n        {\\n          \\\"round\\\": \\\"Series B\\\",\\n          \\\"date\\\": \\\"2020-05-01\\\",\\n          \\\"amount_usd\\\": 40000000,\\n          \\\"lead\\\": \\\"Brighton Park Capital\\\"\\n        },\\n        {\\n          \\\"round\\\": \\\"Series C\\\",\\n          \\\"date\\\": \\\"2021-12-27\\\",\\n          \\\"amount_usd\\\": 200000000,\\n          \\\"lead\\\": \\\"Stripes, Sapphire Ventures, Thoma Bravo\\\"\\n        }\\n      ],\\n      \\\"notable_investors\\\": [\\n        {\\\"name\\\": \\\"Thoma Bravo\\\", \\\"domain\\\": \\\"thomabravo.com\\\"},\\n        {\\\"name\\\": \\\"Sapphire Ventures\\\", \\\"domain\\\": \\\"sapphireventures.com\\\"},\\n        {\\\"name\\\": \\\"Stripes\\\", \\\"domain\\\": \\\"stripes.com\\\"},\\n        {\\\"name\\\": \\\"Brighton Park Capital\\\", \\\"domain\\\": \\\"bpc.com\\\"},\\n        {\\\"name\\\": \\\"Workday Ventures\\\", \\\"domain\\\": \\\"workday.com\\\"},\\n        {\\\"name\\\": \\\"Twilio Ventures\\\", \\\"domain\\\": \\\"twilio.com\\\"},\\n        {\\\"name\\\": \\\"Blue Cloud Ventures\\\", \\\"domain\\\": \\\"bluecloudventures.com\\\"},\\n        {\\\"name\\\": \\\"Geodesic Capital\\\", \\\"domain\\\": \\\"geodesiccapital.com\\\"},\\n        {\\\"name\\\": \\\"Principia Growth\\\", \\\"domain\\\": \\\"principiagrowth.com\\\"},\\n        {\\\"name\\\": \\\"DLA Piper Venture Fund\\\", \\\"domain\\\": \\\"dlapiper.com\\\"},\\n        {\\\"name\\\": \\\"Willoughby Capital\\\", \\\"domain\\\": \\\"willoughbycapital.com\\\"}\\n      ],\\n      \\\"acquisition\\\": {\\n        \\\"acquired\\\": true,\\n        \\\"acquirer\\\": \\\"Workday\\\",\\n        \\\"year\\\": 2025,\\n        \\\"source_url\\\": \\\"https://newsroom.workday.com/2025-08-21-Workday-Signs-Definitive-Agreement-to-Acquire-Paradox%2C-the-AI-Company-Redefining-the-Frontline-Candidate-Experience\\\"\\n      },\\n      \\\"customer_count\\\": \\\"1000+\\\",\\n      \\\"key_people\\\": [\\n        {\\n          \\\"name\\\": \\\"Adam Godson\\\",\\n          \\\"current_role\\\": \\\"Chief Executive Officer\\\",\\n          \\\"background\\\": \\\"Chief Executive Officer at Paradox since March 2024, previously served as Chief Product Officer at Paradox and Chief Technology and Product Innovation Officer at Cielo, a global recruitment process outsourcing firm.\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"Aaron Matos\\\",\\n          \\\"current_role\\\": \\\"Founder & Executive Chairman\\\",\\n          \\\"linkedin_url\\\": \\\"linkedin.com/in/aaronmatos\\\",\\n          \\\"background\\\": \\\"Founder & Executive Chairman at Paradox, founded the company in 2016 and served as CEO until March 2024, previously founded Jobing.com.\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"John Dalzell\\\",\\n          \\\"current_role\\\": \\\"Chief Client Officer\\\",\\n          \\\"linkedin_url\\\": \\\"linkedin.com/in/john-dalzell-2a2b36\\\",\\n          \\\"background\\\": \\\"Chief Client Officer at Paradox, oversees client success and strategic account relationships.\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"Josh Zywien\\\",\\n          \\\"current_role\\\": \\\"Chief Marketing Officer\\\",\\n          \\\"background\\\": \\\"Chief Marketing Officer at Paradox, leads marketing strategy, brand growth, and market positioning.\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"Stephanie King\\\",\\n          \\\"current_role\\\": \\\"Chief Legal Officer\\\",\\n          \\\"background\\\": \\\"Chief Legal Officer at Paradox, oversees legal affairs, compliance, and corporate governance.\\\"\\n        }\\n      ],\\n      \\\"notable_customers\\\": [\\n        {\\n          \\\"name\\\": \\\"IHG Hotels & Resorts\\\",\\n          \\\"domain\\\": \\\"ihg.com\\\",\\n          \\\"segment\\\": \\\"Grand compte\\\",\\n          \\\"industry\\\": \\\"Hospitality\\\",\\n          \\\"evidence\\\": \\\"Case study at https://www.paradox.ai/case-studies/ihg-hotels-and-resorts; hiring for 6,500+ hotels globally\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"General Motors\\\",\\n          \\\"domain\\\": \\\"gm.com\\\",\\n          \\\"segment\\\": \\\"Grand compte\\\",\\n          \\\"industry\\\": \\\"Automotive\\\",\\n          \\\"evidence\\\": \\\"Case study on paradox.ai/clients-stories; estimated $2M savings in first year of interview automation\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"7-Eleven\\\",\\n          \\\"domain\\\": \\\"7-eleven.com\\\",\\n          \\\"segment\\\": \\\"Grand compte\\\",\\n          \\\"industry\\\": \\\"Retail\\\",\\n          \\\"evidence\\\": \\\"Josh Bersin case study cited in Inc 5000 press release; schedules 85% of applicants within the hour, saves store managers 40,000 hours per week\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"Nestle\\\",\\n          \\\"domain\\\": \\\"nestle.com\\\",\\n          \\\"segment\\\": \\\"Grand compte\\\",\\n          \\\"industry\\\": \\\"FMCG\\\",\\n          \\\"evidence\\\": \\\"Mentioned as Paradox client in Inc 5000 press release (Aug 2025)\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"McDonald's\\\",\\n          \\\"domain\\\": \\\"mcdonalds.com\\\",\\n          \\\"segment\\\": \\\"Grand compte\\\",\\n          \\\"industry\\\": \\\"Restaurant\\\",\\n          \\\"evidence\\\": \\\"Mentioned as Paradox client in Prepzo pricing article and hrstechspace review\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"Unilever\\\",\\n          \\\"domain\\\": \\\"unilever.com\\\",\\n          \\\"segment\\\": \\\"Grand compte\\\",\\n          \\\"industry\\\": \\\"FMCG\\\",\\n          \\\"evidence\\\": \\\"Mentioned as Paradox client in Prepzo pricing article\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"CVS Health\\\",\\n          \\\"domain\\\": \\\"cvshealth.com\\\",\\n          \\\"segment\\\": \\\"Grand compte\\\",\\n          \\\"industry\\\": \\\"Healthcare\\\",\\n          \\\"evidence\\\": \\\"Mentioned as Paradox client in Prepzo pricing article\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"Burlington\\\",\\n          \\\"domain\\\": \\\"burlington.com\\\",\\n          \\\"segment\\\": \\\"Grand compte\\\",\\n          \\\"industry\\\": \\\"Retail\\\",\\n          \\\"evidence\\\": \\\"Case study at https://www.paradox.ai/case-studies/burlington; expanding from 800 to 2,000 locations with conversational ATS\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"Neighborly\\\",\\n          \\\"domain\\\": \\\"neighborlybrands.com\\\",\\n          \\\"segment\\\": \\\"Grand compte\\\",\\n          \\\"industry\\\": \\\"Franchise Services\\\",\\n          \\\"evidence\\\": \\\"Workday customer story at https://workday.com/en-us/customer-stories/a-h/neighborly-cuts-cost-to-hire-conversational-ai.html; decreased cost-per-hire by 54%, boosted applicants by 71%\\\"\\n        }\\n      ],\\n      \\\"recent_news\\\": [\\n        {\\n          \\\"date\\\": \\\"2026-01-08\\\",\\n          \\\"headline\\\": \\\"Paradox Conversational Applicant Tracking System (ATS) Now Available Through Workday, Helping Organizations Hire Frontline Workers Faster\\\",\\n          \\\"source_url\\\": \\\"https://www.prnewswire.com/news-releases/paradox-conversational-applicant-tracking-system-ats-now-available-through-workday-helping-organizations-hire-frontline-workers-faster-302656477.html\\\"\\n        },\\n        {\\n          \\\"date\\\": \\\"2025-10-01\\\",\\n          \\\"headline\\\": \\\"Workday Completes Acquisition of Paradox\\\",\\n          \\\"source_url\\\": \\\"https://www.prnewswire.com/news-releases/workday-completes-acquisition-of-paradox-302571738.html\\\"\\n        },\\n        {\\n          \\\"date\\\": \\\"2025-08-21\\\",\\n          \\\"headline\\\": \\\"Workday Signs Definitive Agreement to Acquire Paradox, the AI Company Redefining the Frontline Candidate Experience\\\",\\n          \\\"source_url\\\": \\\"https://newsroom.workday.com/2025-08-21-Workday-Signs-Definitive-Agreement-to-Acquire-Paradox%2C-the-AI-Company-Redefining-the-Frontline-Candidate-Experience\\\"\\n        },\\n        {\\n          \\\"date\\\": \\\"2025-08-13\\\",\\n          \\\"headline\\\": \\\"Paradox Named to Fifth Consecutive Inc. 5000 List -- Among the Fastest Growing HR Technology Companies\\\",\\n          \\\"source_url\\\": \\\"https://finance.yahoo.com/news/paradox-named-fifth-consecutive-inc-120100131.html\\\"\\n        }\\n      ],\\n      \\\"growth_signals\\\": [\\n        \\\"276% three-year revenue growth rate, earning fifth consecutive Inc. 5000 listing in August 2025\\\",\\n        \\\"1,000+ global clients as of August 2025 per Josh Bersin analysis\\\",\\n        \\\"189 million AI-assisted candidate conversations powered as of August 2025 per Workday acquisition announcement\\\",\\n        \\\"1,000%+ growth since 2020 per March 2024 CEO transition announcement\\\",\\n        \\\"Acquired by Workday in October 2025 for its conversational AI frontline hiring capabilities, now powering Workday Paradox Candidate Experience Agent\\\"\\n      ],\\n      \\\"weaknesses\\\": [\\n        \\\"Poor customer support with delayed or non-responsive service, cited by multiple Capterra reviewers as a reason for switching\\\",\\n        \\\"Platform not always intuitive and somewhat difficult to learn, per Capterra user reviews\\\",\\n        \\\"Technical glitches during peak business hours with large reports, and AI chatbot Olivia struggles with complex applicant queries per Capterra and index.dev reviews\\\"\\n      ]\\n    }\\n  ]\\n}\\n```\\n\\n## References\\n\\n1. *Has anyone heard of paradox.ai or Paradox Olivia? They ...*. http://reddit.com/r/WorkOnline/comments/f4vj0z/has_anyone_heard_of_paradoxai_or_paradox_olivia\\n2. *FAQs*. https://www.paradox.ai/faqs\\n3. *Gartner*. http://gartner.com/en/conferences/apac/hr-symposium-australia/sessions/detail/4217845-Paradox-How-REA-Group-Uses-AI-Recruitment-Agent-to-Deliver-Faster-Better-Hiring-Experiences\\n4. *Paradox Olivia | Scottsdale AZ*. https://www.facebook.com/paradoxolivia\\n5. *ADP Marketplace*. http://apps.adp.com/apps/417358\\n6. *Paradox | Thoma Bravo*. https://www.thomabravo.com/portfolio/paradox\\n7. *Pendo*. https://platform.tracxn.com/a/d/company/534625fae4b085eb389cd77a/pendo?utm_source=parallel&utm_medium=ai#a:about\\n8. *Crunchbase company profile*. https://www.crunchbase.com/organization/paradox-technologies-0f98\\n9. *MY01*. https://platform.tracxn.com/a/d/company/5cf56e6c0079301090d46803/my01?utm_source=parallel&utm_medium=ai#a:about\\n10. *On a Mission to Build the Next Generation of HR and Recruiting ...*. http://prnewswire.com/news-releases/on-a-mission-to-build-the-next-generation-of-hr-and-recruiting-software-through-conversational-ai-paradox-raises-200m-series-c-301450591.html\\n11. *Companies using Paradox.ai in 2026 | Landbase*. https://data.landbase.com/technology/paradox-ai\\n12. *Paradox Named to Fifth Consecutive Inc. 5000 List*. http://finance.yahoo.com/news/paradox-named-fifth-consecutive-inc-120100131.html\\n13. *Paradox B2B Case Studies & Customer Successes*. https://www.casestudies.com/company/paradox\\n14. *List of Paradox Customers - Apps Run The World*. https://www.appsruntheworld.com/customers-database/vendors/view/paradox\\n15. *Paradox AI recruiting success stories*. https://www.paradox.ai/clients-stories\\n16. *IntervueBox*. https://platform.tracxn.com/a/d/company/677c9a9d20cdf9401b0cf774/intervuebox?utm_source=parallel&utm_medium=ai#a:about\\n17. *The Best AI-Powered Recruitment Software for Enterprises (2026)*. https://www.mokahr.io/articles/en/the-best-ai-powered-recruitment-software-for-enterprises\\n18. *Paradox AI Review 2026: Olivia Chatbot Features, Pricing ...*. https://www.index.dev/blog/paradox-ai-recruitment-chatbot-review\\n19. *Paradox | The Conversational AI Platform for Recruiting*. http://paradox.ai/\\n20. *Unith*. https://platform.tracxn.com/a/d/company/63e963537fae1664e1d22564/unith?utm_source=parallel&utm_medium=ai#a:about\\n21. *Paradox | 33693 followers on LinkedIn. We ... http://www.paradox.ai.*. http://linkedin.com/company/paradoxolivia\\n22. *Paradox (Olivia) Review \\u2014 Features, Pricing & Rating | ToolPilot*. https://toolpilot.tools/tools/paradox-olivia\\n23. *Is Paradox AI Worth It? Complete 2025 Review and Better ...*. https://www.linkedin.com/pulse/paradox-ai-worth-complete-2025-review-better-alternatives-hirevire-ojkgf\\n24. *Paradox Reviews 2026: Details, Pricing, & Features | G2*. https://www.g2.com/products/paradox/reviews\\n25. *How to Evaluate AI Tools Before You Buy - YouTube*. https://www.youtube.com/watch?v=PRhC0lRSf14\\n26. *Paradox AI Recruitment Chatbot Review*. http://index.dev/blog/paradox-ai-recruitment-chatbot-review\\n27. *Is Paradox AI Worth It? Complete 2025 Review and Better ...*. http://linkedin.com/pulse/paradox-ai-worth-complete-2025-review-better-alternatives-hirevire-ojkgf\\n28. *Paradox AI Pricing 2026: What Olivia Really Costs | Prepzo*. https://prepzo.ai/blog/paradox-ai-pricing\\n29. *Paradox Pricing 2026: Plans, Hidden Costs & Cheaper Alternatives*. https://toolradar.com/tools/paradox/pricing\\n30. *\\\"Your plan pricing is unchanged: Copilot Pro remains $10/ ...*. https://news.ycombinator.com/item?id=47923551\\n31. *Conversational hiring software that gets work done for you \\u2014 Paradox*. https://www.paradox.ai/\\n32. *WDAY Press Release: Workday Signs Definitive Agreement to ...*. https://marketchameleon.com/PressReleases/i/2153770/WDAY/workday-signs-definitive-agreement-to-acquire-paradox\\n33. *Workday Signs Definitive Agreement to Acquire Paradox ...*. http://newsroom.workday.com/2025-08-21-Workday-Signs-Definitive-Agreement-to-Acquire-Paradox%2C-the-AI-Company-Redefining-the-Frontline-Candidate-Experience\\n34. *Workday Completes Acquisition of Paradox*. http://prnewswire.com/news-releases/workday-completes-acquisition-of-paradox-302571738.html\\n35. *Decagon*. https://platform.tracxn.com/a/d/company/650c7af1cf357415ee0843b9/decagon?utm_source=parallel&utm_medium=ai#a:about\\n36. *VectorMax*. https://platform.tracxn.com/a/d/company/531b39d8e4b0f7e16623921f/vectormax?utm_source=parallel&utm_medium=ai#a:about\\n37. *Paradox Interactive raises $2B Public at | SalesTools AI*. http://salestools.io/es/report/paradox-interactive-2b-public\\n38. *HydroCision*. https://platform.tracxn.com/a/d/company/5319d8cee4b0f7e166020a89/hydrocision?utm_source=parallel&utm_medium=ai#a:about\\n39. *Paradox Technologies - 2026 Funding Rounds & List of ... - Tracxn*. https://tracxn.com/d/companies/paradox-technologies/__x7XcRl4sa4QHv4-72J5uGaNnl3rvCafFF690V8EocKc/funding-and-investors\\n40. *Paradox - 2025 Funding Rounds & List of Investors - Tracxn*. https://tracxn.com/d/companies/paradox/__WUmEpi0uRecFw0sjQk8oJqkOhkaXt9nWAtTuN8Q_cLo/funding-and-investors\\n41. *Our $60M Series B Fundraise To Accelerate Real Estate Law With AI*. http://orbital.tech/blog/orbital-raises-series-b\\n42. *Paradox AI: The Smart Conversational AI Hiring Assistant for ...*. https://www.hrstechspace.com/enterprise-ai/conversational-ai-hiring-2025\\n43. *Paradox AI Enterprise Review - YouTube*. http://youtube.com/watch?v=OZInacWsiNk\\n44. *Hiring for 6,500+ hotels globally with conversational AI. - Paradox*. https://www.paradox.ai/case-studies/ihg-hotels-and-resorts\\n45. *Aaron M. on LinkedIn: Excited to announce our Series B ...*. https://www.linkedin.com/posts/aaronmatos_paradox-raises-40m-series-b-to-help-companies-activity-6665643596164800512-dVpg\\n46. *Paradox's Founder and CEO Aaron Matos shares why ... - LinkedIn*. https://www.linkedin.com/posts/paradoxolivia_paradoxs-founder-and-ceo-aaron-matos-shares-activity-6593134198226325504-CITZ\\n47. *Aaron Matos - CEO and Founder @ Paradox - Crunchbase*. https://www.crunchbase.com/person/aaron-matos\\n48. *Paradox Technologies*. https://platform.tracxn.com/a/d/company/59edb9d7e4b0261af2839e79/paradox%20technologies?utm_source=parallel&utm_medium=ai#a:about\\n49. *Olivia by Paradox Ai*. http://olivia.paradox.ai/\\n50. *Paradox | Reviews, Pricing & Demos - SoftwareAdvice AU*. https://www.softwareadvice.com.au/software/332815/olivia\\n51. *Olivia by Paradox Ai*. http://darden.paradox.ai/login\\n52. *Drata Pros and Cons | User Likes & Dislikes - G2*. http://g2.com/products/drata/reviews?qs=pros-and-cons\\n53. [Paradox (Olivia) Pros & Cons [2026] (paradox olivia pros cons ...](https://aitoolsatlas.ai/tools/paradox-olivia/pros-cons)\\n54. *Paradox Reviews, Pros & Cons and Alternatives (Jun 2026)*. https://www.geniusfirms.com/review/paradox/\\n55. *Paradox*. https://www.linkedin.com/company/paradoxolivia\\n56. *Paradox's Competitors, Revenue, Number of Employees, Funding, Acquisitions & News - Owler Company Profile*. http://owler.com/company/paradox1\\n57. *Paradox | LinkedIn*. https://in.linkedin.com/organization-guest/company/paradoxolivia?_l=en\\n58. *Paradox - Overview, News & Similar companies | ZoomInfo.com*. https://www.zoominfo.com/c/paradox-inc/449524317\\n59. *paradox ai employee count - UMU*. https://www.umu.com/ask/t11122301573854323829\\n60. *BPC | Paradox - Brighton Park Capital*. http://bpc.com/companies/paradox\\n61. *Workday to Acquire Paradox. A Bigger Deal Than You Think.*. https://joshbersin.com/2025/08/workday-to-acquire-paradox-a-bigger-deal-than-you-think\\n62. *Workday completes acquisition of conversational AI firm Paradox*. http://staffingindustry.com/editorial/it-staffing-report/workday-completes-acquisition-of-conversational-ai-firm-paradox\\n63. *Workday Completes Acquisition of Paradox - Oct 1, 2025*. https://newsroom.workday.com/2025-10-01-Workday-Completes-Acquisition-of-Paradox\\n64. *Creating the future: The honor, opportunity, and responsibility of taking the helm as Paradox's next CEO. \\u2014 Paradox*. http://paradox.ai/blog/creating-the-future-the-honor-opportunity-and-responsibility-of-taking-the-helm-as-paradoxs-next-ceo\\n65. *Paradox.ai Org Chart + Executive Team - The Official Board*. https://www.theofficialboard.com/org-chart/paradox-ai\\n66. *Conversational AI Disrupts HR Tech. Adam Godson, CEO ...*. http://youtube.com/watch?v=8FRR8uvRSJg\\n67. *Paradox - Leadership Team | The Org*. https://theorg.com/org/paradox-ai/teams/leadership-team-1\\n68. *Conversational AI Recruitment Startup Paradox Joins Unicorns With ...*. https://voicebot.ai/2021/12/30/conversational-ai-recruitment-startup-paradox-joins-unicorns-with-200m-raise\\n69. *Status AI $17M Series A Funding (2026) | Investors & ...*. http://fundup.ai/recently-funded-startups/company/e81b6c8fd2b630e0ae1b35f78da6854771f8022a18b71d5c3bc8a8a0a3f78a4a/status-ai\\n70. *Series C - Paradox - Crunchbase Funding Round Profile*. https://www.crunchbase.com/funding_round/paradox-olivia-series-c--50cb76d2\\n71. *Seed Funding & Series A Rounds - Raising Capital for ...*. https://cenkuslaw.com/raising-capital-startups-seed-series-a-funding\\n72. *Workday Completes Acquisition of Paradox*. https://www.prnewswire.com/news-releases/workday-completes-acquisition-of-paradox-302571738.html\\n73. *WDAY Press Release: Paradox Conversational Applicant Tracking ...*. https://marketchameleon.com/PressReleases/i/2230126/WDAY/paradox-conversational-applicant-tracking-system-ats-now\\n74. *Workday Completes Acquisition of Paradox | Workday*. https://investor.workday.com/news-and-events/press-releases/news-details/2025/Workday-Completes-Acquisition-of-Paradox-10-01-2025/default.aspx\\n75. *Paradox Technologies - 2026 Company Profile & Team - Tracxn*. http://tracxn.com/d/companies/paradoxtechnologies/__x7XcRl4sa4QHv4-72J5uGaNnl3rvCafFF690V8EocKc\\n76. *Paradox Software Pricing, Alternatives & More 2026 | Capterra*. https://www.capterra.com/p/191056/Olivia/\\n77. *Has anyone heard of paradox.ai or Paradox Olivia ... - Reddit*. https://www.reddit.com/r/WorkOnline/comments/f4vj0z/has_anyone_heard_of_paradoxai_or_paradox_olivia/\\n78. *AI Tool Complaints \\u2014 Real User Problems in 2026*. https://bestaitoolcompare.com/ai-tool-complaints-2026\\n79. *Case Studies | The Paradox | The Paradox*. https://www.theparadox.online/case-studies\\n80. *The Talent 10 \\u2014 Paradox*. https://www.paradox.ai/landings/talent-10\\n81. *Greenhouse Pros and Cons | User Likes & Dislikes*. https://www.g2.com/products/greenhouse/reviews?page=4&qs=pros-and-cons\\n82. *Siteimprove Pros and Cons | User Likes & Dislikes - G2*. https://www.g2.com/products/siteimprove/reviews?qs=pros-and-cons\\n83. *ISMS.online Pros and Cons | User Likes & Dislikes - G2*. http://g2.com/products/isms-online/reviews?qs=pros-and-cons\\n84. *Greenhouse Pros and Cons | User Likes & Dislikes*. https://www.g2.com/products/greenhouse/reviews?page=10&qs=pros-and-cons\\n85. *Andr\\u00e9 Martins Dantas*. https://linkedin.com/in/andr%C3%A9-martins-dantas-215438242\\n86. *Paradox | LinkedIn*. https://co.linkedin.com/organization-guest/company/paradoxolivia?_l=en\\n87. *Paradox.ai - Market Share, Competitor Insights in Recruitment*. https://www.6sense.com/tech/recruitment/paradoxandai-market-share\\n88. *Paradox Names New CEO | Arizona Technology Council*. http://aztechcouncil.org/paradox-new-ceo\\n89. *Paradox Reviews, Pros & Cons and Alternatives (Jun 2026)*. https://www.geniusfirms.com/review/paradox\\n90. *Paradox Review 2026: Pricing, Features, Pros, Cons & Best ...*. https://www.peoplebox.ai/blog/paradox-review/\\n91. *Perplexity Pro users claim usage limits have been ...*. https://www.androidauthority.com/perplexity-pro-advanced-ai-limits-reduced-3667942\\n92. *Luma AI Reviews, Pros & Cons and Alternatives (Apr 2026)*. https://www.geniusfirms.com/review/luma-ai\\n93. *Leadership | Tranzact*. http://tranzact.net/leadership\\n94. *Nasuni's latest exec reshuffle*. http://blocksandfiles.com/ai-ml/2026/01/14/nasunis-latest-exec-reshuffle/4090298\\n95. *Paradox CEO and Key Executive Team - Craft.co*. https://craft.co/paradox/executives\\n96. *The 2016 AI Report: Startups See Record High In Deals And Funding*. https://www.cbinsights.com/research/artificial-intelligence-startup-funding\\n97. *Zippr*. https://platform.tracxn.com/a/d/company/5905ba7ce4b05c77fbec7b91/zippr?utm_source=parallel&utm_medium=ai#a:about\\n98. *Paradox - Crunchbase Company Profile & Funding*. https://www.crunchbase.com/organization/paradox-olivia\\n99. *Plotinus*. https://platform.tracxn.com/a/d/company/5906159ee4b0b286e8e06e52/plotinus?utm_source=parallel&utm_medium=ai#a:about\\n100. *Faitron - 2026 Company Profile, Team, Funding & Competitors*. http://tracxn.com/d/companies/faitron/__KWMI4h6q07hAZXVVuzAi8kfdtqiKehdbT150dCsQoUE\\n101. *Paradox Conversational Applicant Tracking System (ATS) Now ...*. https://www.prnewswire.com/news-releases/paradox-conversational-applicant-tracking-system-ats-now-available-through-workday-helping-organizations-hire-frontline-workers-faster-302656477.html\\n102. *Decreasing cost-per-hire by 54% with Workday Paradox.*. http://workday.com/en-us/customer-stories/a-h/neighborly-cuts-cost-to-hire-conversational-ai.html\\n103. *Expanding from 800 to 2000 locations with the help of ...*. http://paradox.ai/case-studies/burlington\\n104. *Paradox Conversational Applicant Tracking System (ATS) Now ...*. https://newsroom.workday.com/2026-01-08-Paradox-Conversational-Applicant-Tracking-System-ATS-Now-Available-Through-Workday%2C-Helping-Organizations-Hire-Frontline-Workers-Faster\\n105. *http://investor.workday.com/news-and-events/press-releases/news-details/2026/Paradox-Conversational-Applicant-Tracking-System-ATS-Now-Available-Through-Workday-Helping-Organizations-Hire-Frontline-Workers-Faster/default.aspx*. http://investor.workday.com/news-and-events/press-releases/news-details/2026/Paradox-Conversational-Applicant-Tracking-System-ATS-Now-Available-Through-Workday-Helping-Organizations-Hire-Frontline-Workers-Faster/default.aspx\\n\"}",
+  "basis": [
+    {
+      "field": "answer",
+      "citations": [
+        {
+          "title": "Has anyone heard of paradox.ai or Paradox Olivia? They ...",
+          "url": "http://reddit.com/r/WorkOnline/comments/f4vj0z/has_anyone_heard_of_paradoxai_or_paradox_olivia",
+          "excerpts": [
+            "The real Paradox company is located in Scottsdale Arizona"
+          ]
+        },
+        {
+          "title": "FAQs",
+          "url": "https://www.paradox.ai/faqs",
+          "excerpts": [
+            "FAQs\nLaunched in 2016, Paradox built the first conversational recruiting platform \u2014 driven by its AI assistant \u2014 to help recruiting and hiring teams spend more time"
+          ]
+        },
+        {
+          "title": "Gartner",
+          "url": "http://gartner.com/en/conferences/apac/hr-symposium-australia/sessions/detail/4217845-Paradox-How-REA-Group-Uses-AI-Recruitment-Agent-to-Deliver-Faster-Better-Hiring-Experiences",
+          "excerpts": [
+            "Paradox: How REA Group Uses AI Recruitment Agent to Deliver Faster, Better Hiring Experiences"
+          ]
+        },
+        {
+          "title": "Paradox Olivia | Scottsdale AZ",
+          "url": "https://www.facebook.com/paradoxolivia",
+          "excerpts": [
+            "Paradox Olivia | Scottsdale AZ\nParadox Olivia, Scottsdale. 762 likes \u00b7 2 talking about this \u00b7 18 were here. We are Paradox, the AI company that believes recruiting is a people game."
+          ]
+        },
+        {
+          "title": "ADP Marketplace",
+          "url": "http://apps.adp.com/apps/417358",
+          "excerpts": [
+            "Paradox is a conversational recruiting software powered by Olivia, the company's AI recruiting assistant that automates administrative work."
+          ]
+        },
+        {
+          "title": "Paradox | Thoma Bravo",
+          "url": "https://www.thomabravo.com/portfolio/paradox",
+          "excerpts": [
+            "Paradox | Thoma Bravo\nPress Release. December 27, 2021. On a Mission to Build the Next Generation of HR and Recruiting Software through Conversational AI, Paradox Raises $200M Series"
+          ]
+        },
+        {
+          "title": "Pendo",
+          "url": "https://platform.tracxn.com/a/d/company/534625fae4b085eb389cd77a/pendo?utm_source=parallel&utm_medium=ai#a:about",
+          "excerpts": [
+            "Name: Pendo | Investor Names: [\"B Capital\",\"Battery Ventures\",\"Contour Venture Partners\",\"Core Capital Partners\",\"Cross Creek\",\"FirstMark\",\"General Atlantic\",\"Geodesic Capital\",\"IDEA Fund Partners\",\"Meritech\",\"SLW\",\"Salesforce Ventures\",\"Sapphire Ventures\",\"Spark Capital\",\"Thoma Bravo\"] | All Funding Rounds: Series F 2021-11-11 Thoma Bravo Series F 2021-07-27 FirstMark, Battery Ventures, Meritech, Tiger Global Management, IDEA Fund Partners, Contour Venture Partners, SLW, Sapphire Ventures, General Atlantic, Geodesic Capital, B Capital Series E 2019-10-17 Battery Ventures, FirstMark, Sapphire Ventures, Cross Creek, Tiger Global Management, General Atlantic, Geodesic Capital, Meritech Series D 2018-09-12 Sapphire Ventures, Contour Venture Partners, Meritech, FirstMark, Geodesic Capital, Battery Ventures, Spark Capital Series C 2017-07-13 Contour Venture Partners, Core Capital Partners, IDEA Fund Partners, Meritech, Battery Ventures, Spark Capital, Salesforce Ventures Series B 2016-12-12"
+          ]
+        },
+        {
+          "title": "Crunchbase company profile",
+          "url": "https://www.crunchbase.com/organization/paradox-technologies-0f98",
+          "excerpts": [
+            "About the Company. Artificial Intelligence company"
+          ]
+        },
+        {
+          "title": "MY01",
+          "url": "https://platform.tracxn.com/a/d/company/5cf56e6c0079301090d46803/my01?utm_source=parallel&utm_medium=ai#a:about",
+          "excerpts": [
+            "Name: MY01 | All Funding Rounds: Series A 2023-08-20 Antler Series A 2023-04-11 Fondaction, Desjardins, Invest Quebec Seed 2019-06-12 MEDTEQ | Latest Funding Round Name: Series A | Investor Names: [\"Antler\",\"Desjardins\",\"Fondaction\",\"Invest Quebec\",\"MEDTEQ\"] | Short Description: AI-powered medical device for the detection of compartment syndrome | All Locations: Singapore Singapore Singapore | Special Flags: Tech YES Enterprise YES Software YES Tech Hardware YES | Achievements: XCorn Size {currentRating=MINICORN} Trending Theme Market {themes=[{id=5f7d55fb655da9ad7d165e81}]} Top Player among its competitors Size  | Incubators: US program MedTech Innovator 2018 | Founders: Ed Harvey Co-Founder | Recent News: MY01 Welcomes Joe Kiani as Investor and Board Member to Accelerate Innovation in Connected Patient Monitoring https://www.prnewswire.com/news-releases/my01-welcomes-joe-kiani-as-investor-and-board-member-to-accelerate-innovation-in-connected-patient-monitoring-302549315.html 2025-09"
+          ]
+        },
+        {
+          "title": "On a Mission to Build the Next Generation of HR and Recruiting ...",
+          "url": "http://prnewswire.com/news-releases/on-a-mission-to-build-the-next-generation-of-hr-and-recruiting-software-through-conversational-ai-paradox-raises-200m-series-c-301450591.html",
+          "excerpts": [
+            "On a Mission to Build the Next Generation of HR and Recruiting Software through Conversational AI, Paradox Raises $200M Series C\nParadox Raises $200M Series C"
+          ]
+        },
+        {
+          "title": "Companies using Paradox.ai in 2026 | Landbase",
+          "url": "https://data.landbase.com/technology/paradox-ai",
+          "excerpts": [
+            "Companies using Paradox.ai in 2026 | Landbase\nWe have data on 596 companies that use Paradox.ai. Our Paradox.ai customers list is available for download and comes enriched with vital company specifics, including industry classification, organizational size, geographical location, funding rounds, and revenue figures, among others."
+          ]
+        },
+        {
+          "title": "Paradox Named to Fifth Consecutive Inc. 5000 List",
+          "url": "http://finance.yahoo.com/news/paradox-named-fifth-consecutive-inc-120100131.html",
+          "excerpts": [
+            "Aug 13, 2025 \u2014 Josh Bersin recently published a new case study showcasing how 7-Eleven uses Paradox's conversational AI software to schedule 85% of"
+          ]
+        },
+        {
+          "title": "Paradox B2B Case Studies & Customer Successes",
+          "url": "https://www.casestudies.com/company/paradox",
+          "excerpts": [
+            "Paradox B2B Case Studies & Customer Successes\nSee how Paradox solves business challenges\u2014real case studies from satisfied customers across industries."
+          ]
+        },
+        {
+          "title": "List of Paradox Customers - Apps Run The World",
+          "url": "https://www.appsruntheworld.com/customers-database/vendors/view/paradox",
+          "excerpts": [
+            "List of Paradox Customers - Apps Run The World\nList of companies using or evaluating Paradox applications, with details on their revenues, employees, industries, and locations."
+          ]
+        },
+        {
+          "title": "Paradox AI recruiting success stories",
+          "url": "https://www.paradox.ai/clients-stories",
+          "excerpts": [
+            "Paradox AI recruiting success stories\nWatch client case studies. \u00b7 Saving $2,000,000 with automated interview scheduling. \u00b7 Reducing time to hire by 75% with conversational AI. \u00b7 Saving store leaders"
+          ]
+        },
+        {
+          "title": "IntervueBox",
+          "url": "https://platform.tracxn.com/a/d/company/677c9a9d20cdf9401b0cf774/intervuebox?utm_source=parallel&utm_medium=ai#a:about",
+          "excerpts": [
+            "Name: IntervueBox | Short Description: Provider of AI-powered video interview and recruitment software | Detailed Description: Provider of AI-powered video interview and recruitment software. This platform conducts automated pre-interviews, utilizing AI to assess candidates based on resume, job description, and recruiter-defined criteria. The system generates detailed reports including SWOT analysis and flags potential integrity issues through proctored interview features analyzing candidate behavior. It offers automated follow-ups via email and WhatsApp, and includes ready-to-use interview templates for various industries. The software integrates with existing Applicant Tracking Systems (ATS) and HRMS platforms, streamlining the recruitment process and reducing costs. Customizable interview templates allow for tailored assessments across diverse skill sets. The platform also offers a service option where pre-interviews are managed by the provider, delivering results to the client."
+          ]
+        },
+        {
+          "title": "The Best AI-Powered Recruitment Software for Enterprises (2026)",
+          "url": "https://www.mokahr.io/articles/en/the-best-ai-powered-recruitment-software-for-enterprises",
+          "excerpts": [
+            "The Best AI-Powered Recruitment Software for Enterprises (2026)\nMokaHR is an AI-powered, data-driven recruiting platform and one of the best ai-powered recruitment software for enterprises, built to make hiring faster, more\u00a0"
+          ]
+        },
+        {
+          "title": "Paradox AI Review 2026: Olivia Chatbot Features, Pricing ...",
+          "url": "https://www.index.dev/blog/paradox-ai-recruitment-chatbot-review",
+          "excerpts": [
+            "Paradox AI Review 2026: Olivia Chatbot Features, Pricing ...\nIn this review, we tested Olivia's capabilities, analyzed real customer results, and break down Paradox AI pricing, features, and limitations to help you decide if it's right for your hiring needs."
+          ]
+        },
+        {
+          "title": "Paradox | The Conversational AI Platform for Recruiting",
+          "url": "http://paradox.ai/",
+          "excerpts": [
+            "Our conversational software automates recruiting tasks like screening, interview scheduling, and onboarding"
+          ]
+        },
+        {
+          "title": "Unith",
+          "url": "https://platform.tracxn.com/a/d/company/63e963537fae1664e1d22564/unith?utm_source=parallel&utm_medium=ai#a:about",
+          "excerpts": [
+            "Name: Unith | Short Description: Conversational AI platform for customer support | Detailed Description: Conversational AI platform for customer support. It provides personalized one-to-one conversations through digital humans, voice, and more. It uses conversational AI to transform human-computer interaction by creating digital interactions with chatbots. It also provides marketing, sales, education, and customer service automation applications for businesses. | Primary Subsector: Chatbots | Other Taxonomy Tags: [\"Europe Tech\",\"Enterprise Tech - Europe\",\"Netherlands Tech\",\"Enterprise Tech - Netherlands\",\"Trending Themes in Chatbots\",\"Chatbot Development Platforms\",\"Enterprise Applications\",\"Enterprise Software\",\"HiTech - Europe\",\"HiTech - Netherlands\",\"Conversational AI Development Platforms\"] | Special Flags: Tech YES Enterprise YES Software YES | All Locations: Netherlands North Holland Amsterdam | All Funding Rounds: Post IPO 2024-02-13  | Cxo Team: Idan Schmorak CEO"
+          ]
+        },
+        {
+          "title": "Paradox | 33693 followers on LinkedIn. We ... http://www.paradox.ai.",
+          "url": "http://linkedin.com/company/paradoxolivia",
+          "excerpts": [
+            "Paradox | 33693 followers on LinkedIn. We ... http://www.paradox.ai."
+          ]
+        },
+        {
+          "title": "Paradox (Olivia) Review \u2014 Features, Pricing & Rating | ToolPilot",
+          "url": "https://toolpilot.tools/tools/paradox-olivia",
+          "excerpts": [
+            "Paradox (Olivia) Review \u2014 Features, Pricing & Rating | ToolPilot\nParadox's AI assistant Olivia handles the most time-consuming parts of recruiting through conversational AI. She engages candidates via text, web chat, or WhatsApp \u2014 answering questions, screening qualifications, scheduling interviews, and sending reminders \u2014 all automatically and 24/7."
+          ]
+        },
+        {
+          "title": "Is Paradox AI Worth It? Complete 2025 Review and Better ...",
+          "url": "https://www.linkedin.com/pulse/paradox-ai-worth-complete-2025-review-better-alternatives-hirevire-ojkgf",
+          "excerpts": [
+            "When I first heard about Paradox AI's pricing\u2014$25,000 to $100,000+ annually\u2014I thought there had to be a mistake. Then I dug deeper and discovered what's really driving these enterprise costs,"
+          ]
+        },
+        {
+          "title": "Paradox Reviews 2026: Details, Pricing, & Features | G2",
+          "url": "https://www.g2.com/products/paradox/reviews",
+          "excerpts": [
+            "Get practical answers, real workflows, and honest pros and cons from the G2 community or share your insights. Is Olivia Paradox safe? Averages based on real user reviews. Filter 40 reviews by the users' company size, role or industry to find out how Paradox works for a business like yours."
+          ]
+        },
+        {
+          "title": "How to Evaluate AI Tools Before You Buy - YouTube",
+          "url": "https://www.youtube.com/watch?v=PRhC0lRSf14",
+          "excerpts": [
+            "How to Evaluate AI Tools Before You Buy - YouTube\n2 days ago \u00b7 How do I find reliable AI software reviews? Use review platforms like G2 as intelligence layers throughout your evaluation \u2014 not just at the end"
+          ]
+        },
+        {
+          "title": "Paradox AI Recruitment Chatbot Review",
+          "url": "http://index.dev/blog/paradox-ai-recruitment-chatbot-review",
+          "excerpts": [
+            "Includes pricing ($1000+/mo)\nParadox AI review: See how Olivia chatbot automates hiring with 24/7 screening & scheduling. Includes pricing ($1000+/mo), real ROI data"
+          ]
+        },
+        {
+          "title": "Is Paradox AI Worth It? Complete 2025 Review and Better ...",
+          "url": "http://linkedin.com/pulse/paradox-ai-worth-complete-2025-review-better-alternatives-hirevire-ojkgf",
+          "excerpts": [
+            "At $36/hour recruiter cost: $21-27 savings per candidate. Monthly break-even points: Paradox AI ($2,500/month average): 120+ candidates monthly"
+          ]
+        },
+        {
+          "title": "Paradox AI Pricing 2026: What Olivia Really Costs | Prepzo",
+          "url": "https://prepzo.ai/blog/paradox-ai-pricing",
+          "excerpts": [
+            "Paradox AI Pricing 2026: What Olivia Really Costs | Prepzo\nParadox AI pricing is custom and enterprise-only. Here is what Olivia actually costs in 2026, the hidden line items, and cheaper alternatives for smaller teams."
+          ]
+        },
+        {
+          "title": "Paradox Pricing 2026: Plans, Hidden Costs & Cheaper Alternatives",
+          "url": "https://toolradar.com/tools/paradox/pricing",
+          "excerpts": [
+            "Paradox does not offer a permanent free plan. Paid plans are required from day one. Is there a cheaper alternative to Paradox? Yes. Popular alternatives to Paradox include SeekOut, Phenom, SAP SuccessFactors. Compare them side-by-side on Toolradar. Direct competitors with similar features."
+          ]
+        },
+        {
+          "title": "\"Your plan pricing is unchanged: Copilot Pro remains $10/ ...",
+          "url": "https://news.ycombinator.com/item?id=47923551",
+          "excerpts": [
+            "\"Your plan pricing is unchanged: Copilot Pro remains $10/ ...\n\"Your plan pricing is unchanged: Copilot Pro remains $10/month and Pro+ remains $39/month, and each includes $10 and $39 in monthly AI Credits, respectively."
+          ]
+        },
+        {
+          "title": "Conversational hiring software that gets work done for you \u2014 Paradox",
+          "url": "https://www.paradox.ai/",
+          "excerpts": []
+        },
+        {
+          "title": "WDAY Press Release: Workday Signs Definitive Agreement to ...",
+          "url": "https://marketchameleon.com/PressReleases/i/2153770/WDAY/workday-signs-definitive-agreement-to-acquire-paradox",
+          "excerpts": [
+            "WDAY Press Release: Workday Signs Definitive Agreement to ...\nPLEASANTON, Calif., Aug. 21, 2025 /PRNewswire/ -- Workday, Inc. (NASDAQ: WDAY), the AI platform for managing people, money, and agents, has entered into a definitive agreement to acquire Paradox, a candidate experience agent that uses conversational AI to simplify every step of the job application journey \u2013 particularly for high-volume"
+          ]
+        },
+        {
+          "title": "Workday Signs Definitive Agreement to Acquire Paradox ...",
+          "url": "http://newsroom.workday.com/2025-08-21-Workday-Signs-Definitive-Agreement-to-Acquire-Paradox%2C-the-AI-Company-Redefining-the-Frontline-Candidate-Experience",
+          "excerpts": [
+            "Aug 21, 2025 \u2014 United Kingdom (English). Press Release. Workday Signs Definitive Agreement to Acquire Paradox, the AI Company Redefining the Frontline Candidate Experience."
+          ]
+        },
+        {
+          "title": "Workday Completes Acquisition of Paradox",
+          "url": "http://prnewswire.com/news-releases/workday-completes-acquisition-of-paradox-302571738.html",
+          "excerpts": [
+            "Oct 1, 2025 \u2014 The Workday Paradox Candidate Experience Agent is available for purchase now for both existing and new customers through Workday or Paradox."
+          ]
+        },
+        {
+          "title": "Decagon",
+          "url": "https://platform.tracxn.com/a/d/company/650c7af1cf357415ee0843b9/decagon?utm_source=parallel&utm_medium=ai#a:about",
+          "excerpts": [
+            "Name: Decagon | Short Description: Developer of an AI platform for customer experience automation | Detailed Description: Developer of an AI platform for customer experience automation. The platform builds, optimizes, and scales AI agents for customer interactions across multiple channels. Agent workflows are defined using natural language to refine behavior and optimize performance. The platform offers testing, experimentation, and analytics to understand customers better and improve performance. | All Funding Rounds: Series D 2026-01-28 Index Ventures, Chemistry VC, Elad Gil, Ribbit Capital, T Capital, A Star, Starwood Capital, Accel, Forerunner Ventures, Definition, avra, Coatue, Andreessen Horowitz, Bain Capital Ventures Series C 2025-11-10 T Capital Series C 2025-06-23 Andreessen Horowitz, A Star, Accel, Bain Capital Ventures, Bond Capital, Forerunner Ventures, Ribbit, avra Series B 2024-10-09 Bond Capital, A Star, Elad Gil, Accel, ACME, Bain Capital Ventures Series A 2024-06-18 E"
+          ]
+        },
+        {
+          "title": "VectorMax",
+          "url": "https://platform.tracxn.com/a/d/company/531b39d8e4b0f7e16623921f/vectormax?utm_source=parallel&utm_medium=ai#a:about",
+          "excerpts": [
+            "Name: VectorMax | All Funding Rounds: Seed 2026-03-04  Seed 2026-01-02  Seed 2025-11-13  Seed 2025-09-02  Seed 2025-07-01  Seed 2025-05-14  Seed 2025-03-06  Seed 2025-01-21  Seed 2024-07-08  Seed 2024-03-01  Seed 2023-06-06  Seed 2022-05-04  Seed 2021-11-19  Seed 2021-09-13  Seed 2021-06-08  Seed 2021-04-07  Seed 2021-03-24  Seed 2021-02-12  Seed 2020-11-17  Seed 2020-09-21  Seed 2020-04-30  Seed 2020-01-30  Seed 2019-08-06  Seed 2018-10-26  Seed 2018-02-15  Seed 2018-02-07  Seed 2018-01-18  Seed 2017-07-24  Seed 2017-01-26  Seed 2016-12-07  Seed 2016-10-26  Seed 2016-08-12  Seed 2016-08-08  Seed 2016-05-06  Seed 2016-03-09  Seed 2016-02-09  Seed 2015-11-17  Seed 2015-09-04  Seed 2015-07-17  Seed 2015-05-13  Seed 2015-02-27  Seed 2015-01-06  Seed 2014-09-10  Seed 2014-08-26  Seed 2014-06-10  Seed 2014-04-01  Seed 2014-02-10  Seed 2013-12-04  Seed 2013-09-13  Seed 2013-05-28  Seed 2012-10-24  Seed 2012-07-31  Seed 2012-04-05  Seed 2012-01-18  Seed 2011-05-20  Seed 2011-05-12  Seed 2010-"
+          ]
+        },
+        {
+          "title": "Paradox Interactive raises $2B Public at | SalesTools AI",
+          "url": "http://salestools.io/es/report/paradox-interactive-2b-public",
+          "excerpts": [
+            "Dec 31, 2023 \u2014 Paradox Interactive: Public Funding Round. Paradox Interactive has successfully raised $2B in Public funding , reaching a valuation of $4B."
+          ]
+        },
+        {
+          "title": "HydroCision",
+          "url": "https://platform.tracxn.com/a/d/company/5319d8cee4b0f7e166020a89/hydrocision?utm_source=parallel&utm_medium=ai#a:about",
+          "excerpts": [
+            "Name: HydroCision | Location City: Billerica | All Funding Rounds: Series C 2024-11-15  Grant (prize money) 2023-04-01 HHS Series C 2017-03-21  Series C 2010-09-15 BioVentures Investors, Omega Funds, Volcano Capital Management Series C 2010-04-13  Series C 2009-09-11  Series C   Series C 2007-11-14  Series C   Series C 2006-12-08 Oxford Bioscience Partners, Rising Tide Fund, Triathlon Medical Ventures, Zero Stage Capital Series C 2006-11-20  Series B   Series B   Series A 2001-06-04 Oxford Bioscience Partners, Rising Tide Fund, Zero Stage Capital | Latest Funding Round Name: Series C | Stage: Series C | All Locations: United States Massachusetts Billerica | Special Flags: Enterprise YES Tech YES Tech Hardware YES | Achievements: XCorn Size {currentRating=SOONICORN} Has Marquee Institutional Investors Team {investors=[{type=COMPANY, id=531aca32e4b0f7e166182f6c}, {type=COMPANY, id=53229c6de4b0023822fba4f2}, {type=COMPANY, id=58ba4336e4b041de9c6b9906}]} | Recent News: First-of-Its-Kind Se"
+          ]
+        },
+        {
+          "title": "Paradox Technologies - 2026 Funding Rounds & List of ... - Tracxn",
+          "url": "https://tracxn.com/d/companies/paradox-technologies/__x7XcRl4sa4QHv4-72J5uGaNnl3rvCafFF690V8EocKc/funding-and-investors",
+          "excerpts": [
+            "Explore Paradox Technologies' funding history with round-wise details, lead investors, post-money valuations, and complete investor list."
+          ]
+        },
+        {
+          "title": "Paradox - 2025 Funding Rounds & List of Investors - Tracxn",
+          "url": "https://tracxn.com/d/companies/paradox/__WUmEpi0uRecFw0sjQk8oJqkOhkaXt9nWAtTuN8Q_cLo/funding-and-investors",
+          "excerpts": [
+            "Paradox - 2025 Funding Rounds & List of Investors - Tracxn\nExplore Paradox's funding history with round-wise details and complete investor list."
+          ]
+        },
+        {
+          "title": "Our $60M Series B Fundraise To Accelerate Real Estate Law With AI",
+          "url": "http://orbital.tech/blog/orbital-raises-series-b",
+          "excerpts": [
+            "Orbital has raised a $60M Series B led by Brighton Park Capital to scale AI purpose-built for real estate legal work and expand adoption\nOrbital, the AI platform for real estate law, has raised a $60M Series B funding round led by New York-based growth fund, Brighton Park Capital"
+          ]
+        },
+        {
+          "title": "Paradox AI: The Smart Conversational AI Hiring Assistant for ...",
+          "url": "https://www.hrstechspace.com/enterprise-ai/conversational-ai-hiring-2025",
+          "excerpts": [
+            "Paradox AI: The Smart Conversational AI Hiring Assistant for ...\nParadox AI is best suited for: Large enterprises with high-volume hiring (retail, hospitality, healthcare, logistics); Global companies needing"
+          ]
+        },
+        {
+          "title": "Paradox AI Enterprise Review - YouTube",
+          "url": "http://youtube.com/watch?v=OZInacWsiNk",
+          "excerpts": [
+            "Access to the software is provided through customized enterprise contracts, making it a premium solution tailored for large organizations rather than small businesses.\nParadox AI is a specialized American enterprise software designed to automate the administrative burdens of corporate recruitment"
+          ]
+        },
+        {
+          "title": "Hiring for 6,500+ hotels globally with conversational AI. - Paradox",
+          "url": "https://www.paradox.ai/case-studies/ihg-hotels-and-resorts",
+          "excerpts": [
+            "Hiring for 6,500+ hotels globally with conversational AI. - Paradox\nHiring for 6,500+ hotels globally with conversational AI. How IHG Hotels & Resorts redefined their employee value proposition and improved their hiring process."
+          ]
+        },
+        {
+          "title": "Aaron M. on LinkedIn: Excited to announce our Series B ...",
+          "url": "https://www.linkedin.com/posts/aaronmatos_paradox-raises-40m-series-b-to-help-companies-activity-6665643596164800512-dVpg",
+          "excerpts": [
+            "We're excited to announce that Paradox has raised a $40M Series B, led by incredible partners at Brighton Park Capital with proven technology executive Mike Gregoire joining our board as Chairman."
+          ]
+        },
+        {
+          "title": "Paradox's Founder and CEO Aaron Matos shares why ... - LinkedIn",
+          "url": "https://www.linkedin.com/posts/paradoxolivia_paradoxs-founder-and-ceo-aaron-matos-shares-activity-6593134198226325504-CITZ",
+          "excerpts": [
+            "Paradox's Founder and CEO Aaron Matos shares why ... - LinkedIn\nParadox's Founder and CEO Aaron Matos shares why he is excited about the talent experience movement and where he sees the future for AI in recruiting."
+          ]
+        },
+        {
+          "title": "Aaron Matos - CEO and Founder @ Paradox - Crunchbase",
+          "url": "https://www.crunchbase.com/person/aaron-matos",
+          "excerpts": [
+            "Aaron Matos has 2 current jobs as CEO and Founder at Paradox and Founder/CEO at Jobing.com"
+          ]
+        },
+        {
+          "title": "Paradox Technologies",
+          "url": "https://platform.tracxn.com/a/d/company/59edb9d7e4b0261af2839e79/paradox%20technologies?utm_source=parallel&utm_medium=ai#a:about",
+          "excerpts": [
+            "Name: Paradox Technologies | Founders: Aaron Matos Founder, Board Member, Executive Chairman | Cxo Team: Sandra Luther Jones Client Success Director Jessica Rush Chief Talent Officer Cory Smith VP of Product Malte Gaertner Vice President Sales Tri Le VP & Head Of Engineering, Vietnam | All Locations: United States Arizona Scottsdale | Special Flags: Tech YES Enterprise YES SaaS YES Software YES | People Background Flags: College Wise Kellogg School of Management | Incubators: FUSION A&I Program Unknown | All Funding Rounds: Series C 2021-12-27 Thoma Bravo, Geodesic Capital, Brighton Park Capital, Sapphire Ventures, Stripes, Workday Ventures, Indeed, Principia Growth, Twilio, Blue Cloud Ventures, Willoughby Capital, DLA Piper Series B 2020-05-18 Brighton Park Capital Series A 2019-02-28  | Acquisition Details: 53008de7e4b05a7723f3b81d Business Acquisition  | Acquisitions Made: 5dea0878f0e6f61814cd7099 Business Acquisition  538b477be4b0e3ede2335e3f Business Acquisition  5d86596ddfad2e726"
+          ]
+        },
+        {
+          "title": "Olivia by Paradox Ai",
+          "url": "http://olivia.paradox.ai/",
+          "excerpts": [
+            "Olivia by Paradox Ai"
+          ]
+        },
+        {
+          "title": "Paradox | Reviews, Pricing & Demos - SoftwareAdvice AU",
+          "url": "https://www.softwareadvice.com.au/software/332815/olivia",
+          "excerpts": [
+            "Paradox | Reviews, Pricing & Demos - SoftwareAdvice AU\nParadox does not have a free version. Paradox paid version starts at USD 1,000.00/month. Starting Price: USD 1,000.00/month. Free Version:."
+          ]
+        },
+        {
+          "title": "Olivia by Paradox Ai",
+          "url": "http://darden.paradox.ai/login",
+          "excerpts": [
+            "Olivia by Paradox Ai. Login."
+          ]
+        },
+        {
+          "title": "Drata Pros and Cons | User Likes & Dislikes - G2",
+          "url": "http://g2.com/products/drata/reviews?qs=pros-and-cons",
+          "excerpts": [
+            "Drata Pros and Cons | User Likes & Dislikes - G2"
+          ]
+        },
+        {
+          "title": "Paradox (Olivia) Pros & Cons [2026] (paradox olivia pros cons ...",
+          "url": "https://aitoolsatlas.ai/tools/paradox-olivia/pros-cons",
+          "excerpts": [
+            "Paradox (Olivia) Pros & Cons [2026] (paradox olivia pros cons ...\nComprehensive analysis of Paradox (Olivia) 's strengths and weaknesses based on real user feedback and expert evaluation."
+          ]
+        },
+        {
+          "title": "Paradox Reviews, Pros & Cons and Alternatives (Jun 2026)",
+          "url": "https://www.geniusfirms.com/review/paradox/",
+          "excerpts": [
+            "Paradox is a conversational AI platform launched in 2016 that automates recruiting workflows through text, chat, and SMS interactions. It handles screening for minimum qualifications, interview scheduling, candidate Q&A, and event management, allowing hiring teams to reduce administrative work."
+          ]
+        },
+        {
+          "title": "Paradox",
+          "url": "https://www.linkedin.com/company/paradoxolivia",
+          "excerpts": [
+            "Paradox\nSoftware Development Scottsdale, Arizona. Headquarters Scottsdale, Arizona. Primary 6330 E Thomas Rd Scottsdale, Arizona 85251, US"
+          ]
+        },
+        {
+          "title": "Paradox's Competitors, Revenue, Number of Employees, Funding, Acquisitions & News - Owler Company Profile",
+          "url": "http://owler.com/company/paradox1",
+          "excerpts": [
+            "Est. Employees\n\n500-1.0\nParadox has 630 employees\nWhere is Paradox's headquarters? Paradox's headquarters is in Scottsdale Arizona, USA"
+          ]
+        },
+        {
+          "title": "Paradox | LinkedIn",
+          "url": "https://in.linkedin.com/organization-guest/company/paradoxolivia?_l=en",
+          "excerpts": []
+        },
+        {
+          "title": "Paradox - Overview, News & Similar companies | ZoomInfo.com",
+          "url": "https://www.zoominfo.com/c/paradox-inc/449524317",
+          "excerpts": [
+            "With a workforce ranging from 500 to 1,000 employees and operating across 8 locations, Paradox is dedicated to enhancing the candidate experience through its advanced technology."
+          ]
+        },
+        {
+          "title": "paradox ai employee count - UMU",
+          "url": "https://www.umu.com/ask/t11122301573854323829",
+          "excerpts": [
+            "paradox ai employee count - UMU\nDec 17, 2025 \u2014 The ideal employee count for implementing AI solutions like Paradox typically starts at around 50 to 100 employees ."
+          ]
+        },
+        {
+          "title": "BPC | Paradox - Brighton Park Capital",
+          "url": "http://bpc.com/companies/paradox",
+          "excerpts": [
+            "Portfolio News ### Workday Signs Definitive Agreement to Acquire Paradox, the AI Company Redefining the Frontline Candidate Experience Read More"
+          ]
+        },
+        {
+          "title": "Workday to Acquire Paradox. A Bigger Deal Than You Think.",
+          "url": "https://joshbersin.com/2025/08/workday-to-acquire-paradox-a-bigger-deal-than-you-think",
+          "excerpts": [
+            "Workday to Acquire Paradox. A Bigger Deal Than You Think.\nAug 21, 2025 \u2014 Today Workday announced the acquisition of Paradox.ai, the pioneer in AI-based conversational recruiting. As I detail in my podcast, this"
+          ]
+        },
+        {
+          "title": "Workday completes acquisition of conversational AI firm Paradox",
+          "url": "http://staffingindustry.com/editorial/it-staffing-report/workday-completes-acquisition-of-conversational-ai-firm-paradox",
+          "excerpts": [
+            "Workday acquired Paradox, a firm that provides conversational AI for the employment process"
+          ]
+        },
+        {
+          "title": "Workday Completes Acquisition of Paradox - Oct 1, 2025",
+          "url": "https://newsroom.workday.com/2025-10-01-Workday-Completes-Acquisition-of-Paradox",
+          "excerpts": [
+            "Workday Completes Acquisition of Paradox - Oct 1, 2025\nOct 1, 2025 \u2014 Workday, Inc. today announced it has completed its acquisition of Paradox, a candidate experience agent that uses conversational AI to simplify"
+          ]
+        },
+        {
+          "title": "Creating the future: The honor, opportunity, and responsibility of taking the helm as Paradox's next CEO. \u2014 Paradox",
+          "url": "http://paradox.ai/blog/creating-the-future-the-honor-opportunity-and-responsibility-of-taking-the-helm-as-paradoxs-next-ceo",
+          "excerpts": [
+            "the builders of award-winning Conversational AI technology for HR and recruiting announced that founder Aaron Matos is promoting Adam Godson to Chief Executive Officer."
+          ]
+        },
+        {
+          "title": "Paradox.ai Org Chart + Executive Team - The Official Board",
+          "url": "https://www.theofficialboard.com/org-chart/paradox-ai",
+          "excerpts": [
+            "See the executive team of Paradox.ai and its org chart, featuring 12 leaders like Adam Godson, Ross Grainger and John Dalzell"
+          ]
+        },
+        {
+          "title": "Conversational AI Disrupts HR Tech. Adam Godson, CEO ...",
+          "url": "http://youtube.com/watch?v=8FRR8uvRSJg",
+          "excerpts": [
+            "Conversational AI Disrupts HR Tech. Adam Godson, CEO of Paradox."
+          ]
+        },
+        {
+          "title": "Paradox - Leadership Team | The Org",
+          "url": "https://theorg.com/org/paradox-ai/teams/leadership-team-1",
+          "excerpts": [
+            "The Leadership Team at Paradox oversees the strategic direction and operational effectiveness of the company, ensuring that all departments align with the goal of revolutionizing the recruiting experience through AI."
+          ]
+        },
+        {
+          "title": "Conversational AI Recruitment Startup Paradox Joins Unicorns With ...",
+          "url": "https://voicebot.ai/2021/12/30/conversational-ai-recruitment-startup-paradox-joins-unicorns-with-200m-raise",
+          "excerpts": [
+            "Conversational AI Recruitment Startup Paradox Joins Unicorns With ...\nThe new funding round elevates Paradox and its Olivia virtual assistant to unicorn status with a valuation of $1.5 billion. Olivia Unicorn. The"
+          ]
+        },
+        {
+          "title": "Status AI $17M Series A Funding (2026) | Investors & ...",
+          "url": "http://fundup.ai/recently-funded-startups/company/e81b6c8fd2b630e0ae1b35f78da6854771f8022a18b71d5c3bc8a8a0a3f78a4a/status-ai",
+          "excerpts": [
+            "Series A"
+          ]
+        },
+        {
+          "title": "Series C - Paradox - Crunchbase Funding Round Profile",
+          "url": "https://www.crunchbase.com/funding_round/paradox-olivia-series-c--50cb76d2",
+          "excerpts": [
+            "Sapphire Ventures Sapphire is a software venture capital firm that invests backing companies of consequence."
+          ]
+        },
+        {
+          "title": "Seed Funding & Series A Rounds - Raising Capital for ...",
+          "url": "https://cenkuslaw.com/raising-capital-startups-seed-series-a-funding",
+          "excerpts": [
+            "Seed Funding & Series A Rounds - Raising Capital for ...\nMay 12, 2025 \u2014 This article is intended to be a very basic overview of the process, including understanding the differences between seed funding vs Series A."
+          ]
+        },
+        {
+          "title": "Workday Completes Acquisition of Paradox",
+          "url": "https://www.prnewswire.com/news-releases/workday-completes-acquisition-of-paradox-302571738.html",
+          "excerpts": [
+            "Workday Completes Acquisition of Paradox\nOct 1, 2025 \u2014 With Paradox, Workday now has a unified end-to-end AI-powered talent acquisition suite that helps companies hire faster, improve recruiter"
+          ]
+        },
+        {
+          "title": "WDAY Press Release: Paradox Conversational Applicant Tracking ...",
+          "url": "https://marketchameleon.com/PressReleases/i/2230126/WDAY/paradox-conversational-applicant-tracking-system-ats-now",
+          "excerpts": [
+            "WDAY Press Release: Paradox Conversational Applicant Tracking ...\nPLEASANTON, Calif., Jan. 8, 2026 /PRNewswire/ -- Workday, Inc. (NASDAQ: WDAY), the enterprise AI platform for managing people, money, and agents, today announced that Paradox Conversational ATS is now available through Workday."
+          ]
+        },
+        {
+          "title": "Workday Completes Acquisition of Paradox | Workday",
+          "url": "https://investor.workday.com/news-and-events/press-releases/news-details/2025/Workday-Completes-Acquisition-of-Paradox-10-01-2025/default.aspx",
+          "excerpts": [
+            "PLEASANTON, Calif., Oct. 1, 2025 / PRNewswire / -- Workday, Inc. (NASDAQ: WDAY), the enterprise AI platform for managing people, money, and agents, today announced it has completed its acquisition of Paradox, a candidate experience agent that uses conversational AI to simplify every step of the job application journey, particularly for"
+          ]
+        },
+        {
+          "title": "Paradox Technologies - 2026 Company Profile & Team - Tracxn",
+          "url": "http://tracxn.com/d/companies/paradoxtechnologies/__x7XcRl4sa4QHv4-72J5uGaNnl3rvCafFF690V8EocKc",
+          "excerpts": [
+            "Paradox Technologies got acquired by Workday on Aug 21, 2025. Click here to take a look at Paradox Technologies's acquisition in detail."
+          ]
+        },
+        {
+          "title": "Paradox Software Pricing, Alternatives & More 2026 | Capterra",
+          "url": "https://www.capterra.com/p/191056/Olivia/",
+          "excerpts": [
+            "With the help of Capterra, learn about Paradox Software - reviews, pricing plans, popular comparisons to other Applicant Tracking products and more."
+          ]
+        },
+        {
+          "title": "Has anyone heard of paradox.ai or Paradox Olivia ... - Reddit",
+          "url": "https://www.reddit.com/r/WorkOnline/comments/f4vj0z/has_anyone_heard_of_paradoxai_or_paradox_olivia/",
+          "excerpts": [
+            "Has anyone heard of paradox.ai or Paradox Olivia? They recruited me from a fiverr gig I posted a gig to do some light data entry. Suddenly I'm contacted by a recruiter for Paradox Olivia. They seem to be an HR firm using AI to help recruit candidates. They want me to do administrative work for them."
+          ]
+        },
+        {
+          "title": "AI Tool Complaints \u2014 Real User Problems in 2026",
+          "url": "https://bestaitoolcompare.com/ai-tool-complaints-2026",
+          "excerpts": [
+            "AI Tool Complaints \u2014 Real User Problems in 2026\nWhat Reddit actually says about ChatGPT, Claude, Gemini and more. Real user complaints, honest weaknesses, and problems no one else will tell you about."
+          ]
+        },
+        {
+          "title": "Case Studies | The Paradox | The Paradox",
+          "url": "https://www.theparadox.online/case-studies",
+          "excerpts": [
+            "Case Studies | The Paradox | The Paradox\nDeep-dive breakdowns of AI systems built by The Paradox. Problem, system architecture, and real measurable results."
+          ]
+        },
+        {
+          "title": "The Talent 10 \u2014 Paradox",
+          "url": "https://www.paradox.ai/landings/talent-10",
+          "excerpts": []
+        },
+        {
+          "title": "Greenhouse Pros and Cons | User Likes & Dislikes",
+          "url": "https://www.g2.com/products/greenhouse/reviews?page=4&qs=pros-and-cons",
+          "excerpts": []
+        },
+        {
+          "title": "Siteimprove Pros and Cons | User Likes & Dislikes - G2",
+          "url": "https://www.g2.com/products/siteimprove/reviews?qs=pros-and-cons",
+          "excerpts": [
+            "Siteimprove Pros and Cons | User Likes & Dislikes - G2\nRating 4.6 (432) 5 Cons or Disadvantages of Siteimprove \u00b7 1. Complex Usability \u00b7 2. Missing Features \u00b7 3. Limited Features \u00b7 4. Difficult Navigation \u00b7 5. Difficult Learning."
+          ]
+        },
+        {
+          "title": "ISMS.online Pros and Cons | User Likes & Dislikes - G2",
+          "url": "http://g2.com/products/isms-online/reviews?qs=pros-and-cons",
+          "excerpts": [
+            "ISMS.online Pros and Cons | User Likes & Dislikes - G2"
+          ]
+        },
+        {
+          "title": "Greenhouse Pros and Cons | User Likes & Dislikes",
+          "url": "https://www.g2.com/products/greenhouse/reviews?page=10&qs=pros-and-cons",
+          "excerpts": []
+        },
+        {
+          "title": "Andr\u00e9 Martins Dantas",
+          "url": "https://linkedin.com/in/andr%C3%A9-martins-dantas-215438242",
+          "excerpts": [
+            "Connection Count: 330 | Follower Count: 338 | Company Name: Paradox AI | Experience: Paradox AI 2026-01-01 Fundador Centro de Compet\u00eancia EMBRAPII em Tecnologias Imersivas - AKCIT 2025-01-01 Staff AKCIT for Statups Centro de Excel\u00eancia em Intelig\u00eancia Artificial (CEIA) & Deep Learning Brasil Goi\u00e2nia, Goi\u00e1s, Brasil 2022-11-01 2023-07-01 Machine Learning Researcher DEX - Hub de Empreendedorismo e Inova\u00e7\u00e3o 2025-12-01 Membro do conselho DEX - Hub de Empreendedorismo e Inova\u00e7\u00e3o Goi\u00e2nia, Goi\u00e1s, Brasil 2023-06-01 2025-12-01 L\u00edder de Forma\u00e7\u00e3o DEX - Hub de Empreendedorismo e Inova\u00e7\u00e3o Goi\u00e2nia, Goi\u00e1s, Brasil 2022-11-01 2023-07-01 Co-Founder Automode Goi\u00e2nia, Goi\u00e1s, Brasil 2023-05-01 2023-12-01 Desenvolvedor | Position: Paradox AI Fundador  2026-01-01  | Languages: English Ingl\u00eas Portugu\u00eas Espanhol | Experience Seniority: Executive  Mid-Senior level   Owner Executive Entry level | Experience Job Function: Sales Business Development  Other Engineering Information Technology Research   Business Deve\nConnection Count: 330 | Follower Count: 338 | Slug Status: A | Company Name: Paradox AI | Experience: Paradox AI 2026-01-01 Fundador Centro de Compet\u00eancia EMBRAPII em Tecnologias Imersivas - AKCIT 2025-01-01 Staff AKCIT for Statups Centro de Excel\u00eancia em Intelig\u00eancia Artificial (CEIA) & Deep Learning Brasil Goi\u00e2nia, Goi\u00e1s, Brasil 2022-11-01 2023-07-01 Machine Learning Researcher DEX - Hub de Empreendedorismo e Inova\u00e7\u00e3o 2025-12-01 Membro do conselho DEX - Hub de Empreendedorismo e Inova\u00e7\u00e3o Goi\u00e2nia, Goi\u00e1s, Brasil 2023-06-01 2025-12-01 L\u00edder de Forma\u00e7\u00e3o DEX - Hub de Empreendedorismo e Inova\u00e7\u00e3o Goi\u00e2nia, Goi\u00e1s, Brasil 2022-11-01 2023-07-01 Co-Founder Automode Goi\u00e2nia, Goi\u00e1s, Brasil 2023-05-01 2023-12-01 Desenvolvedor | Position: Paradox AI Fundador  2026-01-01  | Languages: English Ingl\u00eas Portugu\u00eas Espanhol | Experience Seniority: Executive  Mid-Senior level   Owner Executive Entry level | Experience Job Function: Sales Business Development  Other Engineering Information Technology Researc"
+          ]
+        },
+        {
+          "title": "Paradox | LinkedIn",
+          "url": "https://co.linkedin.com/organization-guest/company/paradoxolivia?_l=en",
+          "excerpts": []
+        },
+        {
+          "title": "Paradox.ai - Market Share, Competitor Insights in Recruitment",
+          "url": "https://www.6sense.com/tech/recruitment/paradoxandai-market-share",
+          "excerpts": [
+            "Paradox.ai - Market Share, Competitor Insights in Recruitment\nThe majority of Paradox.ai's customers for the recruitment category fall in the company size of 0 - 9 employees (232 companies), 10,000+ employees (210"
+          ]
+        },
+        {
+          "title": "Paradox Names New CEO | Arizona Technology Council",
+          "url": "http://aztechcouncil.org/paradox-new-ceo",
+          "excerpts": [
+            "Aaron Matos has stepped down as CEO of Paradox, a Scottsdale-based unicorn company that makes AI-powered conversational recruiting software."
+          ]
+        },
+        {
+          "title": "Paradox Reviews, Pros & Cons and Alternatives (Jun 2026)",
+          "url": "https://www.geniusfirms.com/review/paradox",
+          "excerpts": [
+            "Paradox Reviews, Pros & Cons and Alternatives (Jun 2026)\nParadox is a conversational AI platform launched in 2016 that automates recruiting workflows through text, chat, and SMS interactions. It handles screening for minimum qualifications, interview scheduling, candidate Q&A, and event management, allowing hiring teams to reduce administrative work."
+          ]
+        },
+        {
+          "title": "Paradox Review 2026: Pricing, Features, Pros, Cons & Best ...",
+          "url": "https://www.peoplebox.ai/blog/paradox-review/",
+          "excerpts": [
+            "Either way, this paradox review article is for you. We\u2019ll break down what Paradox actually offers, its core features, strengths, limitations, real-world considerations, and how it compares to leading alternatives."
+          ]
+        },
+        {
+          "title": "Perplexity Pro users claim usage limits have been ...",
+          "url": "https://www.androidauthority.com/perplexity-pro-advanced-ai-limits-reduced-3667942",
+          "excerpts": [
+            "Perplexity Pro users claim usage limits have been ...\nMay 19, 2026 \u2014 Perplexity Pro users are complaining that advanced AI model limits have been reduced, prompting upgrades to the expensive Max tier."
+          ]
+        },
+        {
+          "title": "Luma AI Reviews, Pros & Cons and Alternatives (Apr 2026)",
+          "url": "https://www.geniusfirms.com/review/luma-ai",
+          "excerpts": []
+        },
+        {
+          "title": "Leadership | Tranzact",
+          "url": "http://tranzact.net/leadership",
+          "excerpts": [
+            "Andy Nelson\nCEO\nJuan Jos\u00e9 Fuchs\nSenior Director, AI\nLaurie Poulos\nExecutive Vice President, General Counsel, Chief Compliance Officer & Chief Privacy Officer\nMike Akrop\nChief Financial Officer\nMitch Ginzburg\nChief Operating Officer\nSanjeev Rangaiah\nVice President, Data & Innovation"
+          ]
+        },
+        {
+          "title": "Nasuni's latest exec reshuffle",
+          "url": "http://blocksandfiles.com/ai-ml/2026/01/14/nasunis-latest-exec-reshuffle/4090298",
+          "excerpts": [
+            "Ross Grainger comes to Nasuni from being CFO at Paradox, a recruiting company with a conversational AI assistant to streamline hiring tasks."
+          ]
+        },
+        {
+          "title": "Paradox CEO and Key Executive Team - Craft.co",
+          "url": "https://craft.co/paradox/executives",
+          "excerpts": [
+            "Paradox CEO and Key Executive Team - Craft.co\nParadox's Chief Client Officer is John Dalzell. Other executives include Ross Grainger, Chief Financial Officer; Adam Godson, Chief Executive Officer and 13 others. See the full leadership team at Craft."
+          ]
+        },
+        {
+          "title": "The 2016 AI Report: Startups See Record High In Deals And Funding",
+          "url": "https://www.cbinsights.com/research/artificial-intelligence-startup-funding",
+          "excerpts": [
+            "The 2016 AI Report: Startups See Record High In Deals And Funding\nJan 19, 2017 \u00b7 Over 550 startups using AI as a core part of their products raised $5B in funding in 2016. Since 2012, deals and dollars to AI startups have been on the rise."
+          ]
+        },
+        {
+          "title": "Zippr",
+          "url": "https://platform.tracxn.com/a/d/company/5905ba7ce4b05c77fbec7b91/zippr?utm_source=parallel&utm_medium=ai#a:about",
+          "excerpts": [
+            "Name: Zippr | Short Description: Provider of an application for positioning solutions | All Funding Rounds: Series A 2018-01-22 Amazon Seed 2016-07-11 Sidharth Reddy Indukuri, Sindhura Indukuri, Vamsi Krishna Bandi, M Damodar Reddy, Bikky Khosla, Sanjay Bharatkumar Mehta, Ashok Atluri, Nagendra P Bandaru, Piyush Balwantray Shah, Pragnya, Singapore Angel Network, Rahul Basu Seed 2014-10-10 Hiraco Ventures, Indian Angel Network, Jitendra Apte, Taha Nabee, Piyush Balwantray Shah, Sanjeev Arora, Ajay Anand, Simi Hari, Nagendra P Bandaru, Udit Mittal, Niranjan Seelam, Singapore Angel Network, Texport Industries, Anand Ladsariya, Pooja Anoop Mathur, Munish Jauhar, Kavit Sutariya, Sanjay Jesrani, Ramdas Steven Sule, Nitin Singhal, Parikshith Reddy Pasham, Sanjay Bharatkumar Mehta, Ravi Somani, Bhavna Dadlani, Vamsi Krishna Bandi, Nitin Agarwal, Pragnya, Haystack, Manoj Aheeray, Poonam Surana, Hemant Kanakia, Ashish Kumar, Rahul Basu, Gopinathan Padmanabhan, Anupam Mittal, Bikky Khosla, Rajeev"
+          ]
+        },
+        {
+          "title": "Paradox - Crunchbase Company Profile & Funding",
+          "url": "https://www.crunchbase.com/organization/paradox-olivia",
+          "excerpts": [
+            "Paradox - Crunchbase Company Profile & Funding\nParadox's flagship product is Olivia , the AI recruiting assistant obsessed. with improving and reinventing the candidate experience. It delivers one-to-one"
+          ]
+        },
+        {
+          "title": "Plotinus",
+          "url": "https://platform.tracxn.com/a/d/company/5906159ee4b0b286e8e06e52/plotinus?utm_source=parallel&utm_medium=ai#a:about",
+          "excerpts": [
+            "Name: Plotinus | All Funding Rounds: Seed 2019-06-05  Seed 2018-07-25  Seed 2017-07-30  Seed 2016-05-26  Seed 2015-06-29  Seed 2014-04-04  | Latest Funding Round Name: Seed | Latest Funding Round Date: 2019-06-05 | All Locations: United Kingdom Northern Ireland Newry | Special Flags: Tech YES Consumer YES Software YES | Achievements: Trending Theme Market {themes=[{id=5faa9275de5c4728d98ee19b}]} | Website Url: https://plotinus.tech | Founded Year: 2013 | Short Description: AI-based investment solutions provider | Detailed Description: AI-based investment solution provider. It offers services for institutional investors. It also provides analytics for investment opportunities. | Stage: Seed | Funded: Yes | Location Country: United Kingdom | Location State: Northern Ireland | Location City: Newry | All Locations: [{\"country\":\"United Kingdom\",\"city\":\"Newry\",\"state\":\"Northern Ireland\"}] | Countries Count: 1 | Primary Sector: FinTech | Primary Subsector: Investment Tech"
+          ]
+        },
+        {
+          "title": "Faitron - 2026 Company Profile, Team, Funding & Competitors",
+          "url": "http://tracxn.com/d/companies/faitron/__KWMI4h6q07hAZXVVuzAi8kfdtqiKehdbT150dCsQoUE",
+          "excerpts": [
+            "Faitron has raised a total funding of $9.81K over 2 rounds.\nIts first funding round was on Nov 03, 2016.\nIts latest funding round was a Seed round on 2017 for $"
+          ]
+        },
+        {
+          "title": "Paradox Conversational Applicant Tracking System (ATS) Now ...",
+          "url": "https://www.prnewswire.com/news-releases/paradox-conversational-applicant-tracking-system-ats-now-available-through-workday-helping-organizations-hire-frontline-workers-faster-302656477.html",
+          "excerpts": [
+            "Paradox Conversational Applicant Tracking System (ATS) Now ...\nJan 8, 2026 \u00b7 Paradox Conversational ATS is now available through Workday. Workday Frontline Agent will be available in Spring 2026. Workday at NRF 2026."
+          ]
+        },
+        {
+          "title": "Decreasing cost-per-hire by 54% with Workday Paradox.",
+          "url": "http://workday.com/en-us/customer-stories/a-h/neighborly-cuts-cost-to-hire-conversational-ai.html",
+          "excerpts": [
+            "Neighborly used Workday Paradox to boost applicants by 71%.\nSince implementing the Workday Paradox Conversational ATS, Neighborly has successfully met its hiring goals while also achieving significant cost savings."
+          ]
+        },
+        {
+          "title": "Expanding from 800 to 2000 locations with the help of ...",
+          "url": "http://paradox.ai/case-studies/burlington",
+          "excerpts": [
+            "How Burlington is leveraging Paradox's Conversational ATS to scale their retail hiring without needing to scale the team."
+          ]
+        },
+        {
+          "title": "Paradox Conversational Applicant Tracking System (ATS) Now ...",
+          "url": "https://newsroom.workday.com/2026-01-08-Paradox-Conversational-Applicant-Tracking-System-ATS-Now-Available-Through-Workday%2C-Helping-Organizations-Hire-Frontline-Workers-Faster",
+          "excerpts": [
+            "Paradox Conversational Applicant Tracking System (ATS) Now ...\nJan 8, 2026 \u00b7 Paradox Conversational Applicant Tracking System (ATS) Now Available Through Workday, Helping Organizations Hire Frontline Workers Faster."
+          ]
+        },
+        {
+          "title": "http://investor.workday.com/news-and-events/press-releases/news-details/2026/Paradox-Conversational-Applicant-Tracking-System-ATS-Now-Available-Through-Workday-Helping-Organizations-Hire-Frontline-Workers-Faster/default.aspx",
+          "url": "http://investor.workday.com/news-and-events/press-releases/news-details/2026/Paradox-Conversational-Applicant-Tracking-System-ATS-Now-Available-Through-Workday-Helping-Organizations-Hire-Frontline-Workers-Faster/default.aspx",
+          "excerpts": [
+            "Availability**\nParadox Conversational ATS is now available through Workday. Workday Frontline Agent will be available in Spring 2026\nJan 8, 2026 \u2014 Paradox Conversational ATS removes that friction by allowing candidates to search for jobs, apply, interview, and onboard through short text-based conversations\nParadox Conversational ATS is now available through Workday.\nWorkday Frontline Agent will be available in Spring 2026.\nParadox Conversational ATS is now available through Workday. Workday Frontline Agent will be available in Spring 2026.\nParadox Conversational ATS removes that friction by allowing candidates to search for jobs, apply, interview, and onboard through short text-based conversations\nThis new offering builds on Workday's growing portfolio of AI solutions following its acquisition of Paradox and the launch of the [Workday Paradox Candidate Experience Agent\nay Frontline Agent will be available in Spring 2026."
+          ]
+        }
+      ],
+      "reasoning": "",
+      "confidence": ""
+    }
+  ],
+  "latency_s": 956.7
 }

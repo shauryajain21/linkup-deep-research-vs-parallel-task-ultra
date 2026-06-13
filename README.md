@@ -6,33 +6,32 @@ and sales-outreach research. Both providers answer the same 100 real-customer qu
 LLM judge (**Claude Fable 5**) scores every answer on 7 dimensions, including a
 dashboard-usability (conciseness) lens.
 
-## Results (99 paired queries)
+## Results (100 paired queries)
 
-Scores are on a **0–5** scale. The two are level on the typical query — median total 3.7 vs 3.7,
-with 54 of 99 within ±0.25 points. Parallel `ultra` scores slightly higher on average (3.77 vs
-3.60. Linkup runs **~5× faster** (~3 min vs 14.5 min median) at ~ 20% lower
-cost ($0.25 vs $0.30/query) and scores higher on source quality.
+Scores are on a **0–5** scale. The two are near-level on the typical query — median total 3.7 vs
+3.8, with 54 of 100 within ±0.25 points. Linkup runs **~5× faster** (199s vs 871s median, server-
+side) at ~20% lower cost ($0.25 vs $0.30/query) and scores higher on source quality.
 
 
 |                     | Linkup Research S | Parallel Task ultra |
 | ------------------- | ----------------- | ------------------- |
-| Mean / median total | 3.60 / 3.7        | 3.77 / 3.7          |
-| Latency (median)    | ~3 min            | 14.5 min            |
+| Mean / median total | 3.60 / 3.7        | 3.77 / 3.8          |
+| Latency (median)    | 199s (~3.3 min)   | 871s (~14.5 min)    |
 | Price / query       | $0.25             | $0.30               |
 
 
-**Per-dimension** (0–5):
+**Per-dimension** (0–5, median):
 
 
-| Dimension       | Linkup (mean) | Linkup (median) | Parallel (mean) | Parallel (median) |
-| --------------- | ------------- | --------------- | --------------- | ----------------- |
-| signal_to_noise | 3.17          | 3.0             | 3.12            | 3.0               |
-| source_quality  | 3.75          | **4.0**         | 3.47            | 3.5               |
-| accuracy        | 4.12          | 4.5             | 4.26            | 4.5               |
-| completeness    | 3.94          | 4.5             | 4.67            | 4.5               |
-| gtm_value       | 3.75          | 4.0             | 4.09            | 4.0               |
-| specificity     | 4.29          | 4.5             | 4.56            | 4.5               |
-| conciseness     | 2.15          | **2.0**         | 2.21            | 1.5               |
+| Dimension       | Linkup  | Parallel |
+| --------------- | ------- | -------- |
+| signal_to_noise | 3.0     | 3.0      |
+| source_quality  | **4.0** | 3.5      |
+| accuracy        | 4.5     | 4.5      |
+| completeness    | 4.5     | 4.5      |
+| gtm_value       | 4.0     | 4.0      |
+| specificity     | 4.5     | 4.5      |
+| conciseness     | **2.0** | 1.5      |
 
 
 ## Structure
@@ -67,7 +66,7 @@ Every command is **resumable** — answers and grades are checkpointed per item.
 interrupted (or the machine sleeps), re-run the same command and it skips finished work; the
 provider jobs run server-side, so a `run` can be stopped and resumed freely.
 
-`results/` already contains this run's 199 answers and grades, so `python bench.py report`
+`results/` already contains this run's 200 answers and grades, so `python bench.py report`
 reproduces the comparison above immediately.
 
 ## Methodology

@@ -1,0 +1,401 @@
+{
+  "id": "r079",
+  "provider": "parallel",
+  "query": "Get comprehensive company profile data for the company named \"eMazzanti Technologies\". The company's official website domain is emazzanti.net \u2014 use this for disambiguation and to ensure you are searching for the correct company. Gather information from LinkedIn, G2, Reddit, and other reliable sources. Include company details, reviews, industry codes (UNSPSC, NAICS, ISIC), and market sentiment.",
+  "status": "completed",
+  "answer": "{\"executive_summary\": \"- **Founded 2001, Woman-Owned IT Firm**: Co-founded by Jennifer Mazzanti (CEO) and Carl Mazzanti (President) in Hoboken, NJ; privately held LLC with approximately 50-62 employees and $17.1M annual revenue -> validates stability and sustained growth over two decades.\\n- **Elite Partner Ecosystem**: 4X Microsoft Partner of the Year, 5X WatchGuard Partner of the Year; first-ever WatchGuardONE Platinum Partner (2015); 4 Microsoft AI Cloud Partner designations (November 2025) -> signals deep vendor relationships that confer competitive advantage in cybersecurity and cloud services.\\n- **Client Sentiment Strongly Positive**: Clutch 4.8/5 (9 reviews), 5.0 willingness-to-refer; themes of \\\"exceptional performance,\\\" \\\"personable,\\\" \\\"proactive and professional\\\" -> client retention and advocacy are clear strengths.\\n- **Employee Sentiment Split**: Indeed 4.4/5 (13 reviews) vs. Glassdoor 2.8/5 (42-43 reviews, 41% recommend) -> the gap between client-facing and employee satisfaction suggests potential internal culture or career-development tensions.\\n- **11 Straight Years of Growth Recognition**: Inc. 5000 national list (10 years) and Inc. Regional Northeast (2025) -> consistent revenue growth trajectory.\\n- **Government Contracting Ready**: WBE, WOSB, NJ SBE certifications; GSA Schedule 70 and 58I; OMNIA Partners; SAM.GOV registered -> positioned for public-sector revenue streams.\\n- **Active Product Innovation**: Launched eBot AI-powered IT support assistant (November 2025); Liquisite digital marketing division (June 2026) -> expanding beyond core IT services into AI and digital marketing.\\n- **No G2 or Reddit Presence**: eMazzanti does not appear to have a G2 profile or meaningful Reddit discussions -> limited organic community-driven sentiment outside professional review platforms.\\n\\n---\", \"company_overview\": \"eMazzanti Technologies is a privately held IT consulting and managed services firm headquartered at **701 Grand Street, Hoboken, NJ 07030**. Founded in **2001** by Jennifer Mazzanti and Carl Mazzanti, the company provides comprehensive, scalable, and cost-effective cloud, IT, and network services to businesses ranging from home offices to multinational corporations. The firm operates as an outsourced IT consultant with a worldwide 24/7 support network, servicing clients throughout the New York metropolitan area, the United States, and internationally (including Thailand and Hungary) [company_overview[0]] [6], [company_overview[1]] [4].\\n\\nThe company operates additional offices in **Bellevue, Washington (US)**, **Montreal, Quebec (CA)**, and **Markham, Ontario (CA)** [company_overview[0]] [6].\\n\\n**Contact**: Phone (201) 360-4400 / (844) 360-4400; Email info@emazzanti.net; Website www.emazzanti.net [company_overview[2]] [1], [company_overview[3]] [3].\\n\\n### Legal Entity and Status\\n- **Entity Type**: Limited Liability Company (LLC) [company_overview[4]] [19]\\n- **Ownership**: Woman-owned business (WBE #WBE2400932, WOSB #WOSB240530) [company_overview[1]] [4]\\n- **NJ SBE**: A0112-14 [company_overview[1]] [4]\\n- **SAM.GOV**: ZM75C1KUN1F6; **Cage Code**: 4H3H1; **D&B**: 041650149 [company_overview[1]] [4]\\n- **CJIS Compliant**; NJ State Registration Number 0140710 [company_overview[1]] [4]\\n\\n---\", \"leadership_team\": \"| Role | Name | Source |\\n|------|------|--------|\\n| CEO & Co-Founder | Jennifer Mazzanti | [leadership_team[0]] [1], [leadership_team[1]] [5] |\\n| President & Co-Founder | Carl Mazzanti | [leadership_team[0]] [1], [leadership_team[1]] [5] |\\n| Chief Revenue Officer | Nadege Konyn | [leadership_team[0]] [1] |\\n| Chief Technology Officer | Scott Bennet | [leadership_team[2]] [39], [leadership_team[3]] [17] |\\n| Virtual CIO | Deep Ranipa | [leadership_team[2]] [39] |\\n| VP, Services Delivery | Greg Smith | [leadership_team[2]] [39] |\\n| Digital Brand Manager | Susan Chait | [leadership_team[0]] [1] |\\n| Sr. Director of Recruiting | Fran Blanco | [leadership_team[0]] [1] |\\n| Business Development | Shivam Jain, Nirvan Ramoutar, Chris Pensata | [leadership_team[0]] [1] |\\n\\n---\", \"financial_and_scale_metrics\": \"| Metric | Value | Source |\\n|--------|-------|--------|\\n| Annual Revenue | $17.1M | [financial_and_scale_metrics[0]] [1], [financial_and_scale_metrics[1]] [39] |\\n| Employee Count | 50-62 (LinkedIn); 58 (RocketReach); 51-100 (Crunchbase); 51-200 (ZoomInfo) | [financial_and_scale_metrics[2]] [6], [financial_and_scale_metrics[0]] [1], [financial_and_scale_metrics[3]] [35] |\\n| Hourly Rate | $100 - $149 | [financial_and_scale_metrics[4]] [34] |\\n| Minimum Project Size | $1,000+ | [financial_and_scale_metrics[4]] [34] |\\n| Most Common Project Size | $10,000 - $49,999 | [financial_and_scale_metrics[4]] [34] |\\n| LinkedIn Followers | 7,191 | [financial_and_scale_metrics[2]] [6] |\\n\\nThe revenue figure of $17.1M across approximately 50-62 employees yields roughly $275K-$342K revenue per employee, which is within the typical range for mid-size IT managed services providers.\\n\\n---\", \"services_and_specializations\": \"eMazzanti positions itself as a \\\"one-stop\\\" IT solution partner. Core service lines include:\\n\\n**IT Managed Services**: 24/7/365 outsourced IT support with average request completion under 15 minutes; network management; help desk [services_and_specializations[0]] [4].\\n\\n**Cybersecurity**: Cybersecurity awareness training, network security, PCI compliance consulting, information security, MXINSPECT managed email security [services_and_specializations[0]] [4], eMazzanti MXINSPECT.\\n\\n**Cloud Services**: Cloud hosting and backup, DRaaS (Disaster Recovery as a Service), IaaS (Infrastructure as a Service), business continuity and disaster recovery [services_and_specializations[1]] [34].\\n\\n**Custom Software and Web Development**: Custom application development, website development [services_and_specializations[2]] [12].\\n\\n**ERP and IT Strategy Consulting**: ERP consulting, IT strategy consulting [services_and_specializations[2]] [12].\\n\\n**Digital Marketing (via Liquisite)**: SEO, paid media, automation, CRM integration, analytics, branding, email campaigns, and social media management. Launched June 9, 2026 as a division of eMazzanti [services_and_specializations[3]] [37].\\n\\n**Retail and Payment Technology**: Advanced retail POS systems and payment technology solutions [services_and_specializations[4]] [39].\\n\\n**LinkedIn Specialties**: Microsoft, Network Design, Digital Marketing, Computer Networking, Cloud Computing, Office 365, PCI Compliance, Custom Web Design, Network Security, Disaster Recovery, Virtualization, IT Solutions, Video Security, Outsourced IT, Spam Filtering, WatchGuard Technologies [services_and_specializations[5]] [6].\\n\\n### Client Focus and Industries Served\\n- **Business Size**: Startups, scale-ups, and enterprise organizations [services_and_specializations[2]] [12]\\n- **Industry Focus**: Legal, real estate, advertising and marketing [services_and_specializations[1]] [34]\\n- **Notable Clients**: Pandora Jewelry, Bell Container Corp, Fire District 17 Department [services_and_specializations[0]] [4]\\n\\n---\", \"industry_classification_codes\": \"| Code System | Code | Description | Source |\\n|-------------|------|-------------|--------|\\n| **NAICS (Primary)** | 541512 | Computer Systems Design Services | [industry_classification_codes[0]] [19] |\\n| **NAICS (Additional)** | 541330 | Engineering Services | [industry_classification_codes[1]] [4] |\\n| **NAICS (Additional)** | 541430 | Graphic Design Services | [industry_classification_codes[1]] [4] |\\n| **NAICS (Additional)** | 541490 | Other Specialized Design Services | [industry_classification_codes[1]] [4] |\\n| **NAICS (Additional)** | 541511 | Custom Computer Programming Services | [industry_classification_codes[1]] [4], [industry_classification_codes[2]] [6] |\\n| **NAICS (Additional)** | 541513 | Computer Facilities Management Services | [industry_classification_codes[1]] [4] |\\n| **NAICS (Additional)** | 541519 | Other Computer Related Services | [industry_classification_codes[1]] [4] |\\n| **NAICS (Additional)** | 518210 | Computing Infrastructure Providers, Data Processing, Web Hosting, and Related Services | [industry_classification_codes[2]] [6] |\\n| **SIC** | 7373 | Computer Integrated Systems Design | [industry_classification_codes[0]] [19] |\\n| **ISIC Rev.4** | 6202 | Computer Consultancy and Computer Facilities Management Activities | [industry_classification_codes[3]] [29] |\\n| **UNSPSC** | 80101507 | Information Technology Consultation Services | [industry_classification_codes[4]] [27] |\\n\\nISIC 6202 falls under Section J (Information and Communication), Division 62 (Computer Programming, Consultancy and Related Activities), Group 620, and partially corresponds to NAICS 541512 and 541513 [industry_classification_codes[3]] [29]. UNSPSC 80101507 encompasses professional consulting services focused on strategic technology planning, system implementation, and optimization [industry_classification_codes[4]] [27].\\n\\n---\", \"certifications_and_partner_status\": \"### Microsoft Partnership\\neMazzanti attained **Gold Certified Partner** status in the Microsoft Partner Program on June 7, 2006, with competencies in Networking Infrastructure Solutions and Advanced Infrastructure Solutions [certifications_and_partner_status[0]] [44]. The company has been recognized as **4X Microsoft Partner of the Year** [certifications_and_partner_status[1]] [39]. As of November 25, 2025, eMazzanti attained **four Solutions Partner designations** in the Microsoft AI Cloud Partner Program [certifications_and_partner_status[1]] [39].\\n\\n### WatchGuard Partnership\\nOn April 10, 2015, eMazzanti was named the **first WatchGuardONE Platinum Partner** worldwide. The Platinum level is by invitation only and represents the most elite resellers providing the highest level of network security counsel. The company has been recognized as **5X WatchGuard Partner of the Year** [certifications_and_partner_status[2]] [42], [certifications_and_partner_status[1]] [39].\\n\\n### Government Contracting Vehicles\\n| Vehicle | Number |\\n|---------|--------|\\n| GSA Schedule 70 | #47QTCA-19-D-00MM |\\n| GSA Schedule 58I | #GS-03F-053DA |\\n| OMNIA Partners Authorized Reseller | #R200803 |\\n| E-rate | FRN 0022490155, SPIN/498 ID 143027854 |\\n| Synnex LOA | Letter of Authorization |\\n\\n[certifications_and_partner_status[3]] [4]\\n\\n### Other Certifications\\n- **PCI Security Standards Council** Member [certifications_and_partner_status[4]] [48]\\n- **CJIS Compliant** [certifications_and_partner_status[3]] [4]\\n- **WBE** (#WBE2400932) and **WOSB** (#WOSB240530) [certifications_and_partner_status[3]] [4]\\n- **NJ SBE** (A0112-14) [certifications_and_partner_status[3]] [4]\\n\\n---\", \"reviews_and_market_sentiment\": \"### Client-Facing Reviews\\n\\n| Platform | Rating | Reviews | Key Metrics | Source |\\n|----------|--------|---------|-------------|--------|\\n| **Clutch** | 4.8/5 | 9 verified | Quality 4.8, Schedule 4.8, Cost 4.6, Willingness to Refer 5.0 | [reviews_and_market_sentiment[0]] [34] |\\n| **TopTechAgencies** | 5.0/5 | - | Based on Clutch data | [reviews_and_market_sentiment[1]] [12] |\\n| **G2** | Not listed | - | No profile found on G2 | Search conducted; no results |\\n| **Reddit** | Not found | - | No meaningful Reddit discussions located | Search conducted; no results |\\n\\n**Clutch Review Themes**: \\\"Exceptional performance\\\" (3 mentions), \\\"Personable\\\" (3 mentions), \\\"Easy to work with\\\" (2 mentions), \\\"Proactive and professional.\\\" Clients value the ability to educate non-technical staff and note that while services may come at a higher cost, the value received is worth the investment. Clients appreciate tailored solutions and the ability to leverage technology to compete with larger firms [reviews_and_market_sentiment[0]] [34].\\n\\n### Employee Reviews\\n\\n| Platform | Rating | Reviews | Recommend | Source |\\n|----------|--------|---------|-----------|--------|\\n| **Indeed** | 4.4/5 | 13 | - | [reviews_and_market_sentiment[2]] [18] |\\n| **Glassdoor** | 2.8/5 | 42-43 | 41% | [reviews_and_market_sentiment[3]] [46] |\\n\\n**Indeed Detailed Ratings**: Job Security and Advancement 4.7, Management 4.5, Culture 4.5, Work-Life Balance 4.4, Pay and Benefits 4.3 [reviews_and_market_sentiment[2]] [18].\\n\\n**Indeed Pros**: Inclusive work environment, trust in colleagues, personal appreciation, hard work rewarded by management, positive and stimulating environment for interns [reviews_and_market_sentiment[2]] [18].\\n\\n**Indeed Cons**: Some reviewers note a lack of productivity; one reviewer claimed their role felt like IT help desk support despite having a \\\"network engineer\\\" job title [reviews_and_market_sentiment[2]] [18].\\n\\n**Glassdoor**: With a 2.8/5 overall rating and only 41% of employees recommending the company, Glassdoor presents a notably less favorable picture than Indeed. 38% of job seekers rate their interview experience as positive, with an average difficulty score of 2.7/5 [reviews_and_market_sentiment[3]] [46].\\n\\nThe divergence between Indeed (4.4) and Glassdoor (2.8) ratings is significant and may reflect differences in reviewer populations, anonymity norms, or recent changes in company culture. Prospective employees and partners should weigh both datasets.\\n\\n### Client Testimonials\\nFrom the company's own testimonials page: \\\"eMazzanti has the best Customer service. Every time I have a problem they are willing to help me no matter how long it takes them\\\" [reviews_and_market_sentiment[4]] [38].\\n\\n---\", \"awards_and_recognition\": \"- **Inc. 5000 National List**: Featured for 10 years (repeated national recognition for revenue growth) [awards_and_recognition[0]] [56]\\n- **Inc. Regional Fastest-Growth (Northeast) 2025**: 11th straight year honored for growth; described as \\\"Building The Future\\\" by Inc. Magazine [awards_and_recognition[0]] [56]\\n- **4X Microsoft Partner of the Year** [awards_and_recognition[1]] [39]\\n- **5X WatchGuard Partner of the Year** [awards_and_recognition[1]] [39]\\n- **First WatchGuardONE Platinum Partner** worldwide (April 2015) [awards_and_recognition[2]] [42]\\n\\nCEO Jennifer Mazzanti stated the firm advises businesses on \\\"Cybersecurity, Artificial Intelligence, Outsourced Network Management and other mission-critical issues,\\\" helping clients secure environments against \\\"threats from nation-state and other bad actors\\\" [awards_and_recognition[0]] [56].\\n\\n---\", \"recent_developments_and_innovation\": \"- **eBot AI IT Support Assistant**: Launched November 28, 2025 - an AI-powered IT support assistant [recent_developments_and_innovation[0]] [39]\\n- **Microsoft AI Cloud Partner Program**: Attained four Solutions Partner designations on November 25, 2025 [recent_developments_and_innovation[0]] [39]\\n- **Liquisite Digital Marketing Division**: Launched June 9, 2026, offering \\\"Done For You\\\" fully outsourced and \\\"Done With You\\\" strategy models for SEO, paid media, automation, CRM integration, analytics, branding, email campaigns, and social media management [recent_developments_and_innovation[1]] [37]\\n- **AI and Automation Master Class Workshop**: Running June 11, June 18, and July 9, 2026 eMazzanti.net\\n\\n---\", \"competitors\": \"eMazzanti's listed competitors include Insight, Red River, Bluewater Technologies Group, Technologent, and Level(3) Communications Inc [competitors[0]] [1].\\n\\n---\", \"social_media_presence\": \"- **LinkedIn**: [social_media_presence[0]] [6] (7,191 followers)\\n- **Facebook**: facebook.com/emazzantitechnologies\\n- **Twitter/X**: @emazzanti\\n- **Crunchbase**: [social_media_presence[1]] [35]\\n\\n---\", \"synthesis\": \"eMazzanti Technologies presents a distinctive profile as a **woman-owned, mid-market IT services firm** that has sustained growth for over two decades. Three key tensions define its current position:\\n\\n1. **Client Delight vs. Employee Dissatisfaction Gap**: The chasm between Clutch's 4.8/5 client rating and Glassdoor's 2.8/5 employee rating is the most notable divergence. The Indeed rating (4.4/5) sits between these poles, suggesting the employee experience may vary significantly by role or tenure. High job-security scores on Indeed (4.7) alongside Glassdoor's low recommend rate (41%) point to a stable but potentially unfulfilling work environment for some.\\n\\n2. **Deep Specialization vs. Service Expansion**: The firm's core identity is built on Microsoft and WatchGuard partnerships (a combined 9 Partner-of-the-Year awards), yet recent moves - eBot AI assistant, Liquisite digital marketing division, AI/automation workshops - signal a strategic pivot toward AI-driven services and marketing. This expansion into digital marketing via Liquisite (June 2026) represents a meaningful departure from pure IT/cybersecurity services and could either broaden revenue streams or dilute the firm's focused brand.\\n\\n3. **Government Contracting Readiness vs. Commercial Focus**: Despite holding WBE, WOSB, GSA Schedule 70/58I, OMNIA Partners, and other government-contracting vehicles, eMazzanti's public client references skew commercial (Pandora Jewelry, legal, real estate, advertising). The gap between certification portfolio and publicly disclosed government work suggests the government channel may be underutilized relative to its potential.\\n\\nThe firm's $17.1M revenue across 50-62 employees positions it as a substantial regional player - large enough for enterprise clients, small enough for personalized service. Its 11-year streak on the Inc. growth lists confirms genuine momentum, though the Glassdoor data suggests that growth may be creating internal strain.\\n\\n---\"}",
+  "basis": [
+    {
+      "field": "executive_summary",
+      "citations": [],
+      "reasoning": "",
+      "confidence": ""
+    },
+    {
+      "field": "company_overview",
+      "citations": [
+        {
+          "title": "eMazzanti Technologies \u2014 LinkedIn",
+          "url": "http://linkedin.com/company/emazzanti-technologies",
+          "excerpts": [
+            "eMazzanti Technologies is your outsourced IT consultant servicing clients worldwide since 2001."
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies",
+          "url": "https://www.emazzanti.net/about",
+          "excerpts": [
+            "eMazzanti Technologies\nComprehensive, scalable, cost-effective cloud, IT and network services. We offer worldwide 24/7 technology support as well as Microsoft, Watchguard, HP,"
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies Information - RocketReach",
+          "url": "http://rocketreach.co/emazzanti-technologies-profile_b5e511f4f42e672d",
+          "excerpts": [
+            "Address\n701 Grand Street, Hoboken, New Jersey 07030, US"
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies",
+          "url": "https://business.princetonmercerchamber.org/member-directory/Details/emazzanti-technologies-2631041",
+          "excerpts": [
+            "eMazzanti Technologies\n701 Grand Street , Hoboken , NJ , 07030 (844) 360-4400. We focus on Cyber Security and Cloud Migrations. Cyber Security Assessments & Protection Services phone"
+          ]
+        },
+        {
+          "title": "EMAZZANTI LLC | Computer Systems Design Services in Hoboken, NJ",
+          "url": "https://naicslist.com/company-profile/emazzanti-llc-hoboken-nj-07030",
+          "excerpts": [
+            "Industry Classification The primary North American Industry Classification System (NAICS) code for Emazzanti LLC is 541512: Computer Systems Design Services."
+          ]
+        }
+      ],
+      "reasoning": "**Crafting support details**\n\nI'm noting that while there\u2019s worldwide 24/7 support with emails and phones mentioned, the information lacks details about market sentiment and a full set of industry codes, which means completeness isn't fully there. So I'll mark completeness as false but indicate that the answer is somewhat supported by excerpts. I think it\u2019s partly true overall. Now, I need to create a JSON structure that includes a scratchpad for reasoning about completeness and support. Let's get to work!",
+      "confidence": "low"
+    },
+    {
+      "field": "leadership_team",
+      "citations": [
+        {
+          "title": "eMazzanti Technologies Information - RocketReach",
+          "url": "http://rocketreach.co/emazzanti-technologies-profile_b5e511f4f42e672d",
+          "excerpts": [
+            "Address\n701 Grand Street, Hoboken, New Jersey 07030, US"
+          ]
+        },
+        {
+          "title": "Prior research / company background PDF",
+          "url": "http://go.boarddocs.com/mi/sault/Board.nsf/files/DQ4RAZ6D1F26/%24file/Mazzanti%20Technologies.pdf",
+          "excerpts": [
+            "Founded in 2001 by Jennifer and Carl Mazzanti, eMazzanti Technologies is a premier IT consulting firm ... CEO | Jennifer Mazzanti. President | Carl Mazzanti."
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies - Overview, News & Similar ...",
+          "url": "https://www.zoominfo.com/c/emazzanti-technologies-co/12779872",
+          "excerpts": [
+            "eMazzanti Technologies - Overview, News & Similar ...\neMazzanti's team of trained, certified IT experts rapidly deliver increased revenue growth, data security and productivity for clients."
+          ]
+        },
+        {
+          "title": "Speakers - Aspire 25: Transform Your Business Through Technology",
+          "url": "http://aspire25.com/speakers",
+          "excerpts": [
+            "Scott Bennet. CTO. eMazzanti Technologies."
+          ]
+        }
+      ],
+      "reasoning": "**Crafting JSON structure**\n\nI need to ensure that I\u2019m producing my JSON correctly. The values should reflect \"scratchpad\", \"completeness\", and \"supported\" as keys. Since \"supported\" is currently false, I should make sure to document that properly. My focus is on keeping it concise and easy to understand, which is important for clarity. Alright, time to put everything together and finalize it!",
+      "confidence": "low"
+    },
+    {
+      "field": "financial_and_scale_metrics",
+      "citations": [
+        {
+          "title": "eMazzanti Technologies Information - RocketReach",
+          "url": "http://rocketreach.co/emazzanti-technologies-profile_b5e511f4f42e672d",
+          "excerpts": [
+            "Address\n701 Grand Street, Hoboken, New Jersey 07030, US"
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies - Overview, News & Similar ...",
+          "url": "https://www.zoominfo.com/c/emazzanti-technologies-co/12779872",
+          "excerpts": [
+            "eMazzanti Technologies - Overview, News & Similar ...\neMazzanti's team of trained, certified IT experts rapidly deliver increased revenue growth, data security and productivity for clients."
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies \u2014 LinkedIn",
+          "url": "http://linkedin.com/company/emazzanti-technologies",
+          "excerpts": [
+            "eMazzanti Technologies is your outsourced IT consultant servicing clients worldwide since 2001."
+          ]
+        },
+        {
+          "title": "https://www.crunchbase.com/organization/emazzanti-technologies",
+          "url": "https://www.crunchbase.com/organization/emazzanti-technologies",
+          "excerpts": [
+            "eMazzanti Technologies provides IT consulting services"
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies Reviews (9), Pricing, Services ... - Clutch",
+          "url": "https://clutch.co/profile/emazzanti-technologies",
+          "excerpts": [
+            "eMazzanti Technologies Reviews (9), Pricing, Services ... - Clutch\nOverall Review Rating 4.8 (9) Quality 4.8 Schedule 4.8 Cost 4.6 Willing to Refer 5.0. Exceptional performance (3) Personable (3) Easy to work with (2)"
+          ]
+        }
+      ],
+      "reasoning": "**Evaluating JSON completeness**\n\nI need to produce a JSON that includes scratchpad, completeness, and supported aspects. For the field called financial_and_scale_metrics, there's not an explicit description, but the field_answer does have a table of relevant metrics like revenue, employee count, and project sizes. It seems reasonably complete, although it might not cover all components like sources. The user's query is about gathering comprehensive data; the answer includes some key metrics, so I'll probably mark completeness as true, albeit partial.**Assessing excerpt support**\n\nI need to determine if the excerpts show support for the field answer. It cites sources like RocketReach, ZoomInfo, LinkedIn, Crunchbase, and Clutch, so it looks likely that they provide adequate support. I think I should set supported as true. Now, I\u2019ll prepare a scratchpad with my reasoning and craft the JSON according to the schema. The fields I\u2019ll include are scratchpad as a string, and completeness and supported as booleans, and then I'll fill it in.",
+      "confidence": "high"
+    },
+    {
+      "field": "services_and_specializations",
+      "citations": [
+        {
+          "title": "eMazzanti Technologies",
+          "url": "https://www.emazzanti.net/about",
+          "excerpts": [
+            "eMazzanti Technologies\nComprehensive, scalable, cost-effective cloud, IT and network services. We offer worldwide 24/7 technology support as well as Microsoft, Watchguard, HP,"
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies Reviews (9), Pricing, Services ... - Clutch",
+          "url": "https://clutch.co/profile/emazzanti-technologies",
+          "excerpts": [
+            "eMazzanti Technologies Reviews (9), Pricing, Services ... - Clutch\nOverall Review Rating 4.8 (9) Quality 4.8 Schedule 4.8 Cost 4.6 Willing to Refer 5.0. Exceptional performance (3) Personable (3) Easy to work with (2)"
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies Review 2026 | Ratings, Services ...",
+          "url": "https://toptechagencies.com/agency/emazzanti-technologies",
+          "excerpts": [
+            "eMazzanti Technologies Review 2026 | Ratings, Services ...\neMazzanti Technologies holds a 5/5 rating on Clutch based on 9 verified client reviews. This reflects their commitment to quality delivery and client satisfaction."
+          ]
+        },
+        {
+          "title": "Liquisite and eMazzanti Technologies Deliver Enterprise-Grade ...",
+          "url": "https://www.tmcnet.com/usubmit/2026/06/09/10396918.htm",
+          "excerpts": [
+            "Liquisite delivers comprehensive digital marketing, branding, email campaigns, social media management and more. As part of the renowned, award-winning, Northern New Jersey-based IT Services firm eMazzanti Technologies, Liquisite fuses the creative depth of seasoned web designers and digital marketers with decades of technical expertise."
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies - Overview, News & Similar ...",
+          "url": "https://www.zoominfo.com/c/emazzanti-technologies-co/12779872",
+          "excerpts": [
+            "eMazzanti Technologies - Overview, News & Similar ...\neMazzanti's team of trained, certified IT experts rapidly deliver increased revenue growth, data security and productivity for clients."
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies \u2014 LinkedIn",
+          "url": "http://linkedin.com/company/emazzanti-technologies",
+          "excerpts": [
+            "eMazzanti Technologies is your outsourced IT consultant servicing clients worldwide since 2001."
+          ]
+        }
+      ],
+      "reasoning": "**Evaluating JSON output requirements**\n\nI need to output JSON according to the BasicFieldEvaluatorOutput schema, focusing on scratchpad, completeness, and support. The field name is services_and_specializations, which lists many services. It seems to comprehensively cover multiple service lines and client focuses, making completeness likely true. Excerpts range from cloud services to IT and cybersecurity. While they mention related services, they don't exactly match some specific metrics in the field_answer, yet they do generally support the claims made.**Assessing excerpt support**\n\nI\u2019m noticing that while not all specifics are fully supported by excerpts, there are indeed key elements (like Cloud, IT services, and marketing through Liquisite) that do align with the field answer. The instruction states that I should set supported to true if the excerpts back it up, and I think they do provide good support for the core services. Even though some specifics are missing, I\u2019ll choose to go with true based on the overall corroboration. Lastly, I\u2019ll get started on crafting the JSON!",
+      "confidence": "high"
+    },
+    {
+      "field": "industry_classification_codes",
+      "citations": [
+        {
+          "title": "EMAZZANTI LLC | Computer Systems Design Services in Hoboken, NJ",
+          "url": "https://naicslist.com/company-profile/emazzanti-llc-hoboken-nj-07030",
+          "excerpts": [
+            "Industry Classification The primary North American Industry Classification System (NAICS) code for Emazzanti LLC is 541512: Computer Systems Design Services."
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies",
+          "url": "https://www.emazzanti.net/about",
+          "excerpts": [
+            "eMazzanti Technologies\nComprehensive, scalable, cost-effective cloud, IT and network services. We offer worldwide 24/7 technology support as well as Microsoft, Watchguard, HP,"
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies \u2014 LinkedIn",
+          "url": "http://linkedin.com/company/emazzanti-technologies",
+          "excerpts": [
+            "eMazzanti Technologies is your outsourced IT consultant servicing clients worldwide since 2001."
+          ]
+        },
+        {
+          "title": "Computer consultancy and computer facilities management ...",
+          "url": "https://strategyforindustry.com/isic/class-6202",
+          "excerpts": [
+            "Computer consultancy and computer facilities management ...\nISIC Class 6202: Computer consultancy and computer facilities management activities. Browse this ISIC Rev.4 classification or explore the full GTIAS industry"
+          ]
+        },
+        {
+          "title": "Information technology consultation services - GovTribe",
+          "url": "https://govtribe.com/category/unspsc/80101507-information-technology-consultation-services",
+          "excerpts": [
+            "Information technology consultation services - GovTribe\nUNSPSC 80101507, categorized as Information Technology Consultation Services, encompasses professional consulting services focused on strategic technology planning, system implementation, and optimization across various government and public sector organizations."
+          ]
+        }
+      ],
+      "reasoning": "**Evaluating JSON completeness**\n\nI need to create a JSON structure with fields like scratchpad, completeness, and supported. The industry classification codes are vital here. I\u2019m considering whether the provided answer is complete by checking the field descriptions. It seems to include NAICS, SIC, ISIC, and UNSPSC codes along with their descriptions, which looks good. The excerpts do support the field, but I noticed some codes in the answer aren't mentioned in the excerpts. Overall, I think it's mostly complete.**Assessing support in JSON**\n\nI see that there's partial support for some aspects, but not all are backed by the excerpts. The instruction says to mark it as supported if the field answer is completely supported. Since some items don't have excerpts to back them up, it feels safer to set \"supported\" to false. Although the field answer is a derivation and some aspects do have support, I think it\u2019s best to stick with the safe approach. I'll outline my reasoning in the scratchpad when crafting the JSON.",
+      "confidence": "medium"
+    },
+    {
+      "field": "certifications_and_partner_status",
+      "citations": [
+        {
+          "title": "EMAZZANTI TECHNOLOGIES ATTAINS GOLD CERTIFIED PARTNER STATUS ...",
+          "url": "https://www.emazzanti.net/blogs/articles/emazzanti-technologies-attains-gold-certified-partner-status-in-microsoft-partner-program",
+          "excerpts": [
+            "HOBOKEN, NJ, \u2013 June, 07, 2006 \u2013 eMazzanti Technologies, provider of technology solutions for business growth, today announced it has attained Gold Certified status in the Microsoft Partner Program with competencies in Networking Infrastructure Solutions and Advanced Infrastructure Solutions, recognizing eMazzanti Technologies\u2019 expertise and total impact in the technology marketplace. As"
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies - Overview, News & Similar ...",
+          "url": "https://www.zoominfo.com/c/emazzanti-technologies-co/12779872",
+          "excerpts": [
+            "eMazzanti Technologies - Overview, News & Similar ...\neMazzanti's team of trained, certified IT experts rapidly deliver increased revenue growth, data security and productivity for clients."
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies Named First Platinum Partner by ...",
+          "url": "https://www.emazzanti.net/blogs/articles/emazzanti-technologies-named-first-platinum-partner-by-watchguard-technologies",
+          "excerpts": [
+            "By focusing on value rather than simply volume, the program frees up WatchGuard partners to concentrate on the quality and competency of staffing, solutions and deployment, rather than margin alone. The WatchGuardONE channel program delivers three levels of certification - Silver, Gold and Platinum."
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies",
+          "url": "https://www.emazzanti.net/about",
+          "excerpts": [
+            "eMazzanti Technologies\nComprehensive, scalable, cost-effective cloud, IT and network services. We offer worldwide 24/7 technology support as well as Microsoft, Watchguard, HP,"
+          ]
+        },
+        {
+          "title": "Working at eMazzanti Technologies",
+          "url": "http://glassdoor.com/Overview/Working-at-eMazzanti-Technologies-EI_IE776419.11%2C33.htm",
+          "excerpts": [
+            "As a member of the PCI Security Standards Council, eMazzanti takes data security very seriously.\n\n...\n\nHow do job seekers rate their interview experience at eMazzanti Technologies? 38% of job seekers rate their interview experience at eMazzanti Technologies as positive. Candidates give an average difficulty score of 2.7 out of 5\nOverall, 41% of employees would recommend working at eMazzanti Technologies to a friend. This is based on 43 anonymously submitted reviews on Glassdoor. How do"
+          ]
+        }
+      ],
+      "reasoning": "**Evaluating claims support**\n\nI need to think through the claims made. Some are supported like Gold 2006 and WatchGuard Platinum, while others like the 4X Microsoft Partner of the Year and four Solutions Partner designations might not be backed by excerpts. The guidelines say I should mark something as true if it's supported, but since not all claims are verified, I lean towards marking it as false. However, I do think it still covers the necessary aspects. So, I can report completeness as true and support as false. Let's format this in JSON.",
+      "confidence": "medium"
+    },
+    {
+      "field": "reviews_and_market_sentiment",
+      "citations": [
+        {
+          "title": "eMazzanti Technologies Reviews (9), Pricing, Services ... - Clutch",
+          "url": "https://clutch.co/profile/emazzanti-technologies",
+          "excerpts": [
+            "eMazzanti Technologies Reviews (9), Pricing, Services ... - Clutch\nOverall Review Rating 4.8 (9) Quality 4.8 Schedule 4.8 Cost 4.6 Willing to Refer 5.0. Exceptional performance (3) Personable (3) Easy to work with (2)"
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies Review 2026 | Ratings, Services ...",
+          "url": "https://toptechagencies.com/agency/emazzanti-technologies",
+          "excerpts": [
+            "eMazzanti Technologies Review 2026 | Ratings, Services ...\neMazzanti Technologies holds a 5/5 rating on Clutch based on 9 verified client reviews. This reflects their commitment to quality delivery and client satisfaction."
+          ]
+        },
+        {
+          "title": "Working at eMazzanti Technologies: 13 Reviews - Indeed",
+          "url": "https://www.indeed.com/cmp/Emazzanti-Technologies/reviews",
+          "excerpts": [
+            "Reviews from eMazzanti Technologies employees about eMazzanti Technologies culture, salaries, benefits, work-life balance, management, job security, and more."
+          ]
+        },
+        {
+          "title": "Working at eMazzanti Technologies - Glassdoor",
+          "url": "https://www.glassdoor.com/Overview/Working-at-eMazzanti-Technologies-EI_IE776419.11%2C33.htm",
+          "excerpts": [
+            "Working at eMazzanti Technologies - Glassdoor\nOverall, 41% of employees would recommend working at eMazzanti Technologies to a friend. This is based on 43 anonymously submitted reviews on Glassdoor. How do"
+          ]
+        },
+        {
+          "title": "IT Consulting & Network Security Testimonials | Hoboken, NJ",
+          "url": "https://www.emazzanti.net/about/testimonials",
+          "excerpts": [
+            "IT Consulting & Network Security Testimonials | Hoboken, NJ\neMazzanti has the best Customer service. Every time I have a problem they are willing to help me no matter how long it takes them."
+          ]
+        }
+      ],
+      "reasoning": "**Assessing output requirements**\n\nI need to follow a specific schema to produce my output, which includes elements like scratchpad, completeness, and supported. First, I\u2019ll evaluate completeness, noting that while the field_answer contains reviews and market sentiment, it lacks important industry codes and other details, so completeness should be marked as false.  \n\nNext, the evaluations from sources like Clutch, Indeed, and Glassdoor support the field_answer content, so that\u2019s true. I\u2019ll prepare a JSON that reflects these fields, including brief reasoning in the scratchpad.",
+      "confidence": "low"
+    },
+    {
+      "field": "awards_and_recognition",
+      "citations": [
+        {
+          "title": "eMazzanti Technologies Named To Inc. 2025 Regional ...",
+          "url": "http://prnewswire.com/news-releases/emazzanti-technologies-named-to-inc-2025-regional-fastest-growth-list-302419127.html",
+          "excerpts": [
+            "eMazzanti Technologies is proud to announce its continued recognition by Inc. Magazine as one of the fastest-growing private companies in America."
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies - Overview, News & Similar ...",
+          "url": "https://www.zoominfo.com/c/emazzanti-technologies-co/12779872",
+          "excerpts": [
+            "eMazzanti Technologies - Overview, News & Similar ...\neMazzanti's team of trained, certified IT experts rapidly deliver increased revenue growth, data security and productivity for clients."
+          ]
+        },
+        {
+          "title": "eMazzanti Technologies Named First Platinum Partner by ...",
+          "url": "https://www.emazzanti.net/blogs/articles/emazzanti-technologies-named-first-platinum-partner-by-watchguard-technologies",
+          "excerpts": [
+            "By focusing on value rather than simply volume, the program frees up WatchGuard partners to concentrate on the quality and competency of staffing, solutions and deployment, rather than margin alone. The WatchGuardONE channel program delivers three levels of certification - Silver, Gold and Platinum."
+          ]
+        }
+      ],
+      "reasoning": "**Evaluating completeness of JSON output**\n\nI need to produce JSON based on the BasicFieldEvaluatorOutput structure, focusing on fields like scratchpad, completeness, and supported. I'm assessing the completeness of field_answer given field_description for \"awards_and_recognition.\" The field_answer lists several awards and includes a CEO quote, but I\u2019m not sure it\u2019s complete since it references items and doesn\u2019t provide an explicit list of all awards. It might be missing others, so I think I should set completeness to false.**Assessing profile data completeness**\n\nThe question asks for comprehensive profile data, but since the field is \"awards_and_recognition,\" I realize the answer includes awards along with a CEO quote, which feels a bit extraneous. While it addresses awards, it's not a clear, exhaustive list, so I think I need to set completeness to false. However, the excerpts do support the mention of awards, including notable accolades like Inc. 5000 and regional fastest growth. So, supported is true. Now I can create the JSON output based on this.",
+      "confidence": "low"
+    },
+    {
+      "field": "recent_developments_and_innovation",
+      "citations": [
+        {
+          "title": "eMazzanti Technologies - Overview, News & Similar ...",
+          "url": "https://www.zoominfo.com/c/emazzanti-technologies-co/12779872",
+          "excerpts": [
+            "eMazzanti Technologies - Overview, News & Similar ...\neMazzanti's team of trained, certified IT experts rapidly deliver increased revenue growth, data security and productivity for clients."
+          ]
+        },
+        {
+          "title": "Liquisite and eMazzanti Technologies Deliver Enterprise-Grade ...",
+          "url": "https://www.tmcnet.com/usubmit/2026/06/09/10396918.htm",
+          "excerpts": [
+            "Liquisite delivers comprehensive digital marketing, branding, email campaigns, social media management and more. As part of the renowned, award-winning, Northern New Jersey-based IT Services firm eMazzanti Technologies, Liquisite fuses the creative depth of seasoned web designers and digital marketers with decades of technical expertise."
+          ]
+        }
+      ],
+      "reasoning": "**Evaluating evidence support**\n\nI'm considering whether the excerpts actually support the field answer. Excerpt 0 talks about eMazzanti but doesn't mention eBot AI or the AI Master Class. Excerpt 1 does discuss Liquisite merging with eMazzanti and mentions their digital marketing division, which backs up that specific item. Still, since not all bullets are sufficiently supported, it seems that the overall support should be marked as false or partially true.\n\nI'll proceed to create a JSON with this reasoning included.",
+      "confidence": "low"
+    },
+    {
+      "field": "competitors",
+      "citations": [
+        {
+          "title": "eMazzanti Technologies Information - RocketReach",
+          "url": "http://rocketreach.co/emazzanti-technologies-profile_b5e511f4f42e672d",
+          "excerpts": [
+            "Address\n701 Grand Street, Hoboken, New Jersey 07030, US"
+          ]
+        }
+      ],
+      "reasoning": "**Assessing JSON completeness**\n\nI'm looking into the JSON schema and need to evaluate the completeness of the answer provided. The field for competitors lists a few names, but the excerpt only shows an address, which doesn't really support it. So, I think it counts as not fully supported. The user's query asked for a comprehensive company profile, but the response lacks depth. It mentions competitors but without citations. Still, since it provides a direct answer, I\u2019m leaning towards marking completeness as true.**Crafting final JSON**\n\nI'm looking at the instructions, which say to set completeness to false if an answer isn't complete. The field answer doesn't have citations and seems unverifiable, but it does relate to the question asked, so I think I should mark completeness as true. However, since the excerpts don't support it, I have to indicate that support is false. I\u2019ll need to prepare a scratchpad reasoning string and finalize the JSON with all required fields. Let's put it all together!",
+      "confidence": "medium"
+    },
+    {
+      "field": "social_media_presence",
+      "citations": [
+        {
+          "title": "eMazzanti Technologies \u2014 LinkedIn",
+          "url": "http://linkedin.com/company/emazzanti-technologies",
+          "excerpts": [
+            "eMazzanti Technologies is your outsourced IT consultant servicing clients worldwide since 2001."
+          ]
+        },
+        {
+          "title": "https://www.crunchbase.com/organization/emazzanti-technologies",
+          "url": "https://www.crunchbase.com/organization/emazzanti-technologies",
+          "excerpts": [
+            "eMazzanti Technologies provides IT consulting services"
+          ]
+        }
+      ],
+      "reasoning": "**Assessing data completeness**\n\nI\u2019m checking the output for the \u201csocial_media_presence\u201d field based on the requirement for social media presence across various platforms. The field answer includes some platforms like LinkedIn, Facebook, and Twitter, but it seems incomplete. It doesn\u2019t provide all the necessary details, like valid Facebook page links or Twitter follower counts. The excerpts only support LinkedIn and Crunchbase, so I\u2019d say the supported status should be false due to these gaps. It looks like placeholders in the field answer don't help clarify things either.**Setting output parameters**\n\nI\u2019m determining the output specifics for completeness and support status, and I\u2019ve decided to set both to false. I want to provide a scratchpad that briefly explains my reasoning behind these choices. Then, I\u2019ll put together the final JSON output that includes the required keys: scratchpad, completeness, and supported. It's important to make sure everything aligns correctly, so let\u2019s get crafting! This should lead to a clear and concise final product.",
+      "confidence": "low"
+    },
+    {
+      "field": "synthesis",
+      "citations": [],
+      "reasoning": "",
+      "confidence": ""
+    }
+  ],
+  "latency_s": 676.8,
+  "latency_method": "server_created_to_updated"
+}

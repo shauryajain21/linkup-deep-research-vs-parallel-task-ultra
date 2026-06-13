@@ -2,6 +2,759 @@
   "id": "r007",
   "provider": "parallel",
   "query": "Build a comprehensive competitive intelligence profile for the company listed below. Return facts only, not reasoning.\n\nCompanies:\n1. HireVue (https://www.hirevue.com)\n\nGather the following from public sources (company website, Crunchbase, LinkedIn, TechCrunch, G2, Capterra, press releases). For EACH company extract:\n\nIDENTITY\n- name (EXACT match from list above \u2014 CRITICAL for matching)\n- website domain, tagline (one-sentence elevator pitch)\n- category (primary market, e.g. 'HR Technology'), sub_category (specific niche)\n- linkedin_url (linkedin.com/company/<slug>)\n- hq_city, hq_country, founded_year\n- employee_count (LinkedIn About) and employee_growth_yoy as decimal (0.12 = +12%)\n\nPOSITIONING\n- business_model: B2B, B2C, B2B2C, Marketplace, or API/Platform\n- gtm_motion: sales-led, product-led, marketing-led, or community-led\n- geo_coverage: Local, National, Regional, or Global\n- target_segment: Enterprise, Mid-Market, SMB, Consumer, or Mixed\n- target_verticals (3-5 industries)\n- top_3_features, key_differentiator (max 20 words)\n\nPRICING (from /pricing or /plans page)\n- pricing_model_kind: Freemium, Subscription, Usage-based, Enterprise, or Hybrid\n- pricing.free_plan (bool), starts_at_usd (0 if custom), mention\n- pricing.tiers: array of {name, price_monthly_usd, price_annual_usd, target, features[]}\n\nFUNDING (Crunchbase + press releases)\n- funding_stage, funding_total_usd\n- funding_rounds: array of {round, date YYYY-MM-DD, amount_usd, lead}\n- notable_investors: array of {name, domain}\n- acquisition: {acquired (bool), acquirer, year, amount_usd, source_url}\n\nTRACTION (only if explicitly disclosed in press or filings)\n- arr_usd, customer_count, avg_contract_usd \u2014 omit if not stated, do NOT estimate\n\nTEAM\n- key_people: top 5 senior CURRENT employees from LinkedIn People tab. For each: name, current role AT THIS COMPANY, linkedin URL (linkedin.com/in/<slug>), one-sentence background starting with current role at this company. Include only people currently employed at this company \u2014 exclude external partners, advisors, event speakers.\n\nCUSTOMERS\n- notable_customers: 5-10 customers mentioned on company website or case studies. For each: name, domain, segment (Grand compte/ETI/PME/Startup/Consumer), industry, evidence (quote / case-study URL / logo placement)\n\nSIGNALS (last 12 months)\n- recent_news: 5 most recent press items {date YYYY-MM-DD, headline, source_url}\n- growth_signals: 3-5 one-sentence growth events\n- weaknesses: top 3 user complaints from G2 / Capterra / Reddit\n\nOUTPUT FORMAT\nReturn JSON {\"competitors\": [...]} with one entry per company, preserving the input ORDER and EXACT company names. If a field cannot be retrieved, OMIT it from the response \u2014 do NOT pad with null or placeholder values. Do not fabricate data.",
-  "answer": "{\"answer\": \"```json\\n{\\n  \\\"competitors\\\": [\\n    {\\n      \\\"name\\\": \\\"HireVue\\\",\\n      \\\"identity\\\": {\\n        \\\"website_domain\\\": \\\"hirevue.com\\\",\\n        \\\"tagline\\\": \\\"Hirevue's AI-powered platform pinpoints and validates the skills that drive job success\\\",\\n        \\\"category\\\": \\\"HR Technology\\\",\\n        \\\"sub_category\\\": \\\"Video Interviewing & AI Assessment\\\",\\n        \\\"linkedin_url\\\": \\\"linkedin.com/company/hirevue\\\",\\n        \\\"hq_city\\\": \\\"Sandy\\\",\\n        \\\"hq_country\\\": \\\"United States\\\",\\n        \\\"founded_year\\\": 2004,\\n        \\\"employee_count\\\": 331,\\n        \\\"employee_growth_yoy\\\": -0.06\\n      },\\n      \\\"positioning\\\": {\\n        \\\"business_model\\\": \\\"B2B\\\",\\n        \\\"gtm_motion\\\": \\\"sales-led\\\",\\n        \\\"geo_coverage\\\": \\\"Global\\\",\\n        \\\"target_segment\\\": \\\"Enterprise\\\",\\n        \\\"target_verticals\\\": [\\n          \\\"Financial Services\\\",\\n          \\\"Retail & Consumer Goods\\\",\\n          \\\"Technology\\\",\\n          \\\"Healthcare & Life Sciences\\\",\\n          \\\"Public Sector & Government\\\"\\n        ],\\n        \\\"top_3_features\\\": [\\n          \\\"Skills Validation (AI-powered Virtual Job Tryouts)\\\",\\n          \\\"Intelligent Interviewing (data-driven structured interviews)\\\",\\n          \\\"Talent Engagement (24/7 AI-driven candidate matching and scheduling)\\\"\\n        ],\\n        \\\"key_differentiator\\\": \\\"Only FedRAMP-authorized hiring solution for the US public sector\\\"\\n      },\\n      \\\"pricing\\\": {\\n        \\\"pricing_model_kind\\\": \\\"Enterprise\\\",\\n        \\\"free_plan\\\": false,\\n        \\\"starts_at_usd\\\": 35000,\\n        \\\"mention\\\": \\\"Essentials plan starts at approximately $35,000 per year\\\",\\n        \\\"tiers\\\": [\\n          {\\n            \\\"name\\\": \\\"Essentials\\\",\\n            \\\"price_monthly_usd\\\": 2917,\\n            \\\"price_annual_usd\\\": 35000,\\n            \\\"target\\\": \\\"Under 500 hires/year\\\",\\n            \\\"features\\\": [\\n              \\\"One-way video interviewing\\\",\\n              \\\"Custom branding\\\",\\n              \\\"Basic compliance features\\\",\\n              \\\"Standard ATS integrations\\\"\\n            ]\\n          },\\n          {\\n            \\\"name\\\": \\\"Enterprise\\\",\\n            \\\"price_monthly_usd\\\": 4167,\\n            \\\"price_annual_usd\\\": 50000,\\n            \\\"target\\\": \\\"500-2,000 hires/year\\\",\\n            \\\"features\\\": [\\n              \\\"AI candidate scoring (NLP)\\\",\\n              \\\"Game-based cognitive assessments (add-on)\\\",\\n              \\\"Multi-language support (40+ languages)\\\",\\n              \\\"Full ATS integrations\\\",\\n              \\\"Dedicated Customer Success Manager (add-on)\\\"\\n            ]\\n          },\\n          {\\n            \\\"name\\\": \\\"Enterprise Plus\\\",\\n            \\\"price_monthly_usd\\\": 8333,\\n            \\\"price_annual_usd\\\": 100000,\\n            \\\"target\\\": \\\"2,000+ hires/year\\\",\\n            \\\"features\\\": [\\n              \\\"Game-based cognitive assessments (included)\\\",\\n              \\\"Coding assessments (included)\\\",\\n              \\\"Dedicated Customer Success Manager (included)\\\",\\n              \\\"Volume overage protection\\\",\\n              \\\"Full assessment stack\\\"\\n            ]\\n          }\\n        ]\\n      },\\n      \\\"funding\\\": {\\n        \\\"funding_stage\\\": \\\"Acquired\\\",\\n        \\\"funding_total_usd\\\": 93000000,\\n        \\\"funding_rounds\\\": [\\n          {\\n            \\\"round\\\": \\\"Series B\\\",\\n            \\\"date\\\": \\\"2010-01-01\\\",\\n            \\\"amount_usd\\\": 5000000,\\n            \\\"lead\\\": \\\"Granite Ventures\\\"\\n          },\\n          {\\n            \\\"round\\\": \\\"Series C\\\",\\n            \\\"date\\\": \\\"2012-08-30\\\",\\n            \\\"amount_usd\\\": 17000000,\\n            \\\"lead\\\": \\\"Investor Growth Capital\\\"\\n          },\\n          {\\n            \\\"round\\\": \\\"Series D\\\",\\n            \\\"date\\\": \\\"2013-10-02\\\",\\n            \\\"amount_usd\\\": 25000000,\\n            \\\"lead\\\": \\\"Sequoia Capital\\\"\\n          },\\n          {\\n            \\\"round\\\": \\\"Series E\\\",\\n            \\\"date\\\": \\\"2015-06-02\\\",\\n            \\\"amount_usd\\\": 45000000,\\n            \\\"lead\\\": \\\"Investor Growth Capital\\\"\\n          }\\n        ],\\n        \\\"notable_investors\\\": [\\n          {\\\"name\\\": \\\"Sequoia Capital\\\", \\\"domain\\\": \\\"sequoiacap.com\\\"},\\n          {\\\"name\\\": \\\"TCV\\\", \\\"domain\\\": \\\"tcv.com\\\"},\\n          {\\\"name\\\": \\\"Granite Ventures\\\", \\\"domain\\\": \\\"graniteventures.com\\\"},\\n          {\\\"name\\\": \\\"Peterson Partners\\\", \\\"domain\\\": \\\"petersonpartners.com\\\"},\\n          {\\\"name\\\": \\\"Investor Growth Capital\\\", \\\"domain\\\": \\\"investorgrowth.com\\\"},\\n          {\\\"name\\\": \\\"Rose Park Advisors\\\", \\\"domain\\\": \\\"roseparkadvisors.com\\\"}\\n        ],\\n        \\\"acquisition\\\": {\\n          \\\"acquired\\\": true,\\n          \\\"acquirer\\\": \\\"The Carlyle Group and TCV\\\",\\n          \\\"year\\\": 2019,\\n          \\\"source_url\\\": \\\"https://mergr.com/transaction/the-carlyle-group-acquires-hirevue\\\"\\n        }\\n      },\\n      \\\"traction\\\": {\\n        \\\"arr_usd\\\": 89000000,\\n        \\\"customer_count\\\": 1150\\n      },\\n      \\\"team\\\": {\\n        \\\"key_people\\\": [\\n          {\\n            \\\"name\\\": \\\"Jeremy Friedman\\\",\\n            \\\"current_role\\\": \\\"Chief Executive Officer\\\",\\n            \\\"linkedin_url\\\": \\\"linkedin.com/in/jnfriedman\\\",\\n            \\\"background\\\": \\\"CEO at HireVue since January 2024, previously co-founder and CEO of Schoology (acquired by PowerSchool) where he led a learning management system reaching over 20 million users\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Alberto Silveira\\\",\\n            \\\"current_role\\\": \\\"Chief Technology Officer\\\",\\n            \\\"linkedin_url\\\": \\\"linkedin.com/in/alberto-silveira-2387837\\\",\\n            \\\"background\\\": \\\"CTO at HireVue since July 2024, previously head of engineering at PowerSchool and LawnStarter with 20+ years of technology leadership and author of Building and Managing High-Performance Distributed Teams\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Smitha Venugopal\\\",\\n            \\\"current_role\\\": \\\"Chief Financial Officer\\\",\\n            \\\"linkedin_url\\\": \\\"linkedin.com/in/smitha-venugopal-1952494\\\",\\n            \\\"background\\\": \\\"CFO at HireVue since September 2024, previously CFO at Escalent and prior experience in financial advisory at Deloitte\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Amanda Hahn\\\",\\n            \\\"current_role\\\": \\\"Chief Marketing Officer\\\",\\n            \\\"linkedin_url\\\": \\\"linkedin.com/in/amandajhahn\\\",\\n            \\\"background\\\": \\\"CMO at HireVue since September 2022, previously VP of Product Marketing at Oracle Taleo and Director of Product Strategy at The Newman Group (Futurestep)\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Marcy Daniel\\\",\\n            \\\"current_role\\\": \\\"Chief Product Officer\\\",\\n            \\\"linkedin_url\\\": \\\"linkedin.com/in/marcyldaniel\\\",\\n            \\\"background\\\": \\\"CPO at HireVue since July 2024, previously CPO at Quorum and PowerSchool where she led the company through its successful IPO\\\"\\n          }\\n        ]\\n      },\\n      \\\"customers\\\": {\\n        \\\"notable_customers\\\": [\\n          {\\n            \\\"name\\\": \\\"IKEA\\\",\\n            \\\"domain\\\": \\\"ikea.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Retail\\\",\\n            \\\"evidence\\\": \\\"Customer video case study on hirevue.com citing 49% increase in recruiter efficiency and 96% candidate satisfaction - https://www.hirevue.com/case-studies/customer-videos\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Emirates NBD\\\",\\n            \\\"domain\\\": \\\"emiratesnbd.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Financial Services\\\",\\n            \\\"evidence\\\": \\\"Customer video case study on hirevue.com citing 8,000 recruiter hours saved, $400,000 saved, and 80% reduction in time-to-offer - https://www.hirevue.com/case-studies/customer-videos\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Swire Coca-Cola\\\",\\n            \\\"domain\\\": \\\"swirecc.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Consumer Goods\\\",\\n            \\\"evidence\\\": \\\"Case study on hirevue.com citing 18 days cut from time-to-fill and 3.5 days from application to offer - https://www.hirevue.com/case-studies\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Philips\\\",\\n            \\\"domain\\\": \\\"philips.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Health Technology\\\",\\n            \\\"evidence\\\": \\\"Customer video on hirevue.com about streamlining global early careers hiring and integrating HireVue with Workday - https://www.hirevue.com/case-studies/customer-videos\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Mitsubishi UFJ Trust and Banking\\\",\\n            \\\"domain\\\": \\\"mufg.jp\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Financial Services\\\",\\n            \\\"evidence\\\": \\\"Written case study on hirevue.com about using AI-powered assessments to hire diverse, high-potential graduates - https://www.hirevue.com/case-studies\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Georgia Institute of Technology\\\",\\n            \\\"domain\\\": \\\"gatech.edu\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Higher Education\\\",\\n            \\\"evidence\\\": \\\"Customer video on hirevue.com about standardized flexible hiring to compete with private sector for talent - https://www.hirevue.com/case-studies/customer-videos\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Unilever\\\",\\n            \\\"domain\\\": \\\"unilever.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Consumer Goods\\\",\\n            \\\"evidence\\\": \\\"Case study cited on external sources about using HireVue AI-powered assessments to transform hiring - https://hrmeetstechnology.blogspot.com/2025/04/success-with-ai-in-hr-case-study-of.html\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Walmart\\\",\\n            \\\"domain\\\": \\\"walmart.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Retail\\\",\\n            \\\"evidence\\\": \\\"Case study citing Virtual Job Tryout helped hire over 400,000 new associates in months - https://www.cuspera.com/products/hirevue-x-920/customer-story\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Nike\\\",\\n            \\\"domain\\\": \\\"nike.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Retail\\\",\\n            \\\"evidence\\\": \\\"Listed as a client in Wikipedia sourced from 2012 coverage - https://en.wikipedia.org/wiki/HireVue\\\"\\n          },\\n          {\\n            \\\"name\\\": \\\"Hilton\\\",\\n            \\\"domain\\\": \\\"hilton.com\\\",\\n            \\\"segment\\\": \\\"Grand compte\\\",\\n            \\\"industry\\\": \\\"Hospitality\\\",\\n            \\\"evidence\\\": \\\"Referenced as a customer in external sources and HireVue customer stories - https://en.wikipedia.org/wiki/HireVue\\\"\\n          }\\n        ]\\n      },\\n      \\\"signals\\\": {\\n        \\\"recent_news\\\": [\\n          {\\n            \\\"date\\\": \\\"2026-03-10\\\",\\n            \\\"headline\\\": \\\"Hirevue Acquires Hireguide Technology to Accelerate Agentic AI Hiring\\\",\\n            \\\"source_url\\\": \\\"https://www.hirevue.com/press-release/hirevue-acquires-hireguide-technology-to-accelerate-agentic-ai-hiring\\\"\\n          },\\n          {\\n            \\\"date\\\": \\\"2026-01-12\\\",\\n            \\\"headline\\\": \\\"Hirevue joins Workday AI Agent Partner Network, accelerating the shift to skills-based hiring\\\",\\n            \\\"source_url\\\": \\\"https://www.hirevue.com/press-release/hirevue-joins-workday-ai-agent-partner-network-accelerating-the-shift-to-skills-based-hiring\\\"\\n          },\\n          {\\n            \\\"date\\\": \\\"2025-04-29\\\",\\n            \\\"headline\\\": \\\"Hirevue Announces the Winners of the 2025 Customer Excellence Awards\\\",\\n            \\\"source_url\\\": \\\"https://www.rockymountainbusinessbrief.com/article/807712233-hirevue-announces-the-winners-of-the-2025-customer-excellence-awards\\\"\\n          },\\n          {\\n            \\\"date\\\": \\\"2025-11-01\\\",\\n            \\\"headline\\\": \\\"Hirevue publishes Financial Services eBook targeting banks, insurers, and fintechs\\\",\\n            \\\"source_url\\\": \\\"https://www.hirevue.com/wp-content/uploads/2025/11/HV_2025_eBook_Hirevue-Financial-Services-2.pdf\\\"\\n          },\\n          {\\n            \\\"date\\\": \\\"2024-07-18\\\",\\n            \\\"headline\\\": \\\"Hirevue appoints tech stalwarts Alberto Silveira and Marcy Daniel to drive next-stage growth and innovation\\\",\\n            \\\"source_url\\\": \\\"https://www.hirevue.com/press-release/hirevue-appoints-tech-stalwarts-alberto-silveira-and-marcy-daniel-to-drive-next-stage-growth-and-innovation-at-hirevue\\\"\\n          }\\n        ],\\n        \\\"growth_signals\\\": [\\n          \\\"HireVue acquired Hireguide technology in March 2026 to launch a voice-based AI Interviewer for agentic hiring\\\",\\n          \\\"HireVue joined the Workday AI Agent Partner Network in January 2026, expanding its enterprise ecosystem\\\",\\n          \\\"HireVue serves over 1,150 customers including more than 60% of the Fortune 100\\\",\\n          \\\"HireVue has processed over 70 million video interviews and 200 million chat-based engagements globally\\\",\\n          \\\"HireVue expanded its C-suite with CTO and CPO appointments in July 2024, strengthening product and engineering leadership\\\"\\n        ],\\n        \\\"weaknesses\\\": [\\n          \\\"High total cost of ownership with implementation fees of $15,000-$40,000 and per-interview overage charges on top of annual subscription, inflating first-year costs 30-60% above base price\\\",\\n          \\\"Poor customer support responsiveness after initial setup, with Capterra reviewers describing support as horrible and noting clients are dumped once configuration is complete\\\",\\n          \\\"Complex setup requiring significant professional services with no self-serve option, multi-year contract lock-ins, and separate fees for assessment modules like game-based evaluations and coding tests\\\"\\n        ]\\n      }\\n    }\\n  ]\\n}\\n```\\n\\n## References\\n\\n1. *HireVue - Wikipedia*. http://en.wikipedia.org/wiki/HireVue\\n2. *Customer Stories - | Hirevue*. https://www.hirevue.com/case-studies/customer-videos\\n3. *HireVue Revenue 2024: $89M ARR, $150M Valuation*. http://getlatka.com/companies/hirevue\\n4. *Hirevue | AI-Powered Skill Validation, Video Interviewing ...*. https://www.hirevue.com/\\n5. *Case Studies | Hirevue*. https://www.hirevue.com/case-studies\\n6. *Hirevue | AI-Powered Skill Validation, Video Interviewing ...*. http://hirevue.com/\\n7. *8 Tips for Video Interviews and Interview Preparation | HireVue*. https://www.hirevue.com/blog/candidates/how-to-prepare-for-your-hirevue-digital-interview\\n8. *HireVue PitchBook Profile*. http://pitchbook.com/profiles/company/47555-65\\n9. *HireVue Pricing: Cost and Pricing plans - SaaSworthy*. http://saasworthy.com/product/hirevue/pricing\\n10. *HireVue 2026 Pricing, Features, Reviews & Alternatives | GetApp*. https://www.getapp.com/hr-employee-management-software/a/team-build\\n11. *Amanda Hahn - HireVue | LinkedIn*. https://www.linkedin.com/in/amandajhahn\\n12. *Jeremy Friedman - CEO at Hirevue*. http://linkedin.com/in/jnfriedman\\n13. *Caleb Rottman*. https://linkedin.com/in/calebrottman\\n14. *Hirevue | LinkedIn*. https://cz.linkedin.com/organization-guest/company/hirevue?_l=en\\n15. *Hirevue - LinkedIn*. https://www.linkedin.com/company/hirevue\\n16. *Read Customer Service Reviews of www.capterra.com - Trustpilot*. https://www.trustpilot.com/review/www.capterra.com\\n17. *HireVue Reviews 2026: Details, Pricing, & Features | G2*. https://www.g2.com/products/hirevue/reviews\\n18. *20 best no-code tools in 2026 for productivity and profitability*. http://jotform.com/blog/no-code-tools\\n19. *HireVue Review (2026): Features, Pricing, and Who It's Best For*. http://willo.video/blog/hirevue-review\\n20. *HireVue Reviews 2026. Verified Reviews, Pros & Cons | Capterra*. https://www.capterra.com/p/132193/Team-Build/reviews\\n21. *Series C - HireVue - Crunchbase Funding Round Profile*. https://www.crunchbase.com/funding_round/hirevue-series-c--aa9e2bea\\n22. *HireVue*. https://platform.tracxn.com/a/d/company/5319ce3ae4b0f7e166010e42/hirevue?utm_source=parallel&utm_medium=ai#a:about\\n23. *TCV, Granite Ventures, Sequoia Capital launch sale of ...*. http://buyoutsinsider.com/tcv-granite-ventures-sequoia-capital-launch-sale-of-hirevue\\n24. *HireVue Secures $45 Million in Funding to Fuel Team Acceleration ...*. http://prnewswire.com/news-releases/hirevue-secures-45-million-in-funding-to-fuel-team-acceleration-software-300091454.html\\n25. *HireVue 2026 Company Profile: Valuation, Funding & Investors ...*. https://pitchbook.com/profiles/company/47555-65\\n26. *HireVue*. https://en.wikipedia.org/wiki/HireVue\\n27. *Certified Integration Partner Program*. http://hirevue.com/platform/integrations\\n28. *Talent Crowd*. https://platform.tracxn.com/a/d/company/551577cce4b0de0c0b45d485/talent%20crowd?utm_source=parallel&utm_medium=ai#a:about\\n29. *About the Company Hirevue*. https://www.hirevue.com/about\\n30. *Hirevue Announces the Winners of the 2025 Customer Excellence \\u2026*. https://www.rockymountainbusinessbrief.com/article/807712233-hirevue-announces-the-winners-of-the-2025-customer-excellence-awards\\n31. *Hirevue News & Media*. https://www.hirevue.com/press-release\\n32. *HireVue | UNLEASH*. http://unleash.ai/companies/hirevue\\n33. *Hirevue joins Workday AI Agent Partner Network*. http://hirevue.com/press-release/hirevue-joins-workday-ai-agent-partner-network-accelerating-the-shift-to-skills-based-hiring\\n34. *Hirevue Acquires Modern Hire To Expand Hiring Solutions*. https://www.hirevue.com/press-release/modernhire\\n35. *News Analysis - HireVue Secures $45 Million in Funding to ...*. http://enswmu.blogspot.com/2015/06/news-analysis-hirevue-secures-45.html\\n36. *Progress Chef*. http://linkedin.com/company/chef-software\\n37. *HireVue Acquires ModernHire to Enhance the Hiring Process*. http://hirevue.com/blog/hiring/modernhire\\n38. *Amanda Hahn*. https://linkedin.com/in/amandajhahn\\n39. *How Each C-Suite Role Contributes to Success*. https://www.linkedin.com/posts/hakimi-amran-a000a315b_understanding-the-full-c-suite-ceo-coo-activity-7331329254707666947-Weei\\n40. *Theresa Decker*. http://linkedin.com/in/theresadecker\\n41. *Leadership Team - HireVue*. https://theorg.com/org/hirevue/teams/leadership-team-1\\n42. *Hirevue | LinkedIn*. http://www.linkedin.com/company/hirevue\\n43. *HireVue Company Growth, Stability & Outlook 2026 | Built In*. https://builtin.com/company/hirevue/faq/stability-growth\\n44. *HireVue - 2026 Company Profile & Team*. http://tracxn.com/d/companies/hirevue/__PeMrputcdA2VOkFKx0ff0NX85_cSCaYi7B2wCL8qA6Y\\n45. *Growth Rate Calculations for Hire & Termination*. https://community.oracle.com/products/oracleanalytics/discussion/10968/growth-rate-calculations-for-hire-termination\\n46. *HireVue, Inc. - Sales Rep Reviews & Ratings*. https://www.repvue.com/companies/HireVueInc\\n47. *7 Best Video Interview Platforms for Remote Hiring in 2026 - Pin*. http://pin.com/blog/video-interview-platforms\\n48. *HireVue Pricing 2026: Video Interview Platform Costs - Pin*. http://pin.com/blog/hirevue-pricing\\n49. *HireVue Candidate Experience Review 2026: What Hiring Teams ...*. https://www.willo.video/blog/hirevue-candidate-experience-review\\n50. *HireVue Pricing 2026: What You'll Actually Pay | Leon Consulting*. https://leonstaff.com/blogs/hirevue-pricing-cost\\n51. *AI-Powered Candidate Assessment Software & Tools*. http://hirevue.com/platform/assessment-software\\n52. *Tracxn Login*. https://platform.tracxn.com/a/d/company/5319ce3ae4b0f7e166010e42/hirevue\\n53. *Fetched web page*. http://linkedin.com/company/hireguide-com\\n54. *The Carlyle Group and TCV Acquire HireVue - Mergr*. https://mergr.com/transaction/the-carlyle-group-acquires-hirevue\\n55. *Desert Horizon Capital*. https://platform.tracxn.com/a/d/company/637b814a153f14017aa70a6d/desert%20horizon%20capital?utm_source=parallel&utm_medium=ai#a:about\\n56. *HireVue - 2026 Company Profile & Team*. https://tracxn.com/d/companies/hirevue/__PeMrputcdA2VOkFKx0ff0NX85_cSCaYi7B2wCL8qA6Y\\n57. *Hirevue Press Release*. http://hirevue.com/press-release/hirevue-acquires-hireguide-technology-to-accelerate-agentic-ai-hiring\\n58. *Hirevue appoints tech stalwarts Alberto Silveira and Marcy Daniel to ...*. http://hirevue.com/press-release/hirevue-appoints-tech-stalwarts-alberto-silveira-and-marcy-daniel-to-drive-next-stage-growth-and-innovation-at-hirevue\\n59. *Smitha Venugopal - Chief Financial Officer*. https://www.linkedin.com/in/smitha-venugopal-1952494\\n60. *Chief technology officer*. https://en.wikipedia.org/wiki/Chief_technology_officer\\n61. *Jeremy Friedman Appointed as Hirevue CEO to Lead Next Phase of Growth*. http://hirevue.com/press-release/jeremy-friedman-appointed-as-hirevue-ceo-to-lead-next-phase-of-growth\\n62. *Smitha Venugopal, Hirevue Inc: Profile and Biography*. https://www.bloomberg.com/profile/person/24312043\\n63. *Contact us | Hirevue*. http://hirevue.com/contact\\n64. *HireVue Headquarters - Office Location & Address*. https://salestools.io/en/report/hirevue-headquarters\\n65. *Hire Vue Inc, Ste 810, Sandy, UT, US - MapQuest*. https://www.mapquest.com/us/utah/hirevue-354393041\\n66. *HireVue - Overview, News & Similar companies*. https://www.zoominfo.com/c/hirevue-inc/67175947\\n67. *SUCCESS WITH AI IN HR -CASE STUDY OF UNILEVER*. https://hrmeetstechnology.blogspot.com/2025/04/success-with-ai-in-hr-case-study-of.html\\n68. *Web Design Singapore | ECommerce*. http://comnet.com.sg/unilever.html\\n69. *Hirevue Logo - PNG Logo Vector Brand Downloads (SVG, EPS)*. https://www.freelogovectors.net/hirevue-logo\\n70. *HireVue Press Releases*. http://hirevue.com/press-release\\n71. *Case Studies | Hirevue*. https://www.hirevue.com/case-studies/case-studies\\n72. *HireVue Case Studies & Customer Success | Cuspera*. https://www.cuspera.com/products/hirevue-x-920/customer-story\\n73. *HireVue*. https://app.hirevue.com/ui/learn-more/\\n74. *About Boast*. http://boast.io/about\\n75. *Marcy Daniel - HireVue | LinkedIn*. https://www.linkedin.com/in/marcyldaniel\\n76. *Charlotta Jansson*. https://linkedin.com/in/charlotta-jansson\\n77. *Sibyl McCarley - Executive Bio, Work History, and Contacts - Equilar ExecAtlas*. http://people.equilar.com/bio/person/sibyl-mccarley-hirevue/48947051\\n78. *Hirevue Acquires Hireguide AI Technology | Tom Zinser posted on the topic | LinkedIn*. https://www.linkedin.com/posts/tomzinser_hirevue-acquires-hireguide-technology-to-activity-7437184286652493824-z1bn\\n79. *Marcy Daniel - PowerSchool EDGE 2023 - LinkedIn*. https://www.linkedin.com/posts/marcyldaniel_powerschool-edge-2023-powerschool-activity-7005974121826197504-OORo\\n80. *http://finance.yahoo.com/news/hirevue-acquires-hireguide-technology-accelerate-111900250.html*. http://finance.yahoo.com/news/hirevue-acquires-hireguide-technology-accelerate-111900250.html\\n81. *JONES FINANCIAL COMPANIES*. https://platform.tracxn.com/a/d/company/64d9dd1ba375a63412008f04/jones%20financial%20companies?utm_source=parallel&utm_medium=ai#a:about\\n82. *Hirevue Joins Workday AI Agent Partner Network,*. http://globenewswire.com/news-release/2026/01/13/3217724/0/en/hirevue-joins-workday-ai-agent-partner-network-accelerating-the-shift-to-skills-based-hiring.html\\n83. *Alberto Silveira, Hirevue Inc: Profile and Biography - Bloomberg.com*. https://www.bloomberg.com/profile/person/24133054\\n84. *Alberto Silveira's Post - LinkedIn*. https://www.linkedin.com/posts/asilveira_have-you-talked-about-ai-today-already-activity-7422686624993447936-vP2u\\n85. *Alberto Silveira - HireVue | LinkedIn*. https://www.linkedin.com/in/alberto-silveira-2387837\\n86. *HireVue*. https://targetcareers.hirevue.com/ui/on-demand\\n87. *Soan Valley Tech*. https://platform.tracxn.com/a/d/company/61d79662e2ada02b2aba6c5d/soan%20valley%20tech?utm_source=parallel&utm_medium=ai#a:about\\n88. *Hirevue + Financial services*. https://www.hirevue.com/wp-content/uploads/2025/11/HV_2025_eBook_Hirevue-Financial-Services-2.pdf\\n\"}",
-  "latency_s": 753.2
+  "status": "completed",
+  "answer": "{\"answer\": \"```json\\n{\\n  \\\"competitors\\\": [\\n    {\\n      \\\"name\\\": \\\"HireVue\\\",\\n      \\\"website_domain\\\": \\\"hirevue.com\\\",\\n      \\\"tagline\\\": \\\"Human Potential Intelligence is the future of hiring - enabling organizations to elevate the hiring conversation from evaluating candidates' credentials to understanding what they are capable of.\\\",\\n      \\\"category\\\": \\\"HR Technology\\\",\\n      \\\"sub_category\\\": \\\"AI-Powered Video Interviewing & Assessments\\\",\\n      \\\"linkedin_url\\\": \\\"linkedin.com/company/hirevue\\\",\\n      \\\"hq_city\\\": \\\"South Jordan\\\",\\n      \\\"hq_country\\\": \\\"United States\\\",\\n      \\\"founded_year\\\": 2004,\\n      \\\"employee_count\\\": 329,\\n      \\\"business_model\\\": \\\"B2B\\\",\\n      \\\"gtm_motion\\\": \\\"sales-led\\\",\\n      \\\"geo_coverage\\\": \\\"Global\\\",\\n      \\\"target_segment\\\": \\\"Enterprise\\\",\\n      \\\"target_verticals\\\": [\\\"Banking & Financial Services\\\", \\\"Retail & Hospitality\\\", \\\"Healthcare\\\", \\\"Manufacturing\\\", \\\"Technology\\\"],\\n      \\\"top_3_features\\\": [\\\"AI-Powered Video Interviewing (live and on-demand)\\\", \\\"Pre-Hire Assessments with IO Science Validation\\\", \\\"Skill Validation Platform\\\"],\\n      \\\"key_differentiator\\\": \\\"Combines IO-validated science with AI to predict candidate performance, serving 60%+ of Fortune 100.\\\",\\n      \\\"pricing_model_kind\\\": \\\"Enterprise\\\",\\n      \\\"pricing\\\": {\\n        \\\"free_plan\\\": false,\\n        \\\"starts_at_usd\\\": 35000,\\n        \\\"mention\\\": \\\"Essentials package starts at $35,000/year per G2; Enterprise tier is custom quote-based\\\",\\n        \\\"tiers\\\": [\\n          {\\n            \\\"name\\\": \\\"Essentials\\\",\\n            \\\"price_annual_usd\\\": 35000,\\n            \\\"target\\\": \\\"Mid-to-large companies (2,500-7,500 employees)\\\",\\n            \\\"features\\\": [\\n              \\\"Live and on-demand video interviewing\\\",\\n              \\\"Custom branding and career pages\\\",\\n              \\\"Interview scheduling and calendar integration\\\",\\n              \\\"Automated interview reminders\\\",\\n              \\\"Candidate evaluation scorecards\\\",\\n              \\\"Mobile app for candidates\\\",\\n              \\\"Single language configuration (40 languages)\\\",\\n              \\\"Basic reporting and analytics\\\",\\n              \\\"24/7 candidate support in 230 languages\\\",\\n              \\\"Standard ATS/HRIS/calendar integrations\\\",\\n              \\\"SSO, SOC 2, GDPR compliance, FedRAMP certified\\\"\\n            ]\\n          },\\n          {\\n            \\\"name\\\": \\\"Enterprise\\\",\\n            \\\"price_annual_usd\\\": 0,\\n            \\\"target\\\": \\\"Large enterprises (7,500+ employees)\\\",\\n            \\\"features\\\": [\\n              \\\"All Essentials features\\\",\\n              \\\"AI-powered video assessments and scoring\\\",\\n              \\\"Pre-built interview templates and questions\\\",\\n              \\\"Scheduling, interview guides, chatbot, text-to-apply\\\",\\n              \\\"Advanced candidate analytics and benchmark analytics\\\",\\n              \\\"Multi-language configuration (up to 40 languages)\\\",\\n              \\\"Automated workflow orchestration\\\",\\n              \\\"Pre-built ATS integrations\\\",\\n              \\\"Role-based, game-based, audio-only, and coding assessments\\\",\\n              \\\"Adverse impact testing and IO validated content\\\",\\n              \\\"Job analysis and candidate feedback report\\\",\\n              \\\"Dedicated customer success manager\\\",\\n              \\\"GovCloud support\\\"\\n            ]\\n          }\\n        ]\\n      },\\n      \\\"funding_stage\\\": \\\"Private Equity\\\",\\n      \\\"funding_total_usd\\\": 93000000,\\n      \\\"funding_rounds\\\": [\\n        {\\\"round\\\": \\\"Series B\\\", \\\"date\\\": \\\"2010-07-01\\\", \\\"amount_usd\\\": 5000000, \\\"lead\\\": \\\"Granite Ventures\\\"},\\n        {\\\"round\\\": \\\"Series C\\\", \\\"date\\\": \\\"2012-08-30\\\", \\\"amount_usd\\\": 22000000, \\\"lead\\\": \\\"Granite Ventures\\\"},\\n        {\\\"round\\\": \\\"Series D\\\", \\\"date\\\": \\\"2013-10-02\\\", \\\"amount_usd\\\": 25000000, \\\"lead\\\": \\\"Sequoia Capital\\\"},\\n        {\\\"round\\\": \\\"Series E\\\", \\\"date\\\": \\\"2015-06-02\\\", \\\"amount_usd\\\": 45000000, \\\"lead\\\": \\\"TCV\\\"}\\n      ],\\n      \\\"notable_investors\\\": [\\n        {\\\"name\\\": \\\"TCV\\\", \\\"domain\\\": \\\"tcv.com\\\"},\\n        {\\\"name\\\": \\\"Sequoia Capital\\\", \\\"domain\\\": \\\"sequoiacap.com\\\"},\\n        {\\\"name\\\": \\\"Granite Ventures\\\", \\\"domain\\\": \\\"graniteventures.com\\\"},\\n        {\\\"name\\\": \\\"Peterson Partners\\\", \\\"domain\\\": \\\"petersonpartners.com\\\"},\\n        {\\\"name\\\": \\\"The Carlyle Group\\\", \\\"domain\\\": \\\"carlyle.com\\\"}\\n      ],\\n      \\\"acquisition\\\": {\\n        \\\"acquired\\\": true,\\n        \\\"acquirer\\\": \\\"The Carlyle Group\\\",\\n        \\\"year\\\": 2019,\\n        \\\"source_url\\\": \\\"https://www.carlyle.com/media-room/news-release-archive/hirevue-receive-growth-investment-new-majority-investor-carlyle\\\"\\n      },\\n      \\\"arr_usd\\\": 89000000,\\n      \\\"customer_count\\\": 1150,\\n      \\\"key_people\\\": [\\n        {\\n          \\\"name\\\": \\\"Jeremy Friedman\\\",\\n          \\\"current_role\\\": \\\"Chief Executive Officer\\\",\\n          \\\"linkedin_url\\\": \\\"linkedin.com/in/jnfriedman\\\",\\n          \\\"background\\\": \\\"CEO at HireVue since January 2024; previously Founder & CEO of Schoology (acquired by PowerSchool), SVP at PowerSchool; BA in Economics and Computer Science from Washington University in St. Louis.\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"Walker Ellis\\\",\\n          \\\"current_role\\\": \\\"Chief Revenue Officer\\\",\\n          \\\"background\\\": \\\"CRO at HireVue since December 2023; brings over two decades of revenue leadership experience in enterprise SaaS.\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"Smitha Venugopal\\\",\\n          \\\"current_role\\\": \\\"Chief Financial Officer\\\",\\n          \\\"background\\\": \\\"CFO at HireVue since November 2024; appointed to lead the company's financial operations and strategy.\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"Alberto Silveira\\\",\\n          \\\"current_role\\\": \\\"Chief Technology Officer\\\",\\n          \\\"linkedin_url\\\": \\\"linkedin.com/in/asilveira\\\",\\n          \\\"background\\\": \\\"CTO at HireVue since July 2024; extensive technology leadership across 15+ prior roles; author, mentor, and speaker on AI and engineering leadership.\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"Sibyl McCarley\\\",\\n          \\\"current_role\\\": \\\"Chief People Officer\\\",\\n          \\\"linkedin_url\\\": \\\"linkedin.com/in/sibyl-mccarley-7161543\\\",\\n          \\\"background\\\": \\\"Chief People Officer at HireVue since August 2024; previously VP of People & Engagement at HireVue; BA from Marquette University.\\\"\\n        }\\n      ],\\n      \\\"notable_customers\\\": [\\n        {\\n          \\\"name\\\": \\\"Mitsubishi UFJ Trust and Banking\\\",\\n          \\\"domain\\\": \\\"mufg.jp\\\",\\n          \\\"segment\\\": \\\"Grand compte\\\",\\n          \\\"industry\\\": \\\"Banking\\\",\\n          \\\"evidence\\\": \\\"Case study at hirevue.com/case-studies\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"IKEA\\\",\\n          \\\"domain\\\": \\\"ikea.com\\\",\\n          \\\"segment\\\": \\\"Grand compte\\\",\\n          \\\"industry\\\": \\\"Retail\\\",\\n          \\\"evidence\\\": \\\"Case study at hirevue.com/case-studies\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"Emirates NBD\\\",\\n          \\\"domain\\\": \\\"emiratesnbd.com\\\",\\n          \\\"segment\\\": \\\"Grand compte\\\",\\n          \\\"industry\\\": \\\"Banking\\\",\\n          \\\"evidence\\\": \\\"Case study at hirevue.com/case-studies\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"Swire Coca-Cola\\\",\\n          \\\"domain\\\": \\\"swirecc.com\\\",\\n          \\\"segment\\\": \\\"Grand compte\\\",\\n          \\\"industry\\\": \\\"Beverage/FMCG\\\",\\n          \\\"evidence\\\": \\\"Case study at hirevue.com/case-studies\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"Georgia Institute of Technology\\\",\\n          \\\"domain\\\": \\\"gatech.edu\\\",\\n          \\\"segment\\\": \\\"Grand compte\\\",\\n          \\\"industry\\\": \\\"Education\\\",\\n          \\\"evidence\\\": \\\"Case study at hirevue.com/case-studies\\\"\\n        },\\n        {\\n          \\\"name\\\": \\\"Philips\\\",\\n          \\\"domain\\\": \\\"philips.com\\\",\\n          \\\"segment\\\": \\\"Grand compte\\\",\\n          \\\"industry\\\": \\\"Healthcare Technology\\\",\\n          \\\"evidence\\\": \\\"Case study at hirevue.com/case-studies\\\"\\n        }\\n      ],\\n      \\\"recent_news\\\": [\\n        {\\n          \\\"date\\\": \\\"2026-03-10\\\",\\n          \\\"headline\\\": \\\"HireVue Acquires Hireguide Technology to Accelerate Agentic AI Hiring\\\",\\n          \\\"source_url\\\": \\\"https://www.hirevue.com/press-release/hirevue-acquires-hireguide-technology-to-accelerate-agentic-ai-hiring\\\"\\n        },\\n        {\\n          \\\"date\\\": \\\"2026-02-19\\\",\\n          \\\"headline\\\": \\\"HireVue Launches Assessment Builder to Scale Validated Skills Hiring Across Enterprises\\\",\\n          \\\"source_url\\\": \\\"https://finance.yahoo.com/news/hirevue-launches-assessment-builder-scale-151800948.html\\\"\\n        },\\n        {\\n          \\\"date\\\": \\\"2025-10-08\\\",\\n          \\\"headline\\\": \\\"HireVue Announces Interview Insights, Expanding Its Innovation in Skill Validation\\\",\\n          \\\"source_url\\\": \\\"https://www.techdogs.com/tech-news/globe-newswire/hirevue-announces-interview-insights-expanding-its-innovation-in-skill-validation\\\"\\n        }\\n      ],\\n      \\\"growth_signals\\\": [\\n        \\\"HireVue surpassed 80M global interviews, up from 70M in earlier reporting.\\\",\\n        \\\"Launched Assessment Builder in February 2026 enabling organizations to create scientifically validated, role-specific hiring assessments in minutes.\\\",\\n        \\\"Acquired Hireguide Technology in March 2026 to accelerate agentic AI strategy with a voice-based AI Interviewer.\\\",\\n        \\\"Reported $89M ARR in 2024, up from $32.1M in 2021, representing approximately 177% growth over three years.\\\",\\n        \\\"Serving over 1,150 customers globally including over 60% of the Fortune 100.\\\"\\n      ],\\n      \\\"weaknesses\\\": [\\n        \\\"Technical instability: users report constant outages, audio issues, and video glitches during interviews.\\\",\\n        \\\"Lack of practice mode: candidates cannot practice or use the platform without an interview invitation, creating access barriers.\\\",\\n        \\\"Scheduling and functional limitations: inability to request candidates to reschedule, no break options for admins, and integration issues with tools like Webex.\\\"\\n      ]\\n    }\\n  ]\\n}\\n```\\n\\n**Sources consulted:** HireVue official website (hirevue.com/about, hirevue.com/pricing, hirevue.com/press-release), LinkedIn company page (linkedin.com/company/hirevue), LinkedIn individual profiles (Jeremy Friedman, Alberto Silveira, Sibyl McCarley), Crunchbase (crunchbase.com/organization/hirevue), G2 (g2.com/products/hirevue), PitchBook, Carlyle Group press release, Hunt Scanlon Media, Seedtable, Tracxn, CostBench, Latka (getlatka.com/companies/hirevue), Wikipedia (en.wikipedia.org/wiki/HireVue), Yahoo Finance, TechDogs/GlobeNewswire, EIN Presswire, Apps Run The World, CheckThat.ai, SaaSworthy.\\n\\n**Notes on omitted fields:** employee_growth_yoy omitted (no reliable prior-year LinkedIn headcount for comparable calculation); avg_contract_usd omitted (Latka reports $3.6K ACV but this conflicts with the $35K+ starting price and $89M ARR / 1,150 customers implying ~$77K average); Carlyle Group acquisition amount_usd omitted (not publicly disclosed); Walker Ellis and Smitha Venugopal LinkedIn URLs omitted (not found in public sources); only 3 recent press items found within the 12-month window rather than the requested 5; price_monthly_usd omitted from tiers (not disclosed by HireVue).\\n\\n## References\\n\\n1. *HireVue 2026 Company Profile: Valuation, Funding & Investors*. http://pitchbook.com/profiles/company/47555-65\\n2. *HireVue Secures $22 Million in Funding - Hunt Scanlon Media*. https://huntscanlon.com/hirevue-secures-22-million-in-funding\\n3. *HireVue Secures $45 Million in Funding to Fuel Team Acceleration ...*. http://prnewswire.com/news-releases/hirevue-secures-45-million-in-funding-to-fuel-team-acceleration-software-300091454.html\\n4. *TCV, Granite Ventures, Sequoia Capital launch sale of ...*. http://buyoutsinsider.com/tcv-granite-ventures-sequoia-capital-launch-sale-of-hirevue\\n5. *HireVue - Crunchbase Company Profile & Funding*. https://www.crunchbase.com/organization/hirevue\\n6. *Hirevue LinkedIn Profile*. http://linkedin.com/company/hirevue\\n7. *Modern Hire - Crunchbase Company Profile & Funding*. https://www.crunchbase.com/organization/modern-hire\\n8. *About the Company Hirevue*. http://hirevue.com/about\\n9. *Contact us | Hirevue*. http://hirevue.com/contact\\n10. *HireVue | UNLEASH*. http://unleash.ai/companies/hirevue\\n11. *Theresa Decker's Post - LinkedIn*. http://linkedin.com/posts/theresadecker_happy-to-share-that-ive-just-wrapped-my-activity-7296354815754817536-C8XW\\n12. *Theresa Decker*. http://linkedin.com/in/theresadecker\\n13. *HireVue Org Chart + Executive Team - The Official Board*. https://www.theofficialboard.com/org-chart/hirevue\\n14. *AI is redefining senior leadership, executive, C-suite, and board ...*. https://www.facebook.com/HBR/posts/ai-is-redefining-senior-leadership-executive-c-suite-and-board-roles-just-as-pro/1363078949020629\\n15. *Metro employers using artificial intelligence to screen applicants in hiring process | FOX 4 Kansas City WDAF-TV | News, Weather, Sports*. http://fox4kc.com/news/metro-employers-using-artificial-intelligence-to-screen-applicants-in-hiring-process\\n16. *Hirevue Acquires Hireguide Technology to Accelerate Agentic AI Hiring | Hirevue*. http://hirevue.com/press-release/hirevue-acquires-hireguide-technology-to-accelerate-agentic-ai-hiring\\n17. *News & Media | Hirevue*. http://hirevue.com/press-release\\n18. *Services | Hirevue*. https://www.hirevue.com/solutions/services\\n19. *HireVue Acquires Modern Hire - Harris Williams*. https://www.harriswilliams.com/transactions/hirevue-acquires-modern-hire\\n20. *Case Studies | Hirevue*. https://www.hirevue.com/case-studies/case-studies\\n21. *Case Studies*. https://www.hirevue.com/case-studies\\n22. *HireVue Logo - Download PNG, SVG & Brand Assets*. https://toolradar.com/logo/hirevue\\n23. *List of HireVue Customers*. https://www.appsruntheworld.com/customers-database/vendors/view/hirevue\\n24. *192 Hirevue Customer Reviews & References | FeaturedCustomers*. https://www.featuredcustomers.com/vendor/hirevue\\n25. *HireVue Pros and Cons | User Likes & Dislikes - G2*. https://www.g2.com/products/hirevue/reviews?qs=pros-and-cons\\n26. *HireVue Review (2026): Features, Pricing, and Who It's Best For*. http://willo.video/blog/hirevue-review\\n27. *I hate HireVue. : r/recruitinghell - Reddit*. https://www.reddit.com/r/recruitinghell/comments/pmgptn/i_hate_hirevue\\n28. *Anyone have experience with HireVue interviews? Good ... - Reddit*. https://www.reddit.com/r/jobs/comments/auna5z/anyone_have_experience_with_hirevue_interviews/\\n29. *Hirevue | AI-Powered Skill Validation, Video Interviewing, Assessments and More*. http://hirevue.com/\\n30. *Pricing | Hirevue*. https://www.hirevue.com/pricing\\n31. *HireVue Pricing 2026*. https://www.g2.com/products/hirevue/pricing\\n32. *HireVue Pricing: Cost and Pricing plans - SaaSworthy*. http://saasworthy.com/product/hirevue/pricing\\n33. *About the Company Hirevue*. https://www.hirevue.com/about\\n34. *Fetched web page*. https://www.linkedin.com/company/hirevue\\n35. *News & Media | Hirevue*. https://www.hirevue.com/press-release\\n36. *HireVue: Employee Directory | ZoomInfo.com*. https://www.zoominfo.com/pic/hirevue-inc/67175947\\n37. *Headcount Reports and Balancing Internal Net Movements*. https://www.onemodel.co/blog/people-analytics-reporting-balancing-headcount-and-internal-net-movements\\n38. *HireVue - 2026 Company Profile & Team - Tracxn*. https://tracxn.com/d/companies/hirevue/__PeMrputcdA2VOkFKx0ff0NX85_cSCaYi7B2wCL8qA6Y\\n39. *HireVue*. http://en.wikipedia.org/wiki/HireVue\\n40. *Jeremy Friedman Appointed as Hirevue CEO to Lead Next ...*. http://hirevue.com/press-release/jeremy-friedman-appointed-as-hirevue-ceo-to-lead-next-phase-of-growth\\n41. *HireVue Acquires Modern Hire - Harris Williams*. http://harriswilliams.com/transactions/hirevue-acquires-modern-hire\\n42. *HireVue to Receive Growth Investment from New ... - Carlyle*. https://www.carlyle.com/media-room/news-release-archive/hirevue-receive-growth-investment-new-majority-investor-carlyle\\n43. *Carlyle-backed HireVue buys VC-funded AllyO for $50m to ...*. http://pehub.com/carlyle-backed-hirevue-buys-vc-funded-allyo-for-50m-to-100m\\n44. *HireVue Announces Close of Transaction with The Carlyle Group*. https://www.pressreleasepoint.com/hirevue-announces-close-transaction-carlyle-group?lang=en\\n45. *The Carlyle Group Closes Majority Investment in HireVue*. https://cooleyma.com/deals/the-carlyle-group-closes-majority-investment-in-hirevue\\n46. *Hirevue Acquires Hireguide Technology to Accelerate Agentic ...*. https://finance.yahoo.com/news/hirevue-acquires-hireguide-technology-accelerate-111900250.html?fr=sycsrp_catchall\\n47. *Hirevue Acquires Hireguide Technology to Accelerate Agentic ...*. https://pr.capitalpress.com/article/Hirevue-Acquires-Hireguide-Technology-to-Accelerate-Agentic-AI-Hiring?storyId=69afff3990f5a98f8db7a2f3\\n48. *Hirevue acquires Hireguide - Staffing Industry Analysts*. https://www.staffingindustry.com/news/global-daily-news/hirevue-acquires-hireguide\\n49. *HireVue Revenue 2024: $89M ARR, $150M Valuation - LATKA*. https://getlatka.com/companies/hirevue\\n50. *HireVue: Revenue, Competitors, Alternatives*. https://growjo.com/company/HireVue\\n51. *Darin Bloomquist - Vice President Customer Success ...*. http://linkedin.com/in/darinbloomquist\\n52. *Companies using HireVue in 2026 | Landbase*. https://data.landbase.com/technology/hirevue/\\n53. *Hirevue hiring Director, Strategic Programs & Customer Engagement*. https://www.linkedin.com/jobs/view/director-strategic-programs-customer-engagement-fully-remote-us-at-hirevue-4419470042\\n54. *Jeremy Friedman - CEO at Hirevue | LinkedIn*. https://www.linkedin.com/in/jnfriedman\\n55. *Hirevue | LinkedIn*. http://www.linkedin.com/company/hirevue\\n56. *Amanda Hahn - HireVue | LinkedIn*. http://linkedin.com/in/amandajhahn\\n57. *Product Documentation*. https://legal.hirevue.com/legal-center/product-documentation\\n58. *Hirevue Announces Interview Insights, Expanding Its Innovation In ...*. https://www.techdogs.com/tech-news/globe-newswire/hirevue-announces-interview-insights-expanding-its-innovation-in-skill-validation\\n59. *Press Releases*. https://www.employinc.com/company/press-releases\\n60. *Jeremy Friedman Appointed as Hirevue CEO to Lead Next Phase of Growth | Hirevue*. https://www.hirevue.com/press-release/jeremy-friedman-appointed-as-hirevue-ceo-to-lead-next-phase-of-growth\\n61. *HireVue Pricing & Features Comparison with iMocha*. https://blog.imocha.io/hirevue-pricing-comparison\\n62. *HireVue Pricing 2026: 3 Plans from $35,000\\u2013$175,000/year*. http://costbench.com/software/ai-recruiting/hirevue\\n63. *HireVue Pricing 2026: Video Interview Platform Costs - Pin*. https://www.pin.com/blog/hirevue-pricing\\n64. *HireVue Pricing 2026: What You'll Actually Pay*. https://leonstaff.com/blogs/hirevue-pricing-cost\\n65. *HireVue*. https://platform.tracxn.com/a/d/company/5319ce3ae4b0f7e166010e42/hirevue?utm_source=parallel&utm_medium=ai#a:about\\n66. *Companies using HireVue in 2026 - GTM Intelligence | Landbase*. https://data.landbase.com/technology/hirevue\\n67. *Kelly Carpenter - VP Brand And Customer Marketing at HireVue*. http://theorg.com/org/hirevue/org-chart/kelly-carpenter\\n68. *HireVue Review: What 70M AI Interviews Show | The Screening Room*. https://thescreeningroom.co/posts/hirevue-has-run-70-million-ai-interviews-heres-what-the-data-actually-shows\\n69. *Luolai*. https://platform.tracxn.com/a/d/company/531a2f42e4b0f7e16609c515/luolai?utm_source=parallel&utm_medium=ai#a:about\\n70. *Carlyle Group Takes Majority Stake in HireVue - Hunt Scanlon Media*. https://huntscanlon.com/carlyle-group-takes-majority-stake-in-hirevue\\n71. *Derive Logic*. https://platform.tracxn.com/a/d/company/531954e3e4b0f7e165f65e7e/derive%20logic?utm_source=parallel&utm_medium=ai#a:about\\n72. *AI-Powered Candidate Assessment Software & Tools - Hirevue*. https://www.hirevue.com/platform/assessment-software\\n73. *Hirevue Launches Assessment Builder to Scale Validated Skills ...*. https://finance.yahoo.com/news/hirevue-launches-assessment-builder-scale-151800948.html\\n74. *Assessment Builder | Hirevue*. https://www.hirevue.com/platform/assessment-builder\\n75. *Hirevue Launches Assessment Builder with Proven ...*. http://linkedin.com/posts/mikehudy_exciting-day-here-at-hirevue-as-we-announce-activity-7430373581630484481-0X8o\\n76. *Hirevue Launches AI-Powered Assessment Builder*. https://hrtechnologyinsights.com/news/hirevue-assessment-builder-skills-hiring\\n77. *What is Series A Funding? How to Raise a Series A Round*. https://carta.com/learn/startups/fundraising/series-a\\n78. *HireVue, Inc. - Company Profile & Funding Data | Raising.fi*. https://raising.fi/company/hirevue\\n79. *HireVue - 2026 Company Profile, Team, Funding & Competitors*. http://tracxn.com/d/companies/hirevue/__PeMrputcdA2VOkFKx0ff0NX85_cSCaYi7B2wCL8qA6Y\\n80. *HireVue Company Information - Funding, Investors, and More*. https://www.seedtable.com/startups/HireVue-ZXEVBXE\\n81. *Fetched web page*. https://www.linkedin.com/in/samirgulati\\n82. *Fetched web page*. https://platform.tracxn.com/a/d/company/5319ce3ae4b0f7e166010e42/hirevue?utm_source=parallel&utm_medium=ai\\n83. *Alberto Silveira - HireVue | LinkedIn*. https://www.linkedin.com/in/asilveira\\n84. *Hirevue appoints tech stalwarts Alberto Silveira and Marcy Daniel to ...*. http://hirevue.com/press-release/hirevue-appoints-tech-stalwarts-alberto-silveira-and-marcy-daniel-to-drive-next-stage-growth-and-innovation-at-hirevue\\n85. *HireVue Appoints Tech Stalwarts Alberto Silveira and Marcy ...*. https://www.saltlakesentinel.com/article/728605088-hirevue-appoints-tech-stalwarts-alberto-silveira-and-marcy-daniel-to-drive-next-stage-growth-and-innovation-at-hirevue\\n86. *Alberto Silveira's Post - LinkedIn*. https://www.linkedin.com/posts/asilveira_have-you-talked-about-ai-today-already-activity-7422686624993447936-vP2u\\n87. *CTO Solves Old Problems with New Perspectives with QA Wolf Partner*. http://linkedin.com/posts/asilveira_being-a-cto-requires-solving-old-problems-activity-7447466527894900739--3Z3\\n88. *http://hirevue.com/press-release/page/3*. http://hirevue.com/press-release/page/3\\n89. *HireVue Appoints Smitha Venugopal as Chief Financial Officer*. https://www.globalcareerfinder.com/article/761952833-hirevue-appoints-smitha-venugopal-as-chief-financial-officer\\n90. *Sibyl McCarley - Hirevue | LinkedIn*. http://linkedin.com/in/sibyl-mccarley-7161543\\n91. *HireVue Appoints Smitha Venugopal as Chief Financial Officer*. https://globalfintechseries.com/fintech/hirevue-appoints-smitha-venugopal-as-chief-financial-officer\\n92. *Ambrela*. https://platform.tracxn.com/a/d/company/626eedad1f54fe467ad31222/ambrela?utm_source=parallel&utm_medium=ai#a:about\\n93. *HireVue: Details, Reviews, Pricing, & Features | CheckThat.ai*. https://checkthat.ai/brands/hirevue\\n94. *HireVue Review 2026: Features, Pricing & Alternatives*. https://hirevire.com/blog/hirevue-review-features-pricing-better-alternatives\\n95. *Sibyl McCarley - Executive Bio, Work History, and Contacts - Equilar ExecAtlas*. http://people.equilar.com/bio/person/sibyl-mccarley-hirevue/48947051\\n96. *HireVue Company Profile | Management and Employees List*. http://datanyze.com/companies/hirevue/67175947\\n97. *Sibyl McCarley - Hirevue - LinkedIn*. https://www.linkedin.com/in/sibyl-mccarley-7161543\\n98. *Sibyl McCarley - Profile and Biography*. http://ceoworld.biz/author/sibyl-mccarley\\n99. *Sibyl McCarley - Chief People Officer at HireVue - The Org*. https://theorg.com/org/hirevue/org-chart/sibyl-mccarley\\n100. *HireVue appoints Walker Ellis as Chief Revenue Officer*. https://www.einpresswire.com/article/672770503/hirevue-appoints-walker-ellis-as-chief-revenue-officer\\n101. *Anthony Reynolds (@AReynolds5796) / Posts / X - Twitter*. https://x.com/areynolds5796\\n102. *HireVue appoints Walker Ellis as Chief Revenue Officer | Matthew Fine*. https://www.linkedin.com/posts/matthew-fine-51a50032_hirevue-appoints-walker-ellis-as-chief-revenue-activity-7137505373367717888-HTAA\\n103. *Will Ellis*. https://linkedin.com/in/will-ellis-a9332914\\n104. *Cyril Simonnet*. https://linkedin.com/in/csimonnet\\n105. *EXCLUSIVE: HireVue\\u2019s CMO Amanda Hahn Discusses HireVue\\u2019s ...*. https://1worktech.com/exclusive-hirevues-cmo-amanda-hahn-discusses-hirevues-acquisition-of-modern-hire/\\n106. *Tena Lyons - Vice President, Product Marketing at HireVue*. https://www.zoominfo.com/p/Tena-Lyons/12135400703\\n107. *Amanda Hahn - Chief Marketing Officer at HireVue | The Org*. https://theorg.com/org/hirevue/org-chart/amanda-hahn\\n108. *In a Q&A with @HireVue Interim CMO Amanda Hahn, she explained ...*. https://www.instagram.com/p/CdLw6lCOJQh\\n109. *HireVue appoints new Chief Growth Officer and Chief Marketing ...*. http://businessdailymedia.com/sme-business-news/20887-hirevue-appoints-new-chief-growth-officer-and-chief-marketing-officer\\n\"}",
+  "basis": [
+    {
+      "field": "answer",
+      "citations": [
+        {
+          "title": "HireVue 2026 Company Profile: Valuation, Funding & Investors",
+          "url": "http://pitchbook.com/profiles/company/47555-65",
+          "excerpts": [
+            "How much funding has HireVue raised over time? HireVue has raised $391M."
+          ]
+        },
+        {
+          "title": "HireVue Secures $22 Million in Funding - Hunt Scanlon Media",
+          "url": "https://huntscanlon.com/hirevue-secures-22-million-in-funding",
+          "excerpts": [
+            "HireVue Secures $22 Million in Funding - Hunt Scanlon Media\nAugust 31, 2012 \u2013 Video interviewing provider HireVue has secured $22 million in funding including a $17 million Series C equity round, led by Investor"
+          ]
+        },
+        {
+          "title": "HireVue Secures $45 Million in Funding to Fuel Team Acceleration ...",
+          "url": "http://prnewswire.com/news-releases/hirevue-secures-45-million-in-funding-to-fuel-team-acceleration-software-300091454.html",
+          "excerpts": [
+            "PRNewswire/ -- Team Acceleration software provider HireVue, today announced it has closed $45 million in funding led by Technology Crossover"
+          ]
+        },
+        {
+          "title": "TCV, Granite Ventures, Sequoia Capital launch sale of ...",
+          "url": "http://buyoutsinsider.com/tcv-granite-ventures-sequoia-capital-launch-sale-of-hirevue",
+          "excerpts": [
+            "HireVue has a total of $93 million in VC funding.\nIn 2010, HireVue raised $5 million in a Series B funding round led by Granite Ventures.\nJul 9, 2019 \u2014 HireVue has a total of $93 million in VC funding."
+          ]
+        },
+        {
+          "title": "HireVue - Crunchbase Company Profile & Funding",
+          "url": "https://www.crunchbase.com/organization/hirevue",
+          "excerpts": [
+            "How much funding has HireVue raised to date? HireVue has raised. HireVue's Hiring Intelligence Platform delivers the best talent, faster with video interviews and AI-driven pre-hire assessments."
+          ]
+        },
+        {
+          "title": "Hirevue LinkedIn Profile",
+          "url": "http://linkedin.com/company/hirevue",
+          "excerpts": [
+            "linkedin url: https://www.linkedin.com/company/hirevue\nname: Hirevue\nslug: hirevue\nFrom video interviews to pre-hire assessments, HireVue provides talent acquisition managers and recruiters with transformative hiring solutions."
+          ]
+        },
+        {
+          "title": "Modern Hire - Crunchbase Company Profile & Funding",
+          "url": "https://www.crunchbase.com/organization/modern-hire",
+          "excerpts": [
+            "Modern Hire - Crunchbase Company Profile & Funding\nModern Hire helps customers continually improve hiring across the enterprise through more personalized data. Acquired by. HireVue Logo. HireVue."
+          ]
+        },
+        {
+          "title": "About the Company Hirevue",
+          "url": "http://hirevue.com/about",
+          "excerpts": [
+            "Our solutions transform the way companies engage, screen, assess, interview, and hire talent.\nhirevue.com\nHirevue was founded in 2004 based on the idea that people are more than bullets on a resume. In 2010, we were physically shipping cameras for video interviews.\nAt Hirevue, we know hiring is a life-changing experience for many, so we're committed to helping candidates and workplaces around the world to reach their full potential."
+          ]
+        },
+        {
+          "title": "Contact us | Hirevue",
+          "url": "http://hirevue.com/contact",
+          "excerpts": [
+            "Headquarters. 9800 South Monroe Street, STE 810. Sandy, UT 84070."
+          ]
+        },
+        {
+          "title": "HireVue | UNLEASH",
+          "url": "http://unleash.ai/companies/hirevue",
+          "excerpts": [
+            "Oct 6, 2025 \u2014 HireVue appoints Jeremy Friedman as new CEO. The hiring tech giant is ... Press Release; Product Announcement; Report; Research; Roundtable; Roundtable"
+          ]
+        },
+        {
+          "title": "Theresa Decker's Post - LinkedIn",
+          "url": "http://linkedin.com/posts/theresadecker_happy-to-share-that-ive-just-wrapped-my-activity-7296354815754817536-C8XW",
+          "excerpts": [
+            "Happy to share that I've just wrapped my first week in a new role as Senior Director of User Experience at HireVue."
+          ]
+        },
+        {
+          "title": "Theresa Decker",
+          "url": "http://linkedin.com/in/theresadecker",
+          "excerpts": [
+            "Theresa Decker. People & Product Leadership. HireVue Temple University. Philadelphia, Pennsylvania, United States."
+          ]
+        },
+        {
+          "title": "HireVue Org Chart + Executive Team - The Official Board",
+          "url": "https://www.theofficialboard.com/org-chart/hirevue",
+          "excerpts": [
+            "See the executive team of HireVue and its org chart, featuring 17 leaders like Jeremy Friedman, Smitha Venugopal, Samir Gulati and Robert Hanley"
+          ]
+        },
+        {
+          "title": "AI is redefining senior leadership, executive, C-suite, and board ...",
+          "url": "https://www.facebook.com/HBR/posts/ai-is-redefining-senior-leadership-executive-c-suite-and-board-roles-just-as-pro/1363078949020629",
+          "excerpts": [
+            "AI is redefining senior leadership, executive, C-suite, and board ...\nThe company implemented an AI-powered recruitment platform called HireVue to streamline its hiring process and improve candidate selection, resulting in"
+          ]
+        },
+        {
+          "title": "Metro employers using artificial intelligence to screen applicants in hiring process | FOX 4 Kansas City WDAF-TV | News, Weather, Sports",
+          "url": "http://fox4kc.com/news/metro-employers-using-artificial-intelligence-to-screen-applicants-in-hiring-process",
+          "excerpts": [
+            "said Diana Kucer, the chief marketing officer for HireVue."
+          ]
+        },
+        {
+          "title": "Hirevue Acquires Hireguide Technology to Accelerate Agentic AI Hiring | Hirevue",
+          "url": "http://hirevue.com/press-release/hirevue-acquires-hireguide-technology-to-accelerate-agentic-ai-hiring",
+          "excerpts": [
+            "_Strategic acquisition strengthens Hirevue's Agentic AI strategy, starting with a voice-based AI Interviewer that reveals qualified talent earlier.\nSALT LAKE CITY, March 10th, 2026** \u2014 Hirevue, the global leader in skills-based hiring, today announced it has acquired the technology behind Hireguide\nStrategic acquisition strengthens Hirevue's Agentic AI strategy, starting with a voice-based AI Interviewer that reveals qualified talent earlier.\nMar 10, 2026 \u2014 Strategic acquisition strengthens Hirevue's Agentic AI strategy, starting with a voice-based AI Interviewer that reveals qualified talent earlier.\nSALT LAKE CITY, March 10th, 2026** \u2014 Hirevue, the global leader in skills-based hiring, today announced it has acquired the technology behind Hireguide, a pioneer in agentic AI for hiring."
+          ]
+        },
+        {
+          "title": "News & Media | Hirevue",
+          "url": "http://hirevue.com/press-release",
+          "excerpts": [
+            "Hirevue Acquires Hireguide Technology to Accelerate Agentic AI Hiring\nHirevue Launches Assessment Builder to Scale Validated Skills Hiring Across Enterprises"
+          ]
+        },
+        {
+          "title": "Services | Hirevue",
+          "url": "https://www.hirevue.com/solutions/services",
+          "excerpts": []
+        },
+        {
+          "title": "HireVue Acquires Modern Hire - Harris Williams",
+          "url": "https://www.harriswilliams.com/transactions/hirevue-acquires-modern-hire",
+          "excerpts": [
+            "HireVue Acquires Modern Hire - Harris Williams\nHarris Williams advised HireVue, a portfolio company of The Carlyle Group, on its acquisition of Modern Hire, a portfolio company of The Riverside Company."
+          ]
+        },
+        {
+          "title": "Case Studies | Hirevue",
+          "url": "https://www.hirevue.com/case-studies/case-studies",
+          "excerpts": [
+            "Case Studies | Hirevue\nGet access to case studies and hear how different companies have enhances their hiring process with the use of Hirevue 's software and tools."
+          ]
+        },
+        {
+          "title": "Case Studies",
+          "url": "https://www.hirevue.com/case-studies",
+          "excerpts": [
+            "Case Studies\nGet access to case studies and hear how different companies have enhances their hiring process with the use of Hirevue 's software and tools."
+          ]
+        },
+        {
+          "title": "HireVue Logo - Download PNG, SVG & Brand Assets",
+          "url": "https://toolradar.com/logo/hirevue",
+          "excerpts": [
+            "HireVue Logo - Download PNG, SVG & Brand Assets\nDownload the HireVue logo in PNG (256px, 512px, 1024px), JPG, and WebP. Official brand assets for recruiting use cases. High-resolution and free."
+          ]
+        },
+        {
+          "title": "List of HireVue Customers",
+          "url": "https://www.appsruntheworld.com/customers-database/vendors/view/hirevue",
+          "excerpts": [
+            "List of HireVue Customers\nList of companies using or evaluating HireVue applications, with details on their revenues, employees, industries, and locations."
+          ]
+        },
+        {
+          "title": "192 Hirevue Customer Reviews & References | FeaturedCustomers",
+          "url": "https://www.featuredcustomers.com/vendor/hirevue",
+          "excerpts": [
+            "Read use cases, approaches & end results from real customers, including 74 testimonials & reviews, 60 videos, customer stories, & Hirevue reviews."
+          ]
+        },
+        {
+          "title": "HireVue Pros and Cons | User Likes & Dislikes - G2",
+          "url": "https://www.g2.com/products/hirevue/reviews?qs=pros-and-cons",
+          "excerpts": [
+            "HireVue Pros and Cons | User Likes & Dislikes - G2\nUsers face challenges with interview management, including audio issues, lack of break options, and video quality concerns. See 4 mentions. See Related User"
+          ]
+        },
+        {
+          "title": "HireVue Review (2026): Features, Pricing, and Who It's Best For",
+          "url": "http://willo.video/blog/hirevue-review",
+          "excerpts": [
+            "According to G2 reviewer data, pricing starts around $35,000 per year for the Essentials package"
+          ]
+        },
+        {
+          "title": "I hate HireVue. : r/recruitinghell - Reddit",
+          "url": "https://www.reddit.com/r/recruitinghell/comments/pmgptn/i_hate_hirevue",
+          "excerpts": [
+            "I hate HireVue. : r/recruitinghell - Reddit\nI hate HireVue. I would just like to know who thought HireVue was a great idea. What exactly about being given a time limit on what to say, 30 seconds to prepare an answer, and no chance to re-record if you mess up, was the best option."
+          ]
+        },
+        {
+          "title": "Anyone have experience with HireVue interviews? Good ... - Reddit",
+          "url": "https://www.reddit.com/r/jobs/comments/auna5z/anyone_have_experience_with_hirevue_interviews/",
+          "excerpts": [
+            "Recently I\u2019ve been reading some horror stories about HireVue interviews. Im nervous about mine so I just wanted to hear everyone\u2019s opinions about it and possibly gauge what kind of questions to expect."
+          ]
+        },
+        {
+          "title": "Hirevue | AI-Powered Skill Validation, Video Interviewing, Assessments and More",
+          "url": "http://hirevue.com/",
+          "excerpts": [
+            "Hirevue's AI-powered platform pinpoints and validates the skills that drive job success."
+          ]
+        },
+        {
+          "title": "Pricing | Hirevue",
+          "url": "https://www.hirevue.com/pricing",
+          "excerpts": [
+            "Pricing | Hirevue\nHirevue\u2019s AI-powered platform automates hiring workflows and improves the candidate experience so you can scale quickly. From the Essential package to the Premium package our platform is built for your specific hiring needs. Need help choosing the right plan for your business?"
+          ]
+        },
+        {
+          "title": "HireVue Pricing 2026",
+          "url": "https://www.g2.com/products/hirevue/pricing",
+          "excerpts": [
+            "HireVue Pricing 2026\nTop-Rated Alternatives ; VidCruiter. 4.8/5. (241) ; Spark Hire. 4.7/5. (687) ; HackerRank Developer Skills Platform. 4.6/5. (540)."
+          ]
+        },
+        {
+          "title": "HireVue Pricing: Cost and Pricing plans - SaaSworthy",
+          "url": "http://saasworthy.com/product/hirevue/pricing",
+          "excerpts": [
+            "Free Trial Not Available\nOffers Custom plan.\nPremium Plans ( Quotation Based )"
+          ]
+        },
+        {
+          "title": "About the Company Hirevue",
+          "url": "https://www.hirevue.com/about",
+          "excerpts": []
+        },
+        {
+          "title": "Fetched web page",
+          "url": "https://www.linkedin.com/company/hirevue",
+          "excerpts": []
+        },
+        {
+          "title": "News & Media | Hirevue",
+          "url": "https://www.hirevue.com/press-release",
+          "excerpts": []
+        },
+        {
+          "title": "HireVue: Employee Directory | ZoomInfo.com",
+          "url": "https://www.zoominfo.com/pic/hirevue-inc/67175947",
+          "excerpts": [
+            "HireVue: Employee Directory | ZoomInfo.com\nHireVue Employee Directory HireVue corporate office is located in 10876 S River Front Pkwy Ste 500, South Jordan, Utah, 84095, United States and has 201-500 employees."
+          ]
+        },
+        {
+          "title": "Headcount Reports and Balancing Internal Net Movements",
+          "url": "https://www.onemodel.co/blog/people-analytics-reporting-balancing-headcount-and-internal-net-movements",
+          "excerpts": [
+            "Headcount Reports and Balancing Internal Net Movements\nUsing the Reconciliation Headcount Metric, makes it possible to look at internal movements and understand how the company's headcount has changed internally"
+          ]
+        },
+        {
+          "title": "HireVue - 2026 Company Profile & Team - Tracxn",
+          "url": "https://tracxn.com/d/companies/hirevue/__PeMrputcdA2VOkFKx0ff0NX85_cSCaYi7B2wCL8qA6Y",
+          "excerpts": [
+            "Explore HireVue's in-depth company profile, including funding details, key investors, leadership, competitors, and acquisitions."
+          ]
+        },
+        {
+          "title": "HireVue",
+          "url": "http://en.wikipedia.org/wiki/HireVue",
+          "excerpts": [
+            "irevue** is an artificial intelligence (AI) and human resources management company headquartered in Sandy, Utah"
+          ]
+        },
+        {
+          "title": "Jeremy Friedman Appointed as Hirevue CEO to Lead Next ...",
+          "url": "http://hirevue.com/press-release/jeremy-friedman-appointed-as-hirevue-ceo-to-lead-next-phase-of-growth",
+          "excerpts": [
+            "HireVue, the pioneer and global leader in Human Potential Intelligence, today announced the appointment of Jeremy Friedman as Chief Executive Officer.\nJan 17, 2024 \u2014 HireVue, the pioneer and global leader in Human Potential Intelligence, today announced the appointment of Jeremy Friedman as Chief Executive Officer."
+          ]
+        },
+        {
+          "title": "HireVue Acquires Modern Hire - Harris Williams",
+          "url": "http://harriswilliams.com/transactions/hirevue-acquires-modern-hire",
+          "excerpts": [
+            "Harris Williams advised HireVue, a portfolio company of The Carlyle Group, on its acquisition of Modern Hire\nHireVue, a portfolio company of The Carlyle Group, on its acquisition of Modern Hire"
+          ]
+        },
+        {
+          "title": "HireVue to Receive Growth Investment from New ... - Carlyle",
+          "url": "https://www.carlyle.com/media-room/news-release-archive/hirevue-receive-growth-investment-new-majority-investor-carlyle",
+          "excerpts": [
+            "SALT LAKE CITY - HireVue, provider of the most comprehensive suite of AI-driven talent assessment and video interviewing solutions, today announced that global investment firm The Carlyle Group (NASDAQ: CG) has signed an agreement to invest in HireVue as its majority investor."
+          ]
+        },
+        {
+          "title": "Carlyle-backed HireVue buys VC-funded AllyO for $50m to ...",
+          "url": "http://pehub.com/carlyle-backed-hirevue-buys-vc-funded-allyo-for-50m-to-100m",
+          "excerpts": [
+            "Carlyle Group acquired a majority interest in HireVue in September 2019."
+          ]
+        },
+        {
+          "title": "HireVue Announces Close of Transaction with The Carlyle Group",
+          "url": "https://www.pressreleasepoint.com/hirevue-announces-close-transaction-carlyle-group?lang=en",
+          "excerpts": [
+            "SALT LAKE CITY - October 15, 2019 - HireVue, provider of the most comprehensive suite of AI-driven talent assessment and video interviewing solutions, today announced the completion of The Carlyle Group\u2019s (NASDAQ: CG) majority investment in HireVue."
+          ]
+        },
+        {
+          "title": "The Carlyle Group Closes Majority Investment in HireVue",
+          "url": "https://cooleyma.com/deals/the-carlyle-group-closes-majority-investment-in-hirevue",
+          "excerpts": [
+            "The Carlyle Group Closes Majority Investment in HireVue\nCooley advised The Carlyle Group on its majority investment in HireVue, provider of a comprehensive suite of AI-driven talent assessment and"
+          ]
+        },
+        {
+          "title": "Hirevue Acquires Hireguide Technology to Accelerate Agentic ...",
+          "url": "https://finance.yahoo.com/news/hirevue-acquires-hireguide-technology-accelerate-111900250.html?fr=sycsrp_catchall",
+          "excerpts": [
+            "Salt Lake City, Utah, March 10, 2026 (GLOBE NEWSWIRE) -- Hirevue, the global leader in skills-based hiring, today announced it has acquired the technology behind Hireguide, a pioneer in agentic AI"
+          ]
+        },
+        {
+          "title": "Hirevue Acquires Hireguide Technology to Accelerate Agentic ...",
+          "url": "https://pr.capitalpress.com/article/Hirevue-Acquires-Hireguide-Technology-to-Accelerate-Agentic-AI-Hiring?storyId=69afff3990f5a98f8db7a2f3",
+          "excerpts": [
+            "Salt Lake City, Utah, March 10, 2026 (GLOBE NEWSWIRE) -- Hirevue, the global leader in skills-based hiring, today announced it has acquired the technology behind Hireguide, a pioneer in"
+          ]
+        },
+        {
+          "title": "Hirevue acquires Hireguide - Staffing Industry Analysts",
+          "url": "https://www.staffingindustry.com/news/global-daily-news/hirevue-acquires-hireguide",
+          "excerpts": [
+            "Hirevue acquires Hireguide - Staffing Industry Analysts\nThe deal closed on March 3; terms of the transaction were not disclosed. Last month, Hirevue also launched an assessment builder that uses AI to analyze job"
+          ]
+        },
+        {
+          "title": "HireVue Revenue 2024: $89M ARR, $150M Valuation - LATKA",
+          "url": "https://getlatka.com/companies/hirevue",
+          "excerpts": [
+            "In 2024, HireVue's revenue reached $89M. The company previously reported $32.1M in 2021. Since its launch in 2004, HireVue has shown consistent revenue growth. HireVue reached a $150M valuation in 2013, set during its Series D round. HireVue has raised $93M in total funding across 5 rounds, most recently a $45M Series E round in 2015."
+          ]
+        },
+        {
+          "title": "HireVue: Revenue, Competitors, Alternatives",
+          "url": "https://growjo.com/company/HireVue",
+          "excerpts": [
+            "HireVue: Revenue, Competitors, Alternatives\nHireVue's estimated annual revenue is currently $71.5M per year.(i) \u00b7 HireVue's estimated revenue per employee is $177,800 \u00b7 HireVue's total funding is $93M."
+          ]
+        },
+        {
+          "title": "Darin Bloomquist - Vice President Customer Success ...",
+          "url": "http://linkedin.com/in/darinbloomquist",
+          "excerpts": [
+            "Vice President Customer Success, North America \u00b7 HireVue"
+          ]
+        },
+        {
+          "title": "Companies using HireVue in 2026 | Landbase",
+          "url": "https://data.landbase.com/technology/hirevue/",
+          "excerpts": [
+            "We have data on 1,051 companies that use HireVue. Our HireVue customers list is available for download and comes enriched with vital company specifics, including industry classification, organizational size, geographical location, funding rounds, and revenue figures, among others."
+          ]
+        },
+        {
+          "title": "Hirevue hiring Director, Strategic Programs & Customer Engagement",
+          "url": "https://www.linkedin.com/jobs/view/director-strategic-programs-customer-engagement-fully-remote-us-at-hirevue-4419470042",
+          "excerpts": [
+            "Hirevue hiring Director, Strategic Programs & Customer Engagement\nWe are looking for a Director, Strategic Programs & Customer Engagement\u2014a senior cross-functional leader and strategic operator responsible for shaping and"
+          ]
+        },
+        {
+          "title": "Jeremy Friedman - CEO at Hirevue | LinkedIn",
+          "url": "https://www.linkedin.com/in/jnfriedman",
+          "excerpts": [
+            "Today, we announced that Hirevue has acquired the technology behind Hireguide to accelerate our agentic AI strategy! We have a big vision for the future of hiring, and this acquisition will"
+          ]
+        },
+        {
+          "title": "Hirevue | LinkedIn",
+          "url": "http://www.linkedin.com/company/hirevue",
+          "excerpts": []
+        },
+        {
+          "title": "Amanda Hahn - HireVue | LinkedIn",
+          "url": "http://linkedin.com/in/amandajhahn",
+          "excerpts": [
+            "Experience: HireVue"
+          ]
+        },
+        {
+          "title": "Product Documentation",
+          "url": "https://legal.hirevue.com/legal-center/product-documentation",
+          "excerpts": []
+        },
+        {
+          "title": "Hirevue Announces Interview Insights, Expanding Its Innovation In ...",
+          "url": "https://www.techdogs.com/tech-news/globe-newswire/hirevue-announces-interview-insights-expanding-its-innovation-in-skill-validation",
+          "excerpts": [
+            "Hirevue Announces Interview Insights, Expanding Its Innovation In ...\nOct 10, 2025 \u00b7 Hirevue launches Interview Insights, using AI to highlight job-related skills in interviews, modernizing hiring for fairness and efficiency."
+          ]
+        },
+        {
+          "title": "Press Releases",
+          "url": "https://www.employinc.com/company/press-releases",
+          "excerpts": [
+            "Press Releases\nOur most recent press releases \u00b7 Employ Inc. Named to the Inc. 5000 Fastest-Growing Private Companies in America List \u00b7 Employ Welcomes New Chief Customer Officer."
+          ]
+        },
+        {
+          "title": "Jeremy Friedman Appointed as Hirevue CEO to Lead Next Phase of Growth | Hirevue",
+          "url": "https://www.hirevue.com/press-release/jeremy-friedman-appointed-as-hirevue-ceo-to-lead-next-phase-of-growth",
+          "excerpts": []
+        },
+        {
+          "title": "HireVue Pricing & Features Comparison with iMocha",
+          "url": "https://blog.imocha.io/hirevue-pricing-comparison",
+          "excerpts": [
+            "HireVue Pricing & Features Comparison with iMocha\nDec 29, 2022 \u2014 The Enterprise Plan offers custom pricing option. The Essential Plan starts at $35000 per year, recommended for 2500 to 7500 employees The"
+          ]
+        },
+        {
+          "title": "HireVue Pricing 2026: 3 Plans from $35,000\u2013$175,000/year",
+          "url": "http://costbench.com/software/ai-recruiting/hirevue",
+          "excerpts": [
+            "Free tier: No free tier available\nHireVue costs $35K to $175K per year as of May 2026, with 3 plans available."
+          ]
+        },
+        {
+          "title": "HireVue Pricing 2026: Video Interview Platform Costs - Pin",
+          "url": "https://www.pin.com/blog/hirevue-pricing",
+          "excerpts": [
+            "HireVue Pricing 2026: Video Interview Platform Costs - Pin\nHireVue pricing starts at approximately $35,000 per year for the Essential plan, with enterprise contracts averaging $49,855 annually and topping out above $145,000 for large organizations, according to Vendr transaction data."
+          ]
+        },
+        {
+          "title": "HireVue Pricing 2026: What You'll Actually Pay",
+          "url": "https://leonstaff.com/blogs/hirevue-pricing-cost",
+          "excerpts": [
+            "HireVue Pricing 2026: What You'll Actually Pay\nApr 5, 2026 \u2014 HireVue's entry-level Essentials tier starts at approximately $35,000 per year. Mid-size enterprise contracts average around $50,000 annually."
+          ]
+        },
+        {
+          "title": "HireVue",
+          "url": "https://platform.tracxn.com/a/d/company/5319ce3ae4b0f7e166010e42/hirevue?utm_source=parallel&utm_medium=ai#a:about",
+          "excerpts": [
+            "Name: HireVue | Detailed Description: Provider of AI-powered platform for skill validation, interviewing, and talent engagement. The platform offers solutions for campus, professional, hourly, technical, and internal mobility hiring. It provides tools for video interviewing, assessments, and workflow automation. The platform integrates with applicant tracking systems and offers features such as automated scheduling and multilingual support. | Short Description: Provider of AI-powered platform for skill validation, interviewing, and talent engagement | Other Taxonomy Tags: [\"Enterprise Applications\",\"SaaS\",\"US Tech\",\"SaaS - US\",\"Enterprise Tech - US\",\"Enterprise Software\",\"Vertical SaaS\",\"HR SaaS\"] | All Locations: United States Utah South Jordan | Special Flags: Tech YES Enterprise YES SaaS YES Software YES | Incubators: Atua Partners Acceleration Program Unknown | All Funding Rounds: Series E 2015-06-02 Investor Growth Capital, Granite Ventures, TCV, Peterson Partners, Rose Park Advis"
+          ]
+        },
+        {
+          "title": "Companies using HireVue in 2026 - GTM Intelligence | Landbase",
+          "url": "https://data.landbase.com/technology/hirevue",
+          "excerpts": [
+            "Companies using HireVue in 2026 - GTM Intelligence | Landbase\nAs of 2026, 1,051 verified companies use HireVue \u2013 2025 Number of Companies using 1,051. Our HireVue customers list is available for download."
+          ]
+        },
+        {
+          "title": "Kelly Carpenter - VP Brand And Customer Marketing at HireVue",
+          "url": "http://theorg.com/org/hirevue/org-chart/kelly-carpenter",
+          "excerpts": [
+            "Kelly currently works at HireVue as the VP Brand and Customer Marketing."
+          ]
+        },
+        {
+          "title": "HireVue Review: What 70M AI Interviews Show | The Screening Room",
+          "url": "https://thescreeningroom.co/posts/hirevue-has-run-70-million-ai-interviews-heres-what-the-data-actually-shows",
+          "excerpts": [
+            "The scale: HireVue has conducted over 70 million AI-powered video interviews across thousands of enterprise clients, making it the largest dataset on AI interviewing in existence."
+          ]
+        },
+        {
+          "title": "Luolai",
+          "url": "https://platform.tracxn.com/a/d/company/531a2f42e4b0f7e16609c515/luolai?utm_source=parallel&utm_medium=ai#a:about",
+          "excerpts": [
+            "Name: Luolai | Investor Names: [\"The Carlyle Group\"] | All Funding Rounds: Unattributed 2019-04-26 The Carlyle Group | Latest Funding Round Name: Unattributed | Latest Funding Round Date: 2019-04-26 | Recent News: PE major Carlyle to acquire 10% in China\u2019s Luolai Lifestyle for $108m https://www.dealstreetasia.com/stories/pe-major-carlyle-to-acquire-10-in-chinas-luolai-lifestyle-for-108m-126363/ 2019-03  | Website Url: https://luolai.com | Founded Year: 1998 | Short Description: Limited information available | Stage: Funding Raised | Funded: Yes | All Funding Rounds: [{\"round_investor_names\":\"The Carlyle Group\",\"round_name\":\"Unattributed\",\"round_date\":\"2019-04-26\"}] | Investor Types: [\"Institutional Investor\"] | Linkedin Url: https://linkedin.com/company/%E7%BD%97%E8%8E%B1%E7%94%9F%E6%B4%BB%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8 | Recent News: [{\"title\":\"PE major Carlyle to acquire 10% in China\u2019s Luolai Lifestyle for $108m\",\"url\":\"https://www.dealstreeta"
+          ]
+        },
+        {
+          "title": "Carlyle Group Takes Majority Stake in HireVue - Hunt Scanlon Media",
+          "url": "https://huntscanlon.com/carlyle-group-takes-majority-stake-in-hirevue",
+          "excerpts": [
+            "Carlyle Group Takes Majority Stake in HireVue - Hunt Scanlon Media\nSep 13, 2019 \u00b7 global investment firm Carlyle Group has signed an agreement to invest in HireVue as its majority investor. an $18.5 billion fund."
+          ]
+        },
+        {
+          "title": "Derive Logic",
+          "url": "https://platform.tracxn.com/a/d/company/531954e3e4b0f7e165f65e7e/derive%20logic?utm_source=parallel&utm_medium=ai#a:about",
+          "excerpts": [
+            "Name: Derive Logic | Investor Names: [\"The Carlyle Group\"] | All Funding Rounds: Series A 2019-04-04 The Carlyle Group | Latest Funding Round Name: Series A | Latest Funding Round Date: 2019-04-04 | All Locations: United Kingdom England Cirencester | Recent News: Investment Firm Backs It Specialist https://www.insidermedia.com/insider/southwest/investment-firm-backs-it-specialist 2019-04  | Website Url: http://derive-logic.com | Founded Year: 2011 | Short Description: Provides cloud and managed services | Stage: Series A | Funded: Yes | Location Country: United Kingdom | Location State: England | Location City: Cirencester | All Locations: [{\"country\":\"United Kingdom\",\"city\":\"Cirencester\",\"state\":\"England\"}] | Countries Count: 1 | Primary Sector: Business Services | Primary Subsector: IT Services | Geo Served: [\"United Kingdom\"] | Employee Count Official: 30 | All Funding Rounds: [{\"round_investor_names\":\"The Carlyle Group\",\"round_name\":\"Series A\",\"round_date\":\"2019-04-04\"}]"
+          ]
+        },
+        {
+          "title": "AI-Powered Candidate Assessment Software & Tools - Hirevue",
+          "url": "https://www.hirevue.com/platform/assessment-software",
+          "excerpts": [
+            "AI-Powered Candidate Assessment Software & Tools - Hirevue\nStreamline hiring with AI-driven candidate assessment software. Evaluate skills, verify talent & make data-backed hiring decisions with Hirevue's platform."
+          ]
+        },
+        {
+          "title": "Hirevue Launches Assessment Builder to Scale Validated Skills ...",
+          "url": "https://finance.yahoo.com/news/hirevue-launches-assessment-builder-scale-151800948.html",
+          "excerpts": [
+            "Hirevue Launches Assessment Builder to Scale Validated Skills ...\n19, 2026 (GLOBE NEWSWIRE) -- Hirevue, the global leader in skills-based hiring, announced the launch of Assessment Builder, a breakthrough"
+          ]
+        },
+        {
+          "title": "Assessment Builder | Hirevue",
+          "url": "https://www.hirevue.com/platform/assessment-builder",
+          "excerpts": [
+            "Assessment Builder | Hirevue\nCreate role-specific, scientifically validated assessments in minutes. Assessment Builder brings PhD-level expertise to every hiring decision, empowering your"
+          ]
+        },
+        {
+          "title": "Hirevue Launches Assessment Builder with Proven ...",
+          "url": "http://linkedin.com/posts/mikehudy_exciting-day-here-at-hirevue-as-we-announce-activity-7430373581630484481-0X8o",
+          "excerpts": [
+            "Exciting day here at Hirevue as we announce the launch of Assessment Builder. Built upon the bedrock of 20 years of best practice and hundreds of validation"
+          ]
+        },
+        {
+          "title": "Hirevue Launches AI-Powered Assessment Builder",
+          "url": "https://hrtechnologyinsights.com/news/hirevue-assessment-builder-skills-hiring",
+          "excerpts": [
+            "Hirevue introduces Assessment Builder to help teams create validated, skills-based hiring assessments faster using AI-driven workflows."
+          ]
+        },
+        {
+          "title": "What is Series A Funding? How to Raise a Series A Round",
+          "url": "https://carta.com/learn/startups/fundraising/series-a",
+          "excerpts": [
+            "What is Series A Funding? How to Raise a Series A Round\nJul 11, 2025 \u2014 According to Carta data, the median Series A funding round in the first quarter of 2025 was $7.9 million. Startups use the additional funding"
+          ]
+        },
+        {
+          "title": "HireVue, Inc. - Company Profile & Funding Data | Raising.fi",
+          "url": "https://raising.fi/company/hirevue",
+          "excerpts": [
+            "HireVue, Inc. - Company Profile & Funding Data | Raising.fi\nHireVue, Inc. (Technology) - View funding rounds, investors, capital raised ($97 Million), and investment data. 4 funding rounds tracked."
+          ]
+        },
+        {
+          "title": "HireVue - 2026 Company Profile, Team, Funding & Competitors",
+          "url": "http://tracxn.com/d/companies/hirevue/__PeMrputcdA2VOkFKx0ff0NX85_cSCaYi7B2wCL8qA6Y",
+          "excerpts": [
+            "HireVue has raised a total funding of $93.4M over 8 rounds."
+          ]
+        },
+        {
+          "title": "HireVue Company Information - Funding, Investors, and More",
+          "url": "https://www.seedtable.com/startups/HireVue-ZXEVBXE",
+          "excerpts": [
+            "Get information on funding, investors, industries, and more for HireVue. See HireVue company profile and funding data."
+          ]
+        },
+        {
+          "title": "Fetched web page",
+          "url": "https://www.linkedin.com/in/samirgulati",
+          "excerpts": []
+        },
+        {
+          "title": "Fetched web page",
+          "url": "https://platform.tracxn.com/a/d/company/5319ce3ae4b0f7e166010e42/hirevue?utm_source=parallel&utm_medium=ai",
+          "excerpts": []
+        },
+        {
+          "title": "Alberto Silveira - HireVue | LinkedIn",
+          "url": "https://www.linkedin.com/in/asilveira",
+          "excerpts": [
+            "O Alberto Silveira trouxe agora em uma fala, o que eu concordo e defendo muito. Temos que entender o porqu\u00ea fazer algo. Pode parecer uma pergunta infantil e, de fato tem gente que tem vergonha"
+          ]
+        },
+        {
+          "title": "Hirevue appoints tech stalwarts Alberto Silveira and Marcy Daniel to ...",
+          "url": "http://hirevue.com/press-release/hirevue-appoints-tech-stalwarts-alberto-silveira-and-marcy-daniel-to-drive-next-stage-growth-and-innovation-at-hirevue",
+          "excerpts": [
+            "Hirevue announces the appointments of Alberto Silveira as Chief Technology Officer (CTO)"
+          ]
+        },
+        {
+          "title": "HireVue Appoints Tech Stalwarts Alberto Silveira and Marcy ...",
+          "url": "https://www.saltlakesentinel.com/article/728605088-hirevue-appoints-tech-stalwarts-alberto-silveira-and-marcy-daniel-to-drive-next-stage-growth-and-innovation-at-hirevue",
+          "excerpts": [
+            "HireVue Appoints Tech Stalwarts Alberto Silveira and Marcy ...\nSalt Lake City, UT, July 18, 2024 (GLOBE NEWSWIRE) -- HireVue, the pioneer and global leader in Human Potential Intelligence, is pleased to announce the appointments of Alberto Silveira as Chief Technology Officer (CTO) and Marcy Daniel as Chief Product Officer (CPO)."
+          ]
+        },
+        {
+          "title": "Alberto Silveira's Post - LinkedIn",
+          "url": "https://www.linkedin.com/posts/asilveira_have-you-talked-about-ai-today-already-activity-7422686624993447936-vP2u",
+          "excerpts": [
+            "Alberto Silveira's Post - LinkedIn\nWe're excited to welcome Alberto Silveira, Chief Technology Officer (CTO) at Hirevue to the stage at Ai4 2026 on August 4-6 at The Venetian"
+          ]
+        },
+        {
+          "title": "CTO Solves Old Problems with New Perspectives with QA Wolf Partner",
+          "url": "http://linkedin.com/posts/asilveira_being-a-cto-requires-solving-old-problems-activity-7447466527894900739--3Z3",
+          "excerpts": [
+            "The result: Hirevue doubled release velocity from bi-weekly to weekly releases ... \" \u2014 Alberto Silveira, CTO Read the full case study: https://lnkd.in\nBeing a CTO requires solving old problems with new perspectives."
+          ]
+        },
+        {
+          "title": "http://hirevue.com/press-release/page/3",
+          "url": "http://hirevue.com/press-release/page/3",
+          "excerpts": [
+            "Hirevue Appoints Smitha Venugopal as Chief Financial Officer. November 18, 2024. Hirevue Appoints\nNovember 18, 2024\nHirevue Appoints Smitha Venugopal as Chief Financial Officer\nHirevue Appoints Smitha Venugopal as Chief Financial Officer. November 18, 2024.\nHirevue Appoints Smitha Venugopal as Chief Financial Officer. November 18, 2024. Hirevue Appoints\nNovember 18, 2024\nHirevue Appoints Smitha Venugopal as Chief Financial Officer"
+          ]
+        },
+        {
+          "title": "HireVue Appoints Smitha Venugopal as Chief Financial Officer",
+          "url": "https://www.globalcareerfinder.com/article/761952833-hirevue-appoints-smitha-venugopal-as-chief-financial-officer",
+          "excerpts": [
+            "HireVue Appoints Smitha Venugopal as Chief Financial Officer\nSalt Lake City, Nov. 19, 2024 (GLOBE NEWSWIRE) -- HireVue, the pioneer and global leader in Human Potential Intelligence, today announced the appointment of Smitha Venugopal as the company\u2019s new Chief Financial Officer (CFO)."
+          ]
+        },
+        {
+          "title": "Sibyl McCarley - Hirevue | LinkedIn",
+          "url": "http://linkedin.com/in/sibyl-mccarley-7161543",
+          "excerpts": []
+        },
+        {
+          "title": "HireVue Appoints Smitha Venugopal as Chief Financial Officer",
+          "url": "https://globalfintechseries.com/fintech/hirevue-appoints-smitha-venugopal-as-chief-financial-officer",
+          "excerpts": [
+            "HireVue Appoints Smitha Venugopal as Chief Financial Officer\nHireVue, the pioneer and global leader in Human Potential Intelligence, announced the appointment of Smitha Venugopal as the company\u2019s new Chief Financial Officer (CFO). Smitha will oversee HireVue\u2019s financial operations, drive its strategic financial initiatives, and accelerate financial growth in her role."
+          ]
+        },
+        {
+          "title": "Ambrela",
+          "url": "https://platform.tracxn.com/a/d/company/626eedad1f54fe467ad31222/ambrela?utm_source=parallel&utm_medium=ai#a:about",
+          "excerpts": [
+            "Name: Ambrela | Primary Sector: FinTech | Primary Subsector: Banking Tech | Other Taxonomy Tags: [\"India Tech\",\"Enterprise Tech - India\",\"Consumer Digital - India\",\"Trending Themes in Banking Tech\",\"Open Banking\",\"Banking Tech - India\",\"FinTech - India\",\"Karnataka Tech\",\"Enterprise Tech - Karnataka\",\"Consumer Digital - Karnataka\",\"Financial Services\",\"NBFC Lenders\",\"Unbundling of Bank\",\"Internet First Lenders\",\"Generic Company Lists\",\"DPIIT Registered\"] | Short Description: Fintech platform offering a wealth management marketplace | All Locations: India Karnataka Bengaluru | Special Flags: Tech YES Consumer YES Enterprise YES | People Background Flags: College Wise IIM Bangalore | Achievements: Managed by a Top Team Team  Trending Theme Market {themes=[{id=5ca214628787071e38ff5c24}]} | Incubators: Tenity A&I Program Unknown | All Funding Rounds: Seed 2023-11-23 Tenity Angel 2022-08-19 A R Anatha Srinivasan, Sal Vinay | Founders: Arpit Nagda Co-Founder & CEO Sreeraj Thamarappilly Co-Fou"
+          ]
+        },
+        {
+          "title": "HireVue: Details, Reviews, Pricing, & Features | CheckThat.ai",
+          "url": "https://checkthat.ai/brands/hirevue",
+          "excerpts": [
+            "Ideal Company Profile: 5,000+ employee enterprises in banking, retail/hospitality, healthcare, and manufacturing sectors. High-volume hiring organizations conducting 1,000+ interviews annually with geographic distribution requiring asynchronous evaluation."
+          ]
+        },
+        {
+          "title": "HireVue Review 2026: Features, Pricing & Alternatives",
+          "url": "https://hirevire.com/blog/hirevue-review-features-pricing-better-alternatives",
+          "excerpts": [
+            "The platform serves enterprise clients across industries including healthcare, retail, financial services, and technology, positioning itself as a comprehensive hiring intelligence solution combining structured interviews, assessments, and AI analysis. How HireVue Works HireVue operates through a multi-step workflow:"
+          ]
+        },
+        {
+          "title": "Sibyl McCarley - Executive Bio, Work History, and Contacts - Equilar ExecAtlas",
+          "url": "http://people.equilar.com/bio/person/sibyl-mccarley-hirevue/48947051",
+          "excerpts": [
+            "Chief People Officer at Hirevue"
+          ]
+        },
+        {
+          "title": "HireVue Company Profile | Management and Employees List",
+          "url": "http://datanyze.com/companies/hirevue/67175947",
+          "excerpts": [
+            "Sibyl McCarley Chief People Officer"
+          ]
+        },
+        {
+          "title": "Sibyl McCarley - Hirevue - LinkedIn",
+          "url": "https://www.linkedin.com/in/sibyl-mccarley-7161543",
+          "excerpts": [
+            "Sibyl McCarley - Hirevue - LinkedIn\nExperience. Hirevue Graphic. Chief People Officer. Hirevue. Aug 2024 - Present 1 year 11 months. Education. Marquette University Graphic \u00b7 Marquette University."
+          ]
+        },
+        {
+          "title": "Sibyl McCarley - Profile and Biography",
+          "url": "http://ceoworld.biz/author/sibyl-mccarley",
+          "excerpts": [
+            "Sibyl McCarley, Chief People Officer at Hirevue.\nSibyl McCarley, Chief People Officer at Hirevue. As Chief People Officer at Hirevue, Sibyl oversees the strategy and execution of all people functions"
+          ]
+        },
+        {
+          "title": "Sibyl McCarley - Chief People Officer at HireVue - The Org",
+          "url": "https://theorg.com/org/hirevue/org-chart/sibyl-mccarley",
+          "excerpts": [
+            "Sibyl McCarley - Chief People Officer at HireVue - The Org\nIn 2023, Sibyl joined HireVue as the Vice President of People & Engagement. Sibyl McCarley holds a BA in English, Psychology, and History from Southern"
+          ]
+        },
+        {
+          "title": "HireVue appoints Walker Ellis as Chief Revenue Officer",
+          "url": "https://www.einpresswire.com/article/672770503/hirevue-appoints-walker-ellis-as-chief-revenue-officer",
+          "excerpts": [
+            "HireVue appoints Walker Ellis as Chief Revenue Officer\nEllis will oversee HireVue\u2019s revenue teams where he will continue to maximize the talents and strengths of the organization following the acquisition of Modern Hire."
+          ]
+        },
+        {
+          "title": "Anthony Reynolds (@AReynolds5796) / Posts / X - Twitter",
+          "url": "https://x.com/areynolds5796",
+          "excerpts": [
+            "Anthony Reynolds (@AReynolds5796) / Posts / X - Twitter\nI'm excited to share the news that Walker Ellis has joined us as @HireVue's new Chief Revenue Officer. Walker will prioritize market expansion, operational"
+          ]
+        },
+        {
+          "title": "HireVue appoints Walker Ellis as Chief Revenue Officer | Matthew Fine",
+          "url": "https://www.linkedin.com/posts/matthew-fine-51a50032_hirevue-appoints-walker-ellis-as-chief-revenue-activity-7137505373367717888-HTAA",
+          "excerpts": [
+            "HireVue appoints Walker Ellis as Chief Revenue Officer | Matthew Fine\nWe just welcomed the newest member of the HireVue Executive Leadership Team, Walker Ellis! Walker brings over two decades of experience to"
+          ]
+        },
+        {
+          "title": "Will Ellis",
+          "url": "https://linkedin.com/in/will-ellis-a9332914",
+          "excerpts": [
+            "Connection Count: 11157 | Follower Count: 11296 | Slug Status: A | Name: Will Ellis | Company Name: SFG20 | Title: Chief Revenue Officer (CRO) | Headline: Chief Revenue Officer at SFG20 | Experience: SFG20  2025-01-01  As Chief Revenue Officer at SFG20, I lead the strategic vision and execution of our growth initiatives, driving revenue performance and spearheading expansion across our core and emerging markets. \n\nMy role is focused on delivering ambitious revenue targets through strategic sales leadership, innovative partnerships, customer centric approaches, and operational excellence. Chief Revenue Officer (CRO) Lenvi Manchester, England, United Kingdom 2022-03-01 2024-12-01 As Chief Revenue Officer at Lenvi, I spearhead the company\u2019s growth strategy, focusing on new business sales and marketing initiatives. Responsibility for both the new business sales teams and marketing teams.\nLenvi provide innovative software and services to the Lending Industry.\n\nKey Achievements:\n\n\u2022\tSuccessfu"
+          ]
+        },
+        {
+          "title": "Cyril Simonnet",
+          "url": "https://linkedin.com/in/csimonnet",
+          "excerpts": [
+            "Connection Count: 500 | Follower Count: 13752 | Slug Status: A | Name: Cyril Simonnet | Title: Chief Revenue Officer (CRO) | Headline: Chief Revenue Officer (CRO) at Sekoia.io | Company Name: Sekoia.io | Experience: Sekoia.io 2024-02-01 Chief Revenue Officer (CRO) Cortex by Palo Alto Networks France 2023-08-01 2024-02-01 Regional Vice President - France & MEA Cortex by Palo Alto Networks Emea 2022-10-01 2023-08-01 Regional Vice President - Central and South EMEA Cortex by Palo Alto Networks Emea 2016-05-01 2022-10-01 Director - Central and South EMEA Varonis R\u00e9gion de Munich , Allemagne 2013-12-01 2016-04-01 - Management of 10 Sales (Germany, Belgium, The Netherlands, Sweden, Italy and Spain) - Indirect System Engineer Management - Direct Sales involvement on every step of Sales process until Closing to re-define Sales Process definition to increase direct approach. This has reduced Sales cycle and increased average Deal Value. - Redesign of Channel Model to focus on Value and Large, S"
+          ]
+        },
+        {
+          "title": "EXCLUSIVE: HireVue\u2019s CMO Amanda Hahn Discusses HireVue\u2019s ...",
+          "url": "https://1worktech.com/exclusive-hirevues-cmo-amanda-hahn-discusses-hirevues-acquisition-of-modern-hire/",
+          "excerpts": [
+            "HireVue announced it has acquired Modern Hire.HireVue CMO, Amanda Hahn, stopped by WorkTech to discuss the deal, solidifying HireVue\u2019s position as an industry leader in modern hiring solutions powered by ethical AI."
+          ]
+        },
+        {
+          "title": "Tena Lyons - Vice President, Product Marketing at HireVue",
+          "url": "https://www.zoominfo.com/p/Tena-Lyons/12135400703",
+          "excerpts": [
+            "Tena Lyons - Vice President, Product Marketing at HireVue\nView Colleagues ; Amanda Hahn, Chief Marketing Officer \u00b7 Amanda Hahn. Chief Marketing Officer ; TC \u00b7 Tracy Clementi. Director, Product Marketing ; KC \u00b7 Kelly"
+          ]
+        },
+        {
+          "title": "Amanda Hahn - Chief Marketing Officer at HireVue | The Org",
+          "url": "https://theorg.com/org/hirevue/org-chart/amanda-hahn",
+          "excerpts": [
+            "Amanda Hahn - Chief Marketing Officer at HireVue | The Org\nAmanda Hahn is the current Chief Marketing Officer at HireVue. Amanda has been with the company since June 2013, and in their current role, they oversee all marketing initiatives and strategies."
+          ]
+        },
+        {
+          "title": "In a Q&A with @HireVue Interim CMO Amanda Hahn, she explained ...",
+          "url": "https://www.instagram.com/p/CdLw6lCOJQh",
+          "excerpts": [
+            "In a Q&A with @HireVue Interim CMO Amanda Hahn, she explained ...\n#Workforce | In a Q&A with @HireVue Interim CMO Amanda Hahn, she explained how companies and recruiters can do their part in closing the gender"
+          ]
+        },
+        {
+          "title": "HireVue appoints new Chief Growth Officer and Chief Marketing ...",
+          "url": "http://businessdailymedia.com/sme-business-news/20887-hirevue-appoints-new-chief-growth-officer-and-chief-marketing-officer",
+          "excerpts": [
+            "Amanda Hahn, HireVue's VP of product marketing for the past 9 years, has been promoted into the role of Chief Marketing Officer\n[HireVue](http://www.hirevue.com/)\nm/) , the global leader in video interviewing, assessments, and text-enabled recruiting tools to"
+          ]
+        }
+      ],
+      "reasoning": "",
+      "confidence": ""
+    }
+  ],
+  "latency_s": 1898.9
 }

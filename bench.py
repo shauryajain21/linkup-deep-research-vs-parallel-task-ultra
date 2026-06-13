@@ -93,9 +93,13 @@ async def run_parallel(client, q, sem, processor, key):
     t0 = time.monotonic()
     async with sem:
         try:
-            r = await client.post("https://api.parallel.ai/v1/tasks/runs", headers=hdr,
-                json={"input": q["query"], "processor": processor}, timeout=60)
-            r.raise_for_status(); rid = r.json()["run_id"]
+            rid = None
+            for a in range(7):
+                r = await client.post("https://api.parallel.ai/v1/tasks/runs", headers=hdr,
+                    json={"input": q["query"], "processor": processor}, timeout=60)
+                if r.status_code == 429:
+                    await asyncio.sleep(min(60, 5 * (a + 1))); continue
+                r.raise_for_status(); rid = r.json()["run_id"]; break
             d = await _retry_get(client, f"https://api.parallel.ai/v1/tasks/runs/{rid}/result",
                                  hdr, ok_408=True)
             rec["status"] = d["run"]["status"]
@@ -112,7 +116,9 @@ async def run_parallel(client, q, sem, processor, key):
 
 async def cmd_run(args):
     os.makedirs(ANSWERS_DIR, exist_ok=True)
-    queries = [q for q in load_queries() if not os.path.exists(answer_path(args.provider, q["id"]))]
+    def is_done(p):
+        return os.path.exists(p) and json.load(open(p)).get("status") == "completed"
+    queries = [q for q in load_queries() if not is_done(answer_path(args.provider, q["id"]))]
     print(f"{args.provider}: {len(queries)} to run ({args.provider} resumable)", flush=True)
     if not queries:
         return
@@ -176,6 +182,19 @@ def cmd_judge(args):
 
 
 def cmd_report(args):
+    total_q = len(load_queries())
+    status = {"linkup": {}, "parallel": {}}
+    for p in glob.glob(f"{ANSWERS_DIR}/*.json"):
+        a = json.load(open(p))
+        status[a["provider"]][a["id"]] = a.get("status")
+    for prov in ("linkup", "parallel"):
+        s = status[prov]
+        comp = sum(1 for v in s.values() if v == "completed")
+        failed = [i for i, v in s.items() if v != "completed"]
+        missing = [q["id"] for q in load_queries() if q["id"] not in s]
+        print(f"{prov:9} {comp}/{total_q} completed"
+              + (f" | failed: {failed}" if failed else "")
+              + (f" | missing: {missing}" if missing else ""))
     rows = json.load(open(RESULTS))
     by = {}
     for r in rows:

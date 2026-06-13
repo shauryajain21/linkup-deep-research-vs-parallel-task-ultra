@@ -2,7 +2,6 @@
   {
     "id": "r073",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.0,
       "completeness": 4.0,
@@ -18,7 +17,6 @@
   {
     "id": "r074",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.0,
@@ -34,7 +32,6 @@
   {
     "id": "r001",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 3.0,
@@ -50,7 +47,6 @@
   {
     "id": "r002",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.5,
       "completeness": 1.5,
@@ -66,7 +62,6 @@
   {
     "id": "r003",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -82,7 +77,6 @@
   {
     "id": "r004",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 3.0,
@@ -98,7 +92,6 @@
   {
     "id": "r005",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 3.5,
@@ -114,7 +107,6 @@
   {
     "id": "r006",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.0,
       "completeness": 4.5,
@@ -130,7 +122,6 @@
   {
     "id": "r007",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 3.0,
@@ -146,7 +137,6 @@
   {
     "id": "r008",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.5,
       "completeness": 1.5,
@@ -162,7 +152,6 @@
   {
     "id": "r009",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.5,
       "completeness": 1.5,
@@ -178,7 +167,6 @@
   {
     "id": "r010",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.0,
@@ -194,7 +182,6 @@
   {
     "id": "r011",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.5,
       "completeness": 1.0,
@@ -210,7 +197,6 @@
   {
     "id": "r012",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.5,
       "completeness": 1.5,
@@ -226,7 +212,6 @@
   {
     "id": "r013",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 2.0,
       "completeness": 2.0,
@@ -242,7 +227,6 @@
   {
     "id": "r014",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.0,
       "completeness": 1.5,
@@ -258,7 +242,6 @@
   {
     "id": "r015",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 1.5,
@@ -274,7 +257,6 @@
   {
     "id": "r016",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 3.5,
@@ -290,7 +272,6 @@
   {
     "id": "r017",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 2.0,
@@ -306,7 +287,6 @@
   {
     "id": "r018",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 3.5,
@@ -322,7 +302,6 @@
   {
     "id": "r019",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.5,
       "completeness": 1.5,
@@ -338,7 +317,6 @@
   {
     "id": "r020",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 3.0,
@@ -354,7 +332,6 @@
   {
     "id": "r021",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 3.5,
@@ -370,7 +347,6 @@
   {
     "id": "r022",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -386,7 +362,6 @@
   {
     "id": "r023",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.5,
       "completeness": 3.5,
@@ -402,7 +377,6 @@
   {
     "id": "r024",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -418,7 +392,6 @@
   {
     "id": "r025",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.5,
       "completeness": 4.5,
@@ -434,7 +407,6 @@
   {
     "id": "r026",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 2.5,
       "completeness": 4.5,
@@ -450,7 +422,6 @@
   {
     "id": "r027",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.0,
@@ -466,7 +437,6 @@
   {
     "id": "r028",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.0,
@@ -482,7 +452,6 @@
   {
     "id": "r029",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -498,7 +467,6 @@
   {
     "id": "r030",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 3.5,
@@ -514,7 +482,6 @@
   {
     "id": "r031",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.5,
       "completeness": 3.0,
@@ -530,7 +497,6 @@
   {
     "id": "r032",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.0,
@@ -546,7 +512,6 @@
   {
     "id": "r033",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 3.5,
@@ -562,7 +527,6 @@
   {
     "id": "r034",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 3.5,
@@ -578,7 +542,6 @@
   {
     "id": "r035",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -594,7 +557,6 @@
   {
     "id": "r036",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -610,7 +572,6 @@
   {
     "id": "r037",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -626,7 +587,6 @@
   {
     "id": "r038",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.0,
@@ -642,7 +602,6 @@
   {
     "id": "r039",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.5,
       "completeness": 4.5,
@@ -658,7 +617,6 @@
   {
     "id": "r040",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -674,7 +632,6 @@
   {
     "id": "r085",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 3.5,
@@ -690,7 +647,6 @@
   {
     "id": "r041",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -706,7 +662,6 @@
   {
     "id": "r042",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.0,
@@ -722,7 +677,6 @@
   {
     "id": "r043",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -738,7 +692,6 @@
   {
     "id": "r044",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.0,
       "completeness": 2.5,
@@ -754,7 +707,6 @@
   {
     "id": "r045",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -770,7 +722,6 @@
   {
     "id": "r046",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -786,7 +737,6 @@
   {
     "id": "r047",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -802,7 +752,6 @@
   {
     "id": "r048",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.5,
       "completeness": 4.5,
@@ -818,7 +767,6 @@
   {
     "id": "r049",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -834,7 +782,6 @@
   {
     "id": "r050",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -850,7 +797,6 @@
   {
     "id": "r051",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -866,7 +812,6 @@
   {
     "id": "r052",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -882,7 +827,6 @@
   {
     "id": "r053",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -898,7 +842,6 @@
   {
     "id": "r054",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -914,7 +857,6 @@
   {
     "id": "r055",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -930,7 +872,6 @@
   {
     "id": "r056",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -946,7 +887,6 @@
   {
     "id": "r057",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -962,7 +902,6 @@
   {
     "id": "r058",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -978,7 +917,6 @@
   {
     "id": "r059",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -994,7 +932,6 @@
   {
     "id": "r060",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -1010,7 +947,6 @@
   {
     "id": "r061",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -1026,7 +962,6 @@
   {
     "id": "r062",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -1042,7 +977,6 @@
   {
     "id": "r063",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -1058,7 +992,6 @@
   {
     "id": "r064",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -1074,7 +1007,6 @@
   {
     "id": "r065",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -1090,7 +1022,6 @@
   {
     "id": "r066",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -1106,7 +1037,6 @@
   {
     "id": "r067",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -1122,7 +1052,6 @@
   {
     "id": "r068",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 2.5,
       "completeness": 3.5,
@@ -1138,7 +1067,6 @@
   {
     "id": "r069",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -1154,7 +1082,6 @@
   {
     "id": "r070",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -1170,7 +1097,6 @@
   {
     "id": "r071",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.0,
@@ -1186,7 +1112,6 @@
   {
     "id": "r072",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 3.5,
@@ -1202,7 +1127,6 @@
   {
     "id": "r075",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.0,
@@ -1218,7 +1142,6 @@
   {
     "id": "r076",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 3.5,
@@ -1234,7 +1157,6 @@
   {
     "id": "r077",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 3.5,
@@ -1250,7 +1172,6 @@
   {
     "id": "r078",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.0,
@@ -1266,7 +1187,6 @@
   {
     "id": "r079",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 3.5,
@@ -1282,7 +1202,6 @@
   {
     "id": "r080",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 3.5,
@@ -1298,7 +1217,6 @@
   {
     "id": "r081",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.0,
@@ -1314,7 +1232,6 @@
   {
     "id": "r082",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.0,
       "completeness": 4.0,
@@ -1330,7 +1247,6 @@
   {
     "id": "r083",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 3.5,
@@ -1346,7 +1262,6 @@
   {
     "id": "r084",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 3.5,
@@ -1362,7 +1277,6 @@
   {
     "id": "r086",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -1378,7 +1292,6 @@
   {
     "id": "r087",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 5.0,
       "completeness": 5.0,
@@ -1394,7 +1307,6 @@
   {
     "id": "r088",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -1410,7 +1322,6 @@
   {
     "id": "r089",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 5.0,
       "completeness": 5.0,
@@ -1426,7 +1337,6 @@
   {
     "id": "r090",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -1442,7 +1352,6 @@
   {
     "id": "r091",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -1458,7 +1367,6 @@
   {
     "id": "r092",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -1474,7 +1382,6 @@
   {
     "id": "r093",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -1490,7 +1397,6 @@
   {
     "id": "r094",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -1506,7 +1412,6 @@
   {
     "id": "r095",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -1522,7 +1427,6 @@
   {
     "id": "r096",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -1538,7 +1442,6 @@
   {
     "id": "r097",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -1554,7 +1457,6 @@
   {
     "id": "r098",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 3.5,
       "completeness": 4.5,
@@ -1570,7 +1472,6 @@
   {
     "id": "r099",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.0,
@@ -1586,7 +1487,6 @@
   {
     "id": "r100",
     "provider": "linkup",
-    "latency_s": null,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -1602,7 +1502,6 @@
   {
     "id": "r002",
     "provider": "parallel",
-    "latency_s": 981.8,
     "grade": {
       "accuracy": 3.5,
       "completeness": 4.5,
@@ -1618,7 +1517,6 @@
   {
     "id": "r003",
     "provider": "parallel",
-    "latency_s": 771.2,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -1634,7 +1532,6 @@
   {
     "id": "r004",
     "provider": "parallel",
-    "latency_s": 705.3,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -1650,7 +1547,6 @@
   {
     "id": "r005",
     "provider": "parallel",
-    "latency_s": 674.4,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -1666,7 +1562,6 @@
   {
     "id": "r006",
     "provider": "parallel",
-    "latency_s": 1328.8,
     "grade": {
       "accuracy": 3.0,
       "completeness": 4.5,
@@ -1682,7 +1577,6 @@
   {
     "id": "r007",
     "provider": "parallel",
-    "latency_s": 753.2,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -1698,7 +1592,6 @@
   {
     "id": "r008",
     "provider": "parallel",
-    "latency_s": 1152.1,
     "grade": {
       "accuracy": 3.5,
       "completeness": 4.0,
@@ -1714,7 +1607,6 @@
   {
     "id": "r009",
     "provider": "parallel",
-    "latency_s": 1355.3,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -1730,7 +1622,6 @@
   {
     "id": "r010",
     "provider": "parallel",
-    "latency_s": 873.7,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -1746,7 +1637,6 @@
   {
     "id": "r011",
     "provider": "parallel",
-    "latency_s": 823.7,
     "grade": {
       "accuracy": 3.5,
       "completeness": 4.5,
@@ -1762,7 +1652,6 @@
   {
     "id": "r012",
     "provider": "parallel",
-    "latency_s": 443.2,
     "grade": {
       "accuracy": 3.5,
       "completeness": 4.5,
@@ -1778,7 +1667,6 @@
   {
     "id": "r013",
     "provider": "parallel",
-    "latency_s": 1233.6,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -1794,7 +1682,6 @@
   {
     "id": "r014",
     "provider": "parallel",
-    "latency_s": 1033.6,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -1810,7 +1697,6 @@
   {
     "id": "r015",
     "provider": "parallel",
-    "latency_s": 858.2,
     "grade": {
       "accuracy": 4.0,
       "completeness": 3.5,
@@ -1826,7 +1712,6 @@
   {
     "id": "r016",
     "provider": "parallel",
-    "latency_s": 1242.1,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -1842,7 +1727,6 @@
   {
     "id": "r017",
     "provider": "parallel",
-    "latency_s": 723.7,
     "grade": {
       "accuracy": 3.5,
       "completeness": 4.5,
@@ -1858,7 +1742,6 @@
   {
     "id": "r018",
     "provider": "parallel",
-    "latency_s": 719.2,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -1874,7 +1757,6 @@
   {
     "id": "r019",
     "provider": "parallel",
-    "latency_s": 733.8,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -1890,7 +1772,6 @@
   {
     "id": "r020",
     "provider": "parallel",
-    "latency_s": 456.8,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -1906,7 +1787,6 @@
   {
     "id": "r021",
     "provider": "parallel",
-    "latency_s": 1066.9,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -1922,7 +1802,6 @@
   {
     "id": "r022",
     "provider": "parallel",
-    "latency_s": 818.1,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -1938,7 +1817,6 @@
   {
     "id": "r023",
     "provider": "parallel",
-    "latency_s": 1010.1,
     "grade": {
       "accuracy": 4.0,
       "completeness": 5.0,
@@ -1954,7 +1832,6 @@
   {
     "id": "r024",
     "provider": "parallel",
-    "latency_s": 851.4,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -1970,7 +1847,6 @@
   {
     "id": "r025",
     "provider": "parallel",
-    "latency_s": 1296.2,
     "grade": {
       "accuracy": 3.5,
       "completeness": 4.5,
@@ -1986,7 +1862,6 @@
   {
     "id": "r026",
     "provider": "parallel",
-    "latency_s": 889.7,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2002,7 +1877,6 @@
   {
     "id": "r027",
     "provider": "parallel",
-    "latency_s": 1030.3,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2018,7 +1892,6 @@
   {
     "id": "r028",
     "provider": "parallel",
-    "latency_s": 842.8,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2034,7 +1907,6 @@
   {
     "id": "r029",
     "provider": "parallel",
-    "latency_s": 805.9,
     "grade": {
       "accuracy": 4.0,
       "completeness": 5.0,
@@ -2050,7 +1922,6 @@
   {
     "id": "r030",
     "provider": "parallel",
-    "latency_s": 789.7,
     "grade": {
       "accuracy": 4.0,
       "completeness": 5.0,
@@ -2066,7 +1937,6 @@
   {
     "id": "r031",
     "provider": "parallel",
-    "latency_s": 1811.3,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -2082,7 +1952,6 @@
   {
     "id": "r032",
     "provider": "parallel",
-    "latency_s": 1207.4,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2098,7 +1967,6 @@
   {
     "id": "r033",
     "provider": "parallel",
-    "latency_s": 1536.1,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2114,7 +1982,6 @@
   {
     "id": "r034",
     "provider": "parallel",
-    "latency_s": 786.7,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2130,7 +1997,6 @@
   {
     "id": "r035",
     "provider": "parallel",
-    "latency_s": 710.1,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2146,7 +2012,6 @@
   {
     "id": "r036",
     "provider": "parallel",
-    "latency_s": 1034.4,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2162,7 +2027,6 @@
   {
     "id": "r037",
     "provider": "parallel",
-    "latency_s": 1352.8,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2178,7 +2042,6 @@
   {
     "id": "r038",
     "provider": "parallel",
-    "latency_s": 1075.4,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -2194,7 +2057,6 @@
   {
     "id": "r039",
     "provider": "parallel",
-    "latency_s": 385.7,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2210,7 +2072,6 @@
   {
     "id": "r040",
     "provider": "parallel",
-    "latency_s": 832.8,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2226,7 +2087,6 @@
   {
     "id": "r041",
     "provider": "parallel",
-    "latency_s": 957.2,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -2242,7 +2102,6 @@
   {
     "id": "r042",
     "provider": "parallel",
-    "latency_s": 1328.5,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -2258,7 +2117,6 @@
   {
     "id": "r043",
     "provider": "parallel",
-    "latency_s": 899.4,
     "grade": {
       "accuracy": 4.0,
       "completeness": 5.0,
@@ -2274,7 +2132,6 @@
   {
     "id": "r044",
     "provider": "parallel",
-    "latency_s": 998.3,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2290,7 +2147,6 @@
   {
     "id": "r045",
     "provider": "parallel",
-    "latency_s": 872.9,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -2306,7 +2162,6 @@
   {
     "id": "r046",
     "provider": "parallel",
-    "latency_s": 1190.6,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2322,7 +2177,6 @@
   {
     "id": "r047",
     "provider": "parallel",
-    "latency_s": 984.3,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2338,7 +2192,6 @@
   {
     "id": "r048",
     "provider": "parallel",
-    "latency_s": 1070.2,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -2354,7 +2207,6 @@
   {
     "id": "r049",
     "provider": "parallel",
-    "latency_s": 1122.7,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2370,7 +2222,6 @@
   {
     "id": "r050",
     "provider": "parallel",
-    "latency_s": 297.9,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2386,7 +2237,6 @@
   {
     "id": "r051",
     "provider": "parallel",
-    "latency_s": 870.2,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2402,7 +2252,6 @@
   {
     "id": "r052",
     "provider": "parallel",
-    "latency_s": 1094.8,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2418,7 +2267,6 @@
   {
     "id": "r053",
     "provider": "parallel",
-    "latency_s": 427.3,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2434,7 +2282,6 @@
   {
     "id": "r054",
     "provider": "parallel",
-    "latency_s": 451.4,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2450,7 +2297,6 @@
   {
     "id": "r055",
     "provider": "parallel",
-    "latency_s": 702.4,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2466,7 +2312,6 @@
   {
     "id": "r056",
     "provider": "parallel",
-    "latency_s": 268.6,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2482,7 +2327,6 @@
   {
     "id": "r057",
     "provider": "parallel",
-    "latency_s": 1535.7,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2498,7 +2342,6 @@
   {
     "id": "r058",
     "provider": "parallel",
-    "latency_s": 778.5,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2514,7 +2357,6 @@
   {
     "id": "r059",
     "provider": "parallel",
-    "latency_s": 853.5,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2530,7 +2372,6 @@
   {
     "id": "r060",
     "provider": "parallel",
-    "latency_s": 902.3,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2546,7 +2387,6 @@
   {
     "id": "r061",
     "provider": "parallel",
-    "latency_s": 588.0,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2562,7 +2402,6 @@
   {
     "id": "r062",
     "provider": "parallel",
-    "latency_s": 1195.6,
     "grade": {
       "accuracy": 5.0,
       "completeness": 5.0,
@@ -2578,7 +2417,6 @@
   {
     "id": "r063",
     "provider": "parallel",
-    "latency_s": 321.9,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2594,7 +2432,6 @@
   {
     "id": "r064",
     "provider": "parallel",
-    "latency_s": 1052.8,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -2610,7 +2447,6 @@
   {
     "id": "r065",
     "provider": "parallel",
-    "latency_s": 785.9,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2626,7 +2462,6 @@
   {
     "id": "r066",
     "provider": "parallel",
-    "latency_s": 991.2,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2642,7 +2477,6 @@
   {
     "id": "r067",
     "provider": "parallel",
-    "latency_s": 1375.7,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -2658,7 +2492,6 @@
   {
     "id": "r068",
     "provider": "parallel",
-    "latency_s": 399.1,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2674,7 +2507,6 @@
   {
     "id": "r069",
     "provider": "parallel",
-    "latency_s": 1523.3,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -2690,7 +2522,6 @@
   {
     "id": "r070",
     "provider": "parallel",
-    "latency_s": 1275.4,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2706,7 +2537,6 @@
   {
     "id": "r071",
     "provider": "parallel",
-    "latency_s": 1450.2,
     "grade": {
       "accuracy": 3.5,
       "completeness": 4.5,
@@ -2722,7 +2552,6 @@
   {
     "id": "r072",
     "provider": "parallel",
-    "latency_s": 803.4,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2738,7 +2567,6 @@
   {
     "id": "r073",
     "provider": "parallel",
-    "latency_s": 700.1,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2754,7 +2582,6 @@
   {
     "id": "r074",
     "provider": "parallel",
-    "latency_s": 1007.2,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -2770,7 +2597,6 @@
   {
     "id": "r075",
     "provider": "parallel",
-    "latency_s": 1013.9,
     "grade": {
       "accuracy": 3.5,
       "completeness": 4.5,
@@ -2786,7 +2612,6 @@
   {
     "id": "r076",
     "provider": "parallel",
-    "latency_s": 835.0,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -2802,7 +2627,6 @@
   {
     "id": "r077",
     "provider": "parallel",
-    "latency_s": 922.2,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2818,7 +2642,6 @@
   {
     "id": "r078",
     "provider": "parallel",
-    "latency_s": 1109.5,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2834,7 +2657,6 @@
   {
     "id": "r080",
     "provider": "parallel",
-    "latency_s": 971.2,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2850,7 +2672,6 @@
   {
     "id": "r081",
     "provider": "parallel",
-    "latency_s": 401.0,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2866,7 +2687,6 @@
   {
     "id": "r082",
     "provider": "parallel",
-    "latency_s": 846.7,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -2882,7 +2702,6 @@
   {
     "id": "r083",
     "provider": "parallel",
-    "latency_s": 1386.5,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2898,7 +2717,6 @@
   {
     "id": "r084",
     "provider": "parallel",
-    "latency_s": 1022.9,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2914,7 +2732,6 @@
   {
     "id": "r085",
     "provider": "parallel",
-    "latency_s": 766.5,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -2930,7 +2747,6 @@
   {
     "id": "r086",
     "provider": "parallel",
-    "latency_s": 559.7,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2946,7 +2762,6 @@
   {
     "id": "r087",
     "provider": "parallel",
-    "latency_s": 284.1,
     "grade": {
       "accuracy": 5.0,
       "completeness": 4.5,
@@ -2962,7 +2777,6 @@
   {
     "id": "r088",
     "provider": "parallel",
-    "latency_s": 511.8,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -2978,7 +2792,6 @@
   {
     "id": "r089",
     "provider": "parallel",
-    "latency_s": 781.3,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -2994,7 +2807,6 @@
   {
     "id": "r090",
     "provider": "parallel",
-    "latency_s": 1126.5,
     "grade": {
       "accuracy": 5.0,
       "completeness": 5.0,
@@ -3010,7 +2822,6 @@
   {
     "id": "r091",
     "provider": "parallel",
-    "latency_s": 342.5,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -3026,7 +2837,6 @@
   {
     "id": "r092",
     "provider": "parallel",
-    "latency_s": 315.8,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -3042,7 +2852,6 @@
   {
     "id": "r093",
     "provider": "parallel",
-    "latency_s": 721.4,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -3058,7 +2867,6 @@
   {
     "id": "r094",
     "provider": "parallel",
-    "latency_s": 352.8,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -3074,7 +2882,6 @@
   {
     "id": "r095",
     "provider": "parallel",
-    "latency_s": 360.9,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -3090,7 +2897,6 @@
   {
     "id": "r096",
     "provider": "parallel",
-    "latency_s": 973.1,
     "grade": {
       "accuracy": 4.5,
       "completeness": 4.5,
@@ -3106,7 +2912,6 @@
   {
     "id": "r097",
     "provider": "parallel",
-    "latency_s": 917.7,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -3122,7 +2927,6 @@
   {
     "id": "r098",
     "provider": "parallel",
-    "latency_s": 804.2,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -3138,7 +2942,6 @@
   {
     "id": "r099",
     "provider": "parallel",
-    "latency_s": 1222.7,
     "grade": {
       "accuracy": 4.0,
       "completeness": 4.5,
@@ -3154,7 +2957,6 @@
   {
     "id": "r100",
     "provider": "parallel",
-    "latency_s": 790.7,
     "grade": {
       "accuracy": 4.5,
       "completeness": 5.0,
@@ -3170,7 +2972,6 @@
   {
     "id": "r001",
     "provider": "parallel",
-    "latency_s": 1042.8,
     "grade": {
       "accuracy": 3.5,
       "completeness": 4.5,
@@ -3182,5 +2983,20 @@
       "reason": "Comprehensive and highly specific coverage of all requested sections with strong GTM framing, but the answer is bloated with an unrequested executive summary and strategic synthesis essay, uses opaque citation tokens instead of plain source URLs, and contains a few dubious details (e.g., 'Lorem ipsum' Crunchbase milestones, mis-expanded PDP acronym, generic LinkedIn slug)."
     },
     "total": 3.35
+  },
+  {
+    "id": "r079",
+    "provider": "parallel",
+    "grade": {
+      "accuracy": 4.5,
+      "completeness": 5.0,
+      "gtm_value": 4.5,
+      "specificity": 5.0,
+      "source_quality": 3.5,
+      "signal_to_noise": 3.5,
+      "conciseness": 2.5,
+      "reason": "Correct company with exceptionally complete, specific coverage (all requested codes, review platforms, and explicit G2/Reddit absence notes), but the answer is bloated with a redundant executive summary and synthesis section, and citations are opaque index placeholders rather than verifiable sources, hurting at-a-glance dashboard usability."
+    },
+    "total": 4.07
   }
 ]

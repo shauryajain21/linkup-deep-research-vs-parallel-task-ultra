@@ -2,6 +2,426 @@
   "id": "r003",
   "provider": "parallel",
   "query": "You are a competitive intelligence analyst. For each of the 1 companies below, analyse their positioning, go-to-market motion, and recent news. Sources: company homepage, About page, press releases, TechCrunch, Sifted, VentureBeat, Reddit, G2, Capterra.\n\nCompanies:\n  1. name=\"Linear\", website=\"linear.app\"\n\nFor EACH company extract:\n- one_liner: single-sentence value prop from their homepage\n- key_differentiators: 3-5 unique selling points vs alternatives\n- weaknesses: 2-4 recurring user complaints from G2/Capterra/Reddit/Hacker News\n- target_segment: PRIMARY customer segment \u2014 pick one of: 'Grand compte' (Fortune 500 / CAC40), 'ETI' (250-5000 employees), 'PME' (<250 employees), 'Startup', or 'Consumer' (B2C)\n- business_model: pick one of: B2B, B2C, B2B2C, Marketplace, API/Platform\n- gtm_motion: pick one based on their primary homepage CTA \u2014 'sales-led' (CTA = Book demo / Talk to sales / Contact us), 'product-led' (CTA = Start free / Sign up / Try free), 'marketing-led' (CTA = Read whitepaper / Download report), 'community-led' (CTA = Join community / Slack invite)\n- geo_coverage: pick one of: Local (1 city/country), National, Regional (continent), Global\n- recent_signals: 5-10 most significant news items from the last 6 months. For each: date (YYYY-MM-DD), headline, source_url, type. type MUST be one of: funding / product / hiring / partnership / press.\n\nOmit any field you cannot verify \u2014 do NOT invent classifications. Return one object per company in the SAME order as the input list. Preserve company names EXACTLY.",
-  "answer": "{\"executive_summary\": \"- **AI-Native Positioning**: Linear has repositioned from \\\"issue tracker\\\" to \\\"product development system for teams and agents,\\\" embedding AI at its core with Linear Agent, Code Intelligence, and Coding Sessions - a strategic bet that AI-native workflows will displace legacy tools like Jira.\\n- **Product-Led Growth Engine**: Free tier ($0, unlimited members, 250 issues) with \\\"Get started\\\" CTA drives bottom-up adoption across 33,000+ companies, converting to paid at $10-$16/user/month - classic product-led motion that minimizes sales friction for startup adoption.\\n- **Rapid 2026 Product Cadence**: 10+ major feature launches in the last 6 months (Linear Agent public beta, Code Intelligence, Linear Diffs, Coding Sessions, Microsoft Teams integration) demonstrates aggressive product velocity that outpaces Jira's release cycle.\\n- **Opinionated Design as Double-Edged Sword**: Keyboard-first, speed-obsessed UX delights developer power users but excludes non-technical stakeholders - recurring complaint on Reddit, G2, and Hacker News that limits enterprise penetration.\\n- **Unicorn Status with Capital Runway**: $82M Series C at $1.25B valuation (June 2025, led by Accel) provides runway for enterprise expansion, but 25 open roles (including 5 in sales) signal a shift toward hybrid GTM as they chase larger accounts.\\n- **Partnership Ecosystem Expanding**: Integrations with OpenAI Codex, Notion Custom Agents, Microsoft Teams, Intercom, Zendesk, Gong, and Vercel v0 in the last 6 months build a moat around the AI-agent workflow layer.\\n\\n---\", \"company_snapshot\": \"| Field | Value |\\n|---|---|\\n| **Company** | Linear |\\n| **Website** | linear.app |\\n| **one_liner** | The product development system for teams and agents |\\n| **key_differentiators** | (1) AI-first with native agent collaboration (Linear Agent, MCP, Coding Sessions); (2) Keyboard-first, speed-optimized UX; (3) Purpose-built for product development, not generic PM; (4) Native code review via Linear Diffs; (5) Self-driving intake (auto-routing, labeling, prioritization of issues) |\\n| **weaknesses** | (1) Limited customization and reporting - trades flexibility for speed; (2) Weak mobile app - \\\"basically unusable for anything more than notifications\\\" (Reddit); (3) Opinionated workflow fights teams that don't fit its mold; (4) No offline support and no native time tracking |\\n| **target_segment** | Startup |\\n| **business_model** | B2B |\\n| **gtm_motion** | product-led |\\n| **geo_coverage** | Global |\\n\\n**Takeaway**: Linear is a product-led B2B SaaS company targeting startups with an AI-native, speed-obsessed issue-tracking and product-development platform. Its global footprint (33,000+ companies, team distributed across North America and Europe) and free-tier entry point make it accessible worldwide, though its opinionated design philosophy limits appeal outside developer-centric teams.\\n\\n---\", \"positioning_and_value_proposition\": \"Linear's homepage headline reads: **\\\"The product development system for teams and agents\\\"**, followed by the subline: **\\\"Purpose-built for planning and building products. Designed for the AI era.\\\"** This marks a deliberate evolution from its earlier positioning as an issue tracker. The addition of \\\"agents\\\" signals that Linear sees AI agents not as a feature bolt-on but as first-class users of the system - a foundational architectural choice that distinguishes it from Jira, Asana, and ClickUp, which treat AI as an assistant overlay.\\n\\nThe about page reinforces this: \\\"AI is fundamentally changing how products get built. We are shaping what comes next.\\\" Founded in 2019 by Karri Saarinen, Linear now serves 33,000+ companies including OpenAI, Coinbase, and Ramp. The company became a unicorn in 2025 following its $82M Series C at a $1.25B valuation, led by Accel with participation from Sequoia, 01A, Seven Seven Six, and Designer Fund.\\n\\n### Case Study: Linear's AI-Native Pivot\\n\\nWhen Linear launched Linear Agent in public beta on March 24, 2026, it wasn't simply adding a chatbot. The agent was integrated directly into the workspace context, accessible via Slack, Microsoft Teams, a dedicated chat interface (Cmd/Ctrl + J), and by mentioning @Linear in comments. Users could save agent conversations as reusable \\\"Skills\\\" for recurring workflows. This architectural decision - making the agent a peer in the development workflow rather than an external helper - reflects Linear's conviction that product development will increasingly be shared between humans and AI agents. By May 2026, they extended this with Code Intelligence (giving the agent read access to codebases) and by June 2026, Coding Sessions (enabling agents to execute code changes end-to-end). This rapid progression from \\\"agent reads\\\" to \\\"agent acts\\\" establishes a workflow moat that competitors cannot easily replicate.\\n\\n---\", \"key_differentiators_vs_alternatives\": \"| Differentiator | Linear | Jira | Asana |\\n|---|---|---|---|\\n| AI Agent Integration | Native Linear Agent, MCP, Code Intelligence, Coding Sessions | Atlassian Intelligence (overlay) | Asana Intelligence (overlay) |\\n| UX Philosophy | Keyboard-first, speed-optimized, opinionated | GUI-heavy, configuration-first | Flexible, template-driven |\\n| Code Review | Native via Linear Diffs (review PRs inside Linear) | Requires Bitbucket/external tools | Not supported |\\n| Intake Automation | Self-driving intake (auto-route, label, prioritize) | Manual triage or automation rules | Rules-based automation |\\n| Product Scope | Purpose-built for software product development | General project management + ITSM | General work management |\\n\\n**Takeaway**: Linear's advantages cluster around two axes: (1) AI-native agent workflows that are architecturally embedded, not bolted on, and (2) a focused, opinionated design that optimizes for speed at the cost of flexibility. Jira offers more customization and enterprise features; Asana offers broader use-case coverage; but neither matches Linear's developer experience velocity.\\n\\n---\", \"weaknesses_recurring_user_complaints\": \"Analysis of G2 reviews, Reddit (r/Linear), and Hacker News reveals four recurring complaint themes:\\n\\n1. **Limited Customization and Reporting**: G2 reviewers note that \\\"Linear trades flexibility for speed, so it can feel limiting once a team wants more customization, reporting, or non-standard workflows.\\\" Unlike Jira's extensive custom fields and JQL, Linear's opinionated data model restricts advanced reporting and dashboarding.\\n\\n2. **Weak Mobile Experience**: Reddit users describe the mobile app as \\\"basically unusable for anything more than notifications.\\\" The desktop client is also criticized as \\\"just a web wrapper\\\" rather than a native application, creating performance concerns on the Electron architecture.\\n\\n3. **Opinionated Workflow Resistance**: Multiple Reddit threads highlight that \\\"Linear is very opinionated about how you should work. If your team doesn't fit that mold, it fights you.\\\" The keyboard-first interface creates a learning curve that excludes non-engineers: \\\"It's a keyboard-first tool, which is great for power users, but the learning curve is a pain for involving non-engineers.\\\"\\n\\n4. **Missing Core Features**: No offline support (\\\"If I'm on a plane or have spotty internet, I can't do anything\\\"), no native time tracking (\\\"We have to use a separate tool\\\"), and inadequate roadmapping (\\\"missing a proper Gantt chart or timeline view\\\") are frequently cited as dealbreakers for teams evaluating alternatives.\\n\\n---\", \"go_to_market_motion\": \"Linear operates a **product-led** growth model. The pricing page primary CTA is **\\\"Get started\\\"** for Free, Basic ($10/user/month), and Business ($16/user/month) plans - all self-serve with no sales interaction required. A Free plan offers unlimited members, 2 teams, 250 issues, and access to the Agent platform.\\n\\nThe Enterprise plan uses a \\\"Contact sales\\\" CTA, indicating a hybrid motion at the top end. Recent hiring signals (5 open sales roles per HireJack data, out of 25 total open positions) suggest Linear is building out a sales function to support enterprise expansion, but the primary homepage and pricing CTAs remain product-led.\\n\\n### Case Study: The Free-Tier Growth Engine\\n\\nLinear's free tier is strategically generous: unlimited members with no seat cap, unlike Jira's free tier which limits to 10 users. This design choice reflects a product-led philosophy - get entire teams hooked on the speed and UX, then monetize through issue limits (250 on Free) and feature gates (Automations, Code Intelligence, and Diffs on Business/Enterprise). The result: 33,000+ companies on the platform as of 2026, with a 280% year-over-year profit increase reported at the time of the Series C (TechCrunch, June 2025), achieved by a team of roughly 80 people - suggesting strong unit economics from the product-led funnel.\\n\\n---\", \"target_segment_analysis\": \"Linear's **primary** customer segment is **Startup**. The evidence:\\n\\n- **Pricing**: Free tier with 250 issues targets small teams; $10/user/month pricing is accessible for early-stage budgets\\n- **UX**: Keyboard-first, opinionated design resonates with developer-centric startup cultures\\n- **Customer profile**: While OpenAI, Coinbase, and Ramp are large companies, they operate with startup-style engineering cultures that value speed over configurability\\n- **Product philosophy**: \\\"Purpose-built for modern teams\\\" with AI-native workflows appeals to startups building AI-era products\\n- **GTM**: Self-serve signup with no sales friction matches startup purchasing behavior\\n\\nLinear is expanding toward ETI and enterprise (Enterprise plan, 5 open sales roles, Microsoft Teams integration), but the core motion, pricing, and design remain startup-centric.\\n\\n---\", \"recent_signals_last_6_months_december_2025_june_2026\": \"| Date | Headline | Source URL | Type |\\n|---|---|---|---|\\n| 2025-12-04 | OpenAI Codex agent integration | https://linear.app/changelog/page/2 | partnership |\\n| 2025-12-11 | Linear agent for Intercom, Zendesk, Gong integrations | https://linear.app/changelog/page/2 | partnership |\\n| 2026-01-22 | Linear Code Reviews (Private Beta) | https://linear.app/changelog/page/2 | product |\\n| 2026-02-05 | Linear MCP for product management | https://linear.app/changelog/2026-02-05-linear-mcp-for-product-management | product |\\n| 2026-02-26 | Linear in Notion's Custom Agents | https://linear.app/changelog/page/2 | partnership |\\n| 2026-03-24 | Introducing Linear Agent (public beta) | https://linear.app/changelog/2026-03-24-introducing-linear-agent | product |\\n| 2026-04-16 | Linear for Microsoft Teams | https://linear.app/changelog | partnership |\\n| 2026-05-14 | Code Intelligence for Linear Agent | https://linear.app/changelog | product |\\n| 2026-05-28 | Linear Diffs (native code review) | https://linear.app/changelog | product |\\n| 2026-06-11 | Coding sessions in Linear | https://linear.app/changelog | product |\\n\\n**Takeaway**: Linear shipped 10+ major releases in 6 months, an extraordinary cadence. The trajectory is clear: from agent integrations (Dec-Feb), to the agent itself (March), to agent-powered code understanding and execution (May-June). Each release deepens the human-agent workflow moat. The partnership signals (OpenAI Codex, Notion, Microsoft Teams, Intercom, Zendesk, Gong) show Linear embedding itself into the broader AI-tooling ecosystem rather than trying to own every function.\\n\\n---\", \"synthesis\": \"Linear's competitive position rests on a fundamental tension between its design philosophy and its growth ambitions:\\n\\n**Speed vs. Flexibility**: Linear's opinionated, keyboard-first UX is its greatest strength and its most cited weakness. Developer teams love the velocity; non-technical stakeholders and process-heavy organizations find it constraining. This is not a bug but a strategic choice - the product-led growth engine depends on delighting a specific user persona (the developer PM) who then becomes an internal champion.\\n\\n**Product-Led vs. Enterprise Expansion**: The $82M Series C at unicorn valuation creates pressure to move upmarket. Hiring 5 sales roles, shipping Microsoft Teams integration, and building an Enterprise plan all signal this intent. But the core product remains optimized for startups - the free tier's 250-issue cap, the keyboard-centric UX, and the absence of Jira-level customization create natural ceilings for enterprise adoption. The question is whether Linear can add enterprise features without diluting the speed-first identity that makes it attractive.\\n\\n**AI-Native Moat vs. Incumbent Response**: Linear's early and deep integration of AI agents (Agent, Code Intelligence, Coding Sessions, MCP) creates a genuine architectural advantage over Jira and Asana, which treat AI as an assistant overlay. However, Atlassian's resources and distribution could close this gap if they commit to agent-native workflows. Linear's partnership strategy (OpenAI Codex, Notion, Vercel v0) is a smart counter - building an ecosystem that makes Linear the orchestration layer for AI-agent development workflows, regardless of which individual AI tools win.\\n\\n---\"}",
-  "latency_s": 771.2
+  "status": "completed",
+  "answer": "{\"answer\": \"```json\\n[\\n  {\\n    \\\"name\\\": \\\"Linear\\\",\\n    \\\"one_liner\\\": \\\"The product development system for teams and agents, purpose-built for planning and building products in the AI era.\\\",\\n    \\\"key_differentiators\\\": [\\n      \\\"Blazing-fast performance and keyboard-first design - sub-50ms interactions and a minimalist UI that drastically reduces daily friction compared to Jira's heavier interface\\\",\\n      \\\"AI-native architecture - Linear Agent can write code (Coding Sessions), auto-fix bugs during triage, read codebases (Code Intelligence), and review agent-generated code (Linear Diffs), operating alongside humans in a shared structured environment\\\",\\n      \\\"Opinionated design philosophy - deliberately trades customization breadth for simplicity and speed, avoiding the feature bloat and configuration overhead that plagues Jira and Asana\\\",\\n      \\\"Purpose-built for software product teams - not a generic project management tool; optimized specifically for engineering, product, and design workflows with cycles, triage, and Git automations\\\",\\n      \\\"Integrated code review and AI agent workflows - Linear Diffs and Coding Sessions bring code review and AI-generated PRs directly into the issue tracker, eliminating context-switching\\\"\\n    ],\\n    \\\"weaknesses\\\": [\\n      \\\"Limited reporting and analytics - leadership and non-technical stakeholders lack visibility; no advanced dashboards, velocity tracking is basic, and product managers find roadmapping and prioritization capabilities insufficient (cited across G2, Reddit r/ProductManagement, Everhour review)\\\",\\n      \\\"No native documentation layer - users must rely on external tools like Notion or Confluence for PRDs, specs, and shared references; the June 2026 'Team documents' feature is a first step but remains early (cited on G2 and Hacker News)\\\",\\n      \\\"Restrictive guest/external collaborator model - guest accounts are priced as full users, making it expensive for QA teams, contractors, and stakeholders who need limited access; the model is cited as too restrictive (G2, Hacker News)\\\",\\n      \\\"Limited customization from opinionated design - no custom fields per issue type, no configurable issue types (Requirement/Bug/Signal), limited task nesting, and no self-hosted option; trade-off between simplicity and flexibility frustrates larger or non-standard teams (G2, Hacker News, SIIT review, Capterra)\\\"\\n    ],\\n    \\\"target_segment\\\": \\\"Startup\\\",\\n    \\\"business_model\\\": \\\"B2B\\\",\\n    \\\"gtm_motion\\\": \\\"product-led\\\",\\n    \\\"geo_coverage\\\": \\\"Global\\\",\\n    \\\"recent_signals\\\": [\\n      {\\n        \\\"date\\\": \\\"2026-06-12\\\",\\n        \\\"headline\\\": \\\"Teaching an agent to auto-fix bugs - Linear Agent now identifies and fixes bugs during triage\\\",\\n        \\\"source_url\\\": \\\"https://linear.app/now\\\",\\n        \\\"type\\\": \\\"product\\\"\\n      },\\n      {\\n        \\\"date\\\": \\\"2026-06-10\\\",\\n        \\\"headline\\\": \\\"Coding Sessions in Linear - Linear Agent writes code; also launched Code Intelligence and MCP support\\\",\\n        \\\"source_url\\\": \\\"https://linear.app/now/news\\\",\\n        \\\"type\\\": \\\"product\\\"\\n      },\\n      {\\n        \\\"date\\\": \\\"2026-06-03\\\",\\n        \\\"headline\\\": \\\"Team documents - dedicated pages for team context and shared references\\\",\\n        \\\"source_url\\\": \\\"https://linear.app/now\\\",\\n        \\\"type\\\": \\\"product\\\"\\n      },\\n      {\\n        \\\"date\\\": \\\"2026-05-28\\\",\\n        \\\"headline\\\": \\\"Linear Diffs - code review integrated directly into Linear for reviewing agent-generated code\\\",\\n        \\\"source_url\\\": \\\"https://linear.app/now/news\\\",\\n        \\\"type\\\": \\\"product\\\"\\n      },\\n      {\\n        \\\"date\\\": \\\"2026-05-14\\\",\\n        \\\"headline\\\": \\\"Code Intelligence for Linear Agent - Agent can read codebases and answer questions from source code\\\",\\n        \\\"source_url\\\": \\\"https://linear.app/now\\\",\\n        \\\"type\\\": \\\"product\\\"\\n      },\\n      {\\n        \\\"date\\\": \\\"2026-04-28\\\",\\n        \\\"headline\\\": \\\"How we hire at Linear - insights into high-bar hiring philosophy and team growth\\\",\\n        \\\"source_url\\\": \\\"https://linear.app/now\\\",\\n        \\\"type\\\": \\\"hiring\\\"\\n      },\\n      {\\n        \\\"date\\\": \\\"2026-04-06\\\",\\n        \\\"headline\\\": \\\"Post mortem on Linear security incident - report on a March 24 permission filter bug\\\",\\n        \\\"source_url\\\": \\\"https://linear.app/now/news\\\",\\n        \\\"type\\\": \\\"press\\\"\\n      },\\n      {\\n        \\\"date\\\": \\\"2026-01-20\\\",\\n        \\\"headline\\\": \\\"Announcing Linear Reviews - modern code review experience for humans and agents\\\",\\n        \\\"source_url\\\": \\\"https://www.youtube.com/watch?v=4r8YmQ6lfLo\\\",\\n        \\\"type\\\": \\\"product\\\"\\n      },\\n      {\\n        \\\"date\\\": \\\"2025-06-10\\\",\\n        \\\"headline\\\": \\\"Atlassian rival Linear raises $82M Series C at $1.25B valuation, led by Accel\\\",\\n        \\\"source_url\\\": \\\"https://techcrunch.com/2025/06/10/atlassian-rival-linear-raises-82m-at-1-25b-valuation/\\\",\\n        \\\"type\\\": \\\"funding\\\"\\n      },\\n      {\\n        \\\"date\\\": \\\"2026-05-13\\\",\\n        \\\"headline\\\": \\\"Cars24's push to being AI-native with Linear - case study on enterprise migration from Jira\\\",\\n        \\\"source_url\\\": \\\"https://linear.app/now/news\\\",\\n        \\\"type\\\": \\\"press\\\"\\n      }\\n    ]\\n  }\\n]\\n```\\n\\n## References\\n\\n1. *Linear \\u2013 The system for product development*. http://linear.app/\\n2. *About \\u2013 Linear*. http://linear.app/about\\n3. *Linear Squared*. https://platform.tracxn.com/a/d/company/586d2b67e4b031d0f9fc51ed/linear%20squared?utm_source=parallel&utm_medium=ai#a:about\\n4. *Customers*. https://linear.app/customers\\n5. *Linear - 2026 Company Profile, Team, Funding & Competitors - Tracxn*. http://tracxn.com/d/companies/linear/__xC97n-jdX7VZjDBpNyRfVH-H_Elzu354nD5Yz5FaUVI\\n6. *Linear - Desktop App for Mac, Windows (PC)*. https://webcatalog.io/en/apps/linear\\n7. *Linear App - Knowledge Base*. https://tuskr.app/kb/latest/integrations/how-to/linear\\n8. *Linear App Review: Features, Pricing, Pros & Cons (2026)*. http://siit.io/tools/trending/linear-app-review\\n9. *Linear Alternatives: Top 12 Project Management Tools*. https://alternativeto.net/software/linear\\n10. *VentureBeat | Transformative tech coverage that matters*. https://venturebeat.com/\\n11. *How to Optimize Your Team's Project Management Experience*. https://onehorizon.ai/blog/linear-app-review\\n12. *Sidebar | Domain: linear.app*. http://sidebar.io/domain/linear.app\\n13. *Finnish company Linear becomes a unicorn after raising ...*. https://www.entnerd.com/en/finnish-company-linear-becomes-a-unicorn-after-raising-82m-series-c-at-a-125b-valuation\\n14. *Now \\u2013 Updates from the Linear team*. https://linear.app/now\\n15. *Linear Project Management: Streamline Your Workflow and Boost ...*. https://everhour.com/blog/linear-project-management\\n16. *Linear \\u2014 The issue tracking tool you'll enjoy using. - Reddit*. https://www.reddit.com/r/Linear/\\n17. *Looking for Honest experiences about Linear App - Reddit*. https://www.reddit.com/r/ProductManagement/comments/1pwtbd9/looking_for_honest_experiences_about_linear_app\\n18. *Sifted: The latest startup news and analysis from Europe*. http://sifted.eu/\\n19. *Latest News news and analysis from startup Europe | Sifted*. https://sifted.eu/categories/news\\n20. *Daphn\\u00e9 (@daphneleprince) / Posts / X*. http://x.com/daphneleprince?lang=en\\n21. *Sifted - 2026 Company Profile & Team*. https://tracxn.com/d/companies/sifted/__2yafKgV4B9DDUCJbN3OM6Uq5yVIP-8iapF1clIDCsjA\\n22. *Sifted 250 - Europe's Fastest-Growing Startups 2025*. https://sifted.eu/leaderboards/sifted-250-2025\\n23. *Read Customer Service Reviews of www.g2.com | 6 of 237 - Trustpilot*. https://www.trustpilot.com/review/www.g2.com?page=6\\n24. *Top 10 Optro Alternatives & Competitors in 2026 - G2*. http://g2.com/products/optro/competitors/alternatives\\n25. *Compare Complyance vs. Vanta - G2*. http://g2.com/compare/complyance-complyance-vs-vanta\\n26. *Read Customer Service Reviews of www.g2.com - Trustpilot*. https://www.trustpilot.com/review/www.g2.com\\n27. *Linear Reviews 2026: Details, Pricing, & Features - G2*. https://www.g2.com/products/linear/reviews\\n28. *News - Linear*. https://linear.app/now/news\\n29. *Linear: Funding, Team & Investors*. https://startupintros.com/orgs/linear\\n30. *http://getlatka.com/companies/linear.app*. http://getlatka.com/companies/linear.app\\n31. *Linear App Tutorial For Beginners - 2025 | How To Use ... - YouTube*. https://www.youtube.com/watch?v=Ghtag_lFz2A\\n32. *Linear - TechCrunch*. https://techcrunch.com/tag/linear/\\n33. *Linear Software Pricing, Alternatives & More 2026 | Capterra*. https://www.capterra.com/p/10026109/Linear/\\n34. *Linear Review: Pros, Cons, Features and Pricing*. https://thedigitalprojectmanager.com/tools/linear-review\\n35. *KeyedIn Software Pricing, Alternatives & More 2026 | Capterra*. http://capterra.com/p/163842/KeyedIn-Projects\\n36. *Similarweb G2 Similar Sites*. http://similarweb.com/website/g2.com\\n37. *How to Scrape and Analyze Capterra Reviews - Kimola Support*. https://kimola.com/support/how-to-scrape-and-analyze-capterra-reviews\\n38. *Linear \\u2013 The system for product development*. https://linear.app/\\n39. *About \\u2013 Linear*. https://linear.app/about\\n40. *Pricing \\u2013 Linear*. https://linear.app/pricing\\n41. [Linear vs Jira: Why 30% of Teams Switched [2026] - Tech Insider](https://tech-insider.org/linear-vs-jira-2026)\\n42. *Linear vs Jira - I don't get it : r/SaaS*. http://reddit.com/r/SaaS/comments/1ceo72u/linear_vs_jira_i_dont_get_it\\n43. *Linear.app | Hacker News*. https://news.ycombinator.com/item?id=33199304\\n44. *Noob Comments | Hacker News*. https://news.ycombinator.com/noobcomments?next=47137900\\n45. *Show HN: I analyzed 5k comments to quantify the Jira vs ...*. https://news.ycombinator.com/item?id=46046101\\n46. *r/Linear - Reddit*. https://www.reddit.com/r/Linear\\n47. *Linear Review: Pros, Cons, Features and Pricing*. https://thedigitalprojectmanager.com/tools/linear-review/\\n48. [Linear vs Jira: Why 30% of Teams Switched [2026] - Tech Insider](http://tech-insider.org/linear-vs-jira-2026)\\n49. *Linear vs Jira: Which Should You Choose? | Efficient App*. https://efficient.app/compare/linear-vs-jira\\n50. *For those using Linear, what are you guys using for ... - Reddit*. https://www.reddit.com/r/ProductManagement/comments/1b5mku3/for_those_using_linear_what_are_you_guys_using/\\n51. *Atlassian rival Linear raises $82M at $1.25B valuation | TechCrunch*. https://techcrunch.com/2025/06/10/atlassian-rival-linear-raises-82m-at-1-25b-valuation/\\n52. *Announcing Linear Reviews - YouTube*. https://www.youtube.com/watch?v=4r8YmQ6lfLo\\n53. *Ari Mojdeh*. http://linkedin.com/in/arimojdeh\\n54. *http://linear.app/changelog/2026-04-30-releases*. http://linear.app/changelog/2026-04-30-releases\\n55. *Launch an AI Agent App Store, Vertical Software Summit is BACK ...*. https://www.newsletter.lukesophinos.com/p/linear-165-launch-an-ai-agent-app\\n56. *99minutos*. https://platform.tracxn.com/a/d/company/53187db2e4b01c90cfdc370d/99minutos?utm_source=parallel&utm_medium=ai#a:about\\n57. *How Linear\\u2019s $82M Series C at $1.25B Valuation Supercharges ...*. https://applyingai.com/2025/09/how-linears-82m-series-c-at-1-25b-valuation-supercharges-ai-driven-project-management-workflows/\\n58. *Linear's Funding and Investor Information | Total Raised*. https://exa.ai/websets/directory/linear-funding\\n59. *Linear Raises $82 Million in Series C | The SaaS News*. http://thesaasnews.com/news/linear-raises-82-million-in-series-c\\n60. *Linear just hit a $1.25B valuation with 100 employees.*. https://www.linkedin.com/posts/aagupta_linear-just-hit-a-125b-valuation-with-100-activity-7397151074563878912-1I8E\\n\"}",
+  "basis": [
+    {
+      "field": "answer",
+      "citations": [
+        {
+          "title": "Linear \u2013 The system for product development",
+          "url": "http://linear.app/",
+          "excerpts": [
+            "Linear powers over **33,000** product teams.\nPurpose-built for planning and building products. Designed for the AI era.\nThe product development system for teams and agents\nlinear.app"
+          ]
+        },
+        {
+          "title": "About \u2013 Linear",
+          "url": "http://linear.app/about",
+          "excerpts": [
+            "Building tools for the next era of product development."
+          ]
+        },
+        {
+          "title": "Linear Squared",
+          "url": "https://platform.tracxn.com/a/d/company/586d2b67e4b031d0f9fc51ed/linear%20squared?utm_source=parallel&utm_medium=ai#a:about",
+          "excerpts": [
+            "Name: Linear Squared | Short Description: Provider of cloud and AI-based demand forecasting and planning software | Detailed Description: Linear Squared is a provider of cloud and AI-based demand forecasting and planning software. Its features include inventory and distribution optimisation, resource allocation planning, automated capacity planning, and elimination of out of stock situations. It caters to multiple sectors, like grocery retail and the apparel industry. | Founders: Sankha Poruthotage Co-Founder & CEO Rajith Munasinghe Co-Founder | Cxo Team: Sankha Poruthotage Co-Founder & CEO | Other Taxonomy Tags: [\"Enterprise Applications\",\"SaaS\",\"Trending Themes in SCM Software\",\"Supply Chain Planning\",\"Global SaaS\",\"Vertical SaaS\",\"Supply Chain SaaS\",\"Enterprise Software\",\"Industrial Goods and Manufacturing\",\"Industry 4.0\"] | Special Flags: Tech YES Enterprise YES SaaS YES Software YES | All Locations: Sri Lanka Western Province Colombo | People Background Flags: Company Wise Microso"
+          ]
+        },
+        {
+          "title": "Customers",
+          "url": "https://linear.app/customers",
+          "excerpts": [
+            "Customers\nMeet the startups and enterprises that choose Linear to build products better."
+          ]
+        },
+        {
+          "title": "Linear - 2026 Company Profile, Team, Funding & Competitors - Tracxn",
+          "url": "http://tracxn.com/d/companies/linear/__xC97n-jdX7VZjDBpNyRfVH-H_Elzu354nD5Yz5FaUVI",
+          "excerpts": [
+            "ite\n    [linear.app](https://linear.app)"
+          ]
+        },
+        {
+          "title": "Linear - Desktop App for Mac, Windows (PC)",
+          "url": "https://webcatalog.io/en/apps/linear",
+          "excerpts": [
+            "Linear - Desktop App for Mac, Windows (PC)\nLinear is a project management app designed to help teams streamline their workflows by combining issue tracking, project planning, and team collaboration"
+          ]
+        },
+        {
+          "title": "Linear App - Knowledge Base",
+          "url": "https://tuskr.app/kb/latest/integrations/how-to/linear",
+          "excerpts": [
+            "Linear App - Knowledge Base\nModern test management software with an easy UI, customizable integrations , AI tools, and custom reports without the enterprise price. Book a Demo. Compare."
+          ]
+        },
+        {
+          "title": "Linear App Review: Features, Pricing, Pros & Cons (2026)",
+          "url": "http://siit.io/tools/trending/linear-app-review",
+          "excerpts": [
+            "Linear is a purpose-built project management platform"
+          ]
+        },
+        {
+          "title": "Linear Alternatives: Top 12 Project Management Tools",
+          "url": "https://alternativeto.net/software/linear",
+          "excerpts": [
+            "Linear Alternatives: Top 12 Project Management Tools\nMar 20, 2026 \u2014 The best Linear alternative is Redmine, which is both free and Open Source. Other great apps like Linear are JIRA, OpenProject, Plane and\u00a0"
+          ]
+        },
+        {
+          "title": "VentureBeat | Transformative tech coverage that matters",
+          "url": "https://venturebeat.com/",
+          "excerpts": [
+            "VentureBeat delivers news, analysis, and insights on AI, data, and security\u2014helping business leaders stay ahead in the rapidly evolving tech landscape."
+          ]
+        },
+        {
+          "title": "How to Optimize Your Team's Project Management Experience",
+          "url": "https://onehorizon.ai/blog/linear-app-review",
+          "excerpts": [
+            "How to Optimize Your Team's Project Management Experience\nExplore the strengths and limitations of Linear.app as a project management tool, discover advanced features and workflows, and learn how to"
+          ]
+        },
+        {
+          "title": "Sidebar | Domain: linear.app",
+          "url": "http://sidebar.io/domain/linear.app",
+          "excerpts": [
+            "linear.app"
+          ]
+        },
+        {
+          "title": "Finnish company Linear becomes a unicorn after raising ...",
+          "url": "https://www.entnerd.com/en/finnish-company-linear-becomes-a-unicorn-after-raising-82m-series-c-at-a-125b-valuation",
+          "excerpts": [
+            "Finnish company Linear becomes a unicorn after raising ...\nJun 12, 2025 \u2014 Linear, the startup revolutionizing product development tools for software teams, has just secured an $82 million Series C round at a $1.25 billion valuation."
+          ]
+        },
+        {
+          "title": "Now \u2013 Updates from the Linear team",
+          "url": "https://linear.app/now",
+          "excerpts": [
+            "Linear product updates, thoughts on crafting beautiful products, and reflections on building a startup."
+          ]
+        },
+        {
+          "title": "Linear Project Management: Streamline Your Workflow and Boost ...",
+          "url": "https://everhour.com/blog/linear-project-management",
+          "excerpts": [
+            "Linear Project Management: Streamline Your Workflow and Boost ...\nSep 10, 2025 \u2014 Linear is a project management app that helps teams stay focused, organized, and productive. Tailored for fast-paced workflows."
+          ]
+        },
+        {
+          "title": "Linear \u2014 The issue tracking tool you'll enjoy using. - Reddit",
+          "url": "https://www.reddit.com/r/Linear/",
+          "excerpts": [
+            "I'm reaching out to the community today seeking advice on leveraging Linear to have reportings and visibility for the non-tech management team and our investors."
+          ]
+        },
+        {
+          "title": "Looking for Honest experiences about Linear App - Reddit",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1pwtbd9/looking_for_honest_experiences_about_linear_app",
+          "excerpts": [
+            "Looking for Honest experiences about Linear App - Reddit\nDec 27, 2025 \u00b7 Regarding AI, Linear's features are currently mostly \"text polishers\" (rewriting descriptions) rather than actual workflow agents. If you are"
+          ]
+        },
+        {
+          "title": "Sifted: The latest startup news and analysis from Europe",
+          "url": "http://sifted.eu/",
+          "excerpts": [
+            "The latest startup news, analysis and in-depth reporting on Europe's founders, investors and operators. Backed by the Financial Times."
+          ]
+        },
+        {
+          "title": "Latest News news and analysis from startup Europe | Sifted",
+          "url": "https://sifted.eu/categories/news",
+          "excerpts": [
+            "Finnish satellite startup Iceye raises \u20ac1bn amid spacetech funding boost The startup last raised \u20ac200m in December"
+          ]
+        },
+        {
+          "title": "Daphn\u00e9 (@daphneleprince) / Posts / X",
+          "url": "http://x.com/daphneleprince?lang=en",
+          "excerpts": [
+            "Tips and stories: daphne@sifted.eu // Signal +33 6 31 99 74 65"
+          ]
+        },
+        {
+          "title": "Sifted - 2026 Company Profile & Team",
+          "url": "https://tracxn.com/d/companies/sifted/__2yafKgV4B9DDUCJbN3OM6Uq5yVIP-8iapF1clIDCsjA",
+          "excerpts": [
+            "Sifted - 2026 Company Profile & Team\nMay 21, 2026 \u2014 Sifted is a series A company based in London (United Kingdom), founded in 2018 by Caspar Woolley, John Thornhill and Kimberly Lexow."
+          ]
+        },
+        {
+          "title": "Sifted 250 - Europe's Fastest-Growing Startups 2025",
+          "url": "https://sifted.eu/leaderboards/sifted-250-2025",
+          "excerpts": [
+            "Sifted 250 - Europe's Fastest-Growing Startups 2025\nSifted 250 (2025) The Sifted 250 ranks Europe\u2019s 250 startups with the highest percentage revenue growth over the past three financial years, calculated using a two-year compound annual growth rate (CAGR)."
+          ]
+        },
+        {
+          "title": "Read Customer Service Reviews of www.g2.com | 6 of 237 - Trustpilot",
+          "url": "https://www.trustpilot.com/review/www.g2.com?page=6",
+          "excerpts": [
+            "Read Customer Service Reviews of www.g2.com | 6 of 237 - Trustpilot\nGreat service team and opportunities. The analytics could be a lot better with the amount of tracking they do. Useful."
+          ]
+        },
+        {
+          "title": "Top 10 Optro Alternatives & Competitors in 2026 - G2",
+          "url": "http://g2.com/products/optro/competitors/alternatives",
+          "excerpts": [
+            "[Archer](https://www.g2.com/products/archer-technologies-archer/reviews)\n[Sprinto](https://www.g2.com/products/sprinto-inc/reviews)\n[Vanta](https://www.g2.com/products/vanta/reviews)\n[Resolver](https://www.g2.com/products/resolver/reviews)"
+          ]
+        },
+        {
+          "title": "Compare Complyance vs. Vanta - G2",
+          "url": "http://g2.com/compare/complyance-complyance-vs-vanta",
+          "excerpts": [
+            "Compare Complyance vs. Vanta - G2\nG2 reviewers report that Vanta excels in overall user satisfaction"
+          ]
+        },
+        {
+          "title": "Read Customer Service Reviews of www.g2.com - Trustpilot",
+          "url": "https://www.trustpilot.com/review/www.g2.com",
+          "excerpts": [
+            "Read Customer Service Reviews of www.g2.com - Trustpilot\nMany consumers express significant dissatisfaction with the website and product, often finding the interface difficult to navigate and the design poor."
+          ]
+        },
+        {
+          "title": "Linear Reviews 2026: Details, Pricing, & Features - G2",
+          "url": "https://www.g2.com/products/linear/reviews",
+          "excerpts": [
+            "Linear Reviews 2026: Details, Pricing, & Features - G2\nLinear's UI is very intuitive, easy to use, fast, and interactive, which reduces daily friction and allows more time to be spent on priorities. I also like the"
+          ]
+        },
+        {
+          "title": "News - Linear",
+          "url": "https://linear.app/now/news",
+          "excerpts": [
+            "Linear product updates, thoughts on crafting beautiful products, and reflections on building a startup."
+          ]
+        },
+        {
+          "title": "Linear: Funding, Team & Investors",
+          "url": "https://startupintros.com/orgs/linear",
+          "excerpts": [
+            "Linear: Funding, Team & Investors\nApr 16, 2026 \u2014 Linear has raised $135.3M across 5 funding rounds. Most recently, it raised $82.0M Series C in June 2025."
+          ]
+        },
+        {
+          "title": "http://getlatka.com/companies/linear.app",
+          "url": "http://getlatka.com/companies/linear.app",
+          "excerpts": [
+            "2025 Linear App hit $100M in revenue in June 2025.\nFunding: Total $134.2M (reflecting rounds through 2025)\nLinear App has 178 total employees in different roles and functions.\nLinear App hit $100M in revenue in June 2025.\nLinear App has raised $134.2M in total funding across 4 rounds, most recently a $82M Series C round in 2025."
+          ]
+        },
+        {
+          "title": "Linear App Tutorial For Beginners - 2025 | How To Use ... - YouTube",
+          "url": "https://www.youtube.com/watch?v=Ghtag_lFz2A",
+          "excerpts": [
+            "Linear App Tutorial For Beginners - 2025 | How To Use ... - YouTube\n... Collaboration: Assigning tasks, adding comments, and staying aligned with your team \u2713 Reporting & Insights: Tracking cycle times, velocity"
+          ]
+        },
+        {
+          "title": "Linear - TechCrunch",
+          "url": "https://techcrunch.com/tag/linear/",
+          "excerpts": [
+            "Atlassian rival Linear raises $82M at $1.25B valuation Kyle Wiggers Jun 10, 2025 AI"
+          ]
+        },
+        {
+          "title": "Linear Software Pricing, Alternatives & More 2026 | Capterra",
+          "url": "https://www.capterra.com/p/10026109/Linear/",
+          "excerpts": [
+            "With the help of Capterra, learn about Linear Software - reviews, pricing plans, popular comparisons to other Product Roadmap products and more."
+          ]
+        },
+        {
+          "title": "Linear Review: Pros, Cons, Features and Pricing",
+          "url": "https://thedigitalprojectmanager.com/tools/linear-review",
+          "excerpts": [
+            "Linear Review: Pros, Cons, Features and Pricing\nDiscover Linear's pros and cons, pricing, best use cases, and functionality compared to other project management tools in this detailed review."
+          ]
+        },
+        {
+          "title": "KeyedIn Software Pricing, Alternatives & More 2026 | Capterra",
+          "url": "http://capterra.com/p/163842/KeyedIn-Projects",
+          "excerpts": [
+            "With the help of Capterra, learn about KeyedIn Software - reviews, pricing plans, popular comparisons to other Project Management products"
+          ]
+        },
+        {
+          "title": "Similarweb G2 Similar Sites",
+          "url": "http://similarweb.com/website/g2.com",
+          "excerpts": [
+            "capterra.com100% \u00b7 #596 ; trustradius.com97% \u00b7 #3,563 ; softwareadvice.com95% \u00b7 #2,175 ; getapp.com93% \u00b7 #2,222"
+          ]
+        },
+        {
+          "title": "How to Scrape and Analyze Capterra Reviews - Kimola Support",
+          "url": "https://kimola.com/support/how-to-scrape-and-analyze-capterra-reviews",
+          "excerpts": [
+            "How to Scrape and Analyze Capterra Reviews - Kimola Support\nManual scraping allows you to collect Capterra reviews directly while browsing product pages using Kimola\u2019s browser extension. Instead of initiating the process within the platform, this approach lets you capture user feedback as you navigate through review pages and store it for later analysis."
+          ]
+        },
+        {
+          "title": "Linear \u2013 The system for product development",
+          "url": "https://linear.app/",
+          "excerpts": []
+        },
+        {
+          "title": "About \u2013 Linear",
+          "url": "https://linear.app/about",
+          "excerpts": []
+        },
+        {
+          "title": "Pricing \u2013 Linear",
+          "url": "https://linear.app/pricing",
+          "excerpts": []
+        },
+        {
+          "title": "Linear vs Jira: Why 30% of Teams Switched [2026] - Tech Insider",
+          "url": "https://tech-insider.org/linear-vs-jira-2026",
+          "excerpts": [
+            "Linear vs Jira: Why 30% of Teams Switched [2026] - Tech Insider\nApr 4, 2026 \u00b7 Linear gained 30% market share from Jira in 2025. We compare speed, pricing ($8 vs $17.65/user), features, and migration difficulty. Why the Linear vs Jira Debate... \u00b7 Linear vs Jira at a Glance"
+          ]
+        },
+        {
+          "title": "Linear vs Jira - I don't get it : r/SaaS",
+          "url": "http://reddit.com/r/SaaS/comments/1ceo72u/linear_vs_jira_i_dont_get_it",
+          "excerpts": [
+            "Linear isn't a magic bullet, it's just consistently better than Jira in design and performance all throughout."
+          ]
+        },
+        {
+          "title": "Linear.app | Hacker News",
+          "url": "https://news.ycombinator.com/item?id=33199304",
+          "excerpts": [
+            "I have used Linear on a couple of my hobby projects and it's a great tool to quickly capture features and bugs. My one gripe about the new website (and it's something I notice many projects stumble at) is that the written copy fails to explain what the product actually is."
+          ]
+        },
+        {
+          "title": "Noob Comments | Hacker News",
+          "url": "https://news.ycombinator.com/noobcomments?next=47137900",
+          "excerpts": []
+        },
+        {
+          "title": "Show HN: I analyzed 5k comments to quantify the Jira vs ...",
+          "url": "https://news.ycombinator.com/item?id=46046101",
+          "excerpts": [
+            "I built a Brand Alignment Engine (Delta) to scrape public sentiment (Reddit, G2, News) and measure the gap between a brand\u2019s intended strategy and market reality."
+          ]
+        },
+        {
+          "title": "r/Linear - Reddit",
+          "url": "https://www.reddit.com/r/Linear",
+          "excerpts": [
+            "r/Linear - Reddit\nHey! Linear is great but the reporting is pretty limited. ... Still in beta, would love feedback from real Linear users. linearinsights.vercel.app"
+          ]
+        },
+        {
+          "title": "Linear Review: Pros, Cons, Features and Pricing",
+          "url": "https://thedigitalprojectmanager.com/tools/linear-review/",
+          "excerpts": [
+            "Discover Linear's pros and cons, pricing, best use cases, and functionality compared to other project management tools in this detailed review."
+          ]
+        },
+        {
+          "title": "Linear vs Jira: Why 30% of Teams Switched [2026] - Tech Insider",
+          "url": "http://tech-insider.org/linear-vs-jira-2026",
+          "excerpts": [
+            "Linear gained 30% market share from Jira in 2025. We compare speed, pricing ($8 vs $17.65/user), features, and migration difficulty."
+          ]
+        },
+        {
+          "title": "Linear vs Jira: Which Should You Choose? | Efficient App",
+          "url": "https://efficient.app/compare/linear-vs-jira",
+          "excerpts": [
+            "Linear vs Jira: Which Should You Choose? | Efficient App\nComparison Summary Linear nails engineering workflows and is way easier to use than Jira, which is so complex most teams avoid it unless they have thousands of employees. Only use Jira if you run a giant enterprise with dedicated Scrum Masters; choose Linear for every other engineering team."
+          ]
+        },
+        {
+          "title": "For those using Linear, what are you guys using for ... - Reddit",
+          "url": "https://www.reddit.com/r/ProductManagement/comments/1b5mku3/for_those_using_linear_what_are_you_guys_using/",
+          "excerpts": [
+            "We've been chatting to a lot of companies experiencing the same pains after switching to Linear (e.g. Replit). Last year my co-founder and I left Canva and Atlassian last year to build a next-gen product planning experience, and two-way sync with Linear has been one of our most used features so far."
+          ]
+        },
+        {
+          "title": "Atlassian rival Linear raises $82M at $1.25B valuation | TechCrunch",
+          "url": "https://techcrunch.com/2025/06/10/atlassian-rival-linear-raises-82m-at-1-25b-valuation/",
+          "excerpts": []
+        },
+        {
+          "title": "Announcing Linear Reviews - YouTube",
+          "url": "https://www.youtube.com/watch?v=4r8YmQ6lfLo",
+          "excerpts": [
+            "Announcing Linear Reviews - YouTube\nJan 20, 2026 \u00b7 Linear Reviews. A modern code review experience for humans and agents. Join the waitlist for early access: https://linear.app/reviews."
+          ]
+        },
+        {
+          "title": "Ari Mojdeh",
+          "url": "http://linkedin.com/in/arimojdeh",
+          "excerpts": [
+            "Name: Ari Mojdeh | Company Name: Linear | Experience: Linear 2026-02-01 Filmmaker, Brand & Product Storytelling"
+          ]
+        },
+        {
+          "title": "http://linear.app/changelog/2026-04-30-releases",
+          "url": "http://linear.app/changelog/2026-04-30-releases",
+          "excerpts": [
+            "5 days ago \u2014 Linear changelog - New updates and improvements to Linear ... April 30, 2026. Share. Releases. Elapsed00:00. Seek to:00:00 / Duration"
+          ]
+        },
+        {
+          "title": "Launch an AI Agent App Store, Vertical Software Summit is BACK ...",
+          "url": "https://www.newsletter.lukesophinos.com/p/linear-165-launch-an-ai-agent-app",
+          "excerpts": [
+            "Launch an AI Agent App Store, Vertical Software Summit is BACK ...\nFeb 22, 2026 \u00b7 Linear #165: Launch an AI Agent App Store, Vertical Software Summit ... Agents would integrate directly into Toast's POS terminals or back-office"
+          ]
+        },
+        {
+          "title": "99minutos",
+          "url": "https://platform.tracxn.com/a/d/company/53187db2e4b01c90cfdc370d/99minutos?utm_source=parallel&utm_medium=ai#a:about",
+          "excerpts": [
+            "Latest Funding Round Amount Usd: 82000000.0 | Name: 99minutos | Latest Funding Round Name: Series C | Latest Funding Round Date: 2022-03-02 | All Funding Rounds: Series C 2022-03-02 Kaszek, Prosus, Oak HC/FT Series B 2021-06-07 Kaszek, Endeavor, Prosus Seed 2020-03-18 Y Combinator Seed 2013-11-14 500 Global | Investor Names: [\"500 Global\",\"Endeavor\",\"Kaszek\",\"Oak HC/FT\",\"Prosus\",\"Y Combinator\"] | All Locations: Mexico Mexico City Mexico City | Special Flags: Consumer YES Tech YES | People Background Flags: College Wise Booth School of Business College Wise University of Chicago | Achievements: XCorn Size {currentRating=SOONICORN} Managed by a Top Team Team  Top Player among its competitors Size  Has Marquee Institutional Investors Team {investors=[{type=COMPANY, id=58dda71ae4b04ae5ab0f43d4}, {type=COMPANY, id=53023301e4b0c6aef60c118b}]} | Incubators: Endeavor Accelerator Program Unknown 2020 Summer 500 Global A&I Program Unknown | Founders: Alexis Patjane Co-Founder & CEO"
+          ]
+        },
+        {
+          "title": "How Linear\u2019s $82M Series C at $1.25B Valuation Supercharges ...",
+          "url": "https://applyingai.com/2025/09/how-linears-82m-series-c-at-1-25b-valuation-supercharges-ai-driven-project-management-workflows/",
+          "excerpts": [
+            "On June 10, 2025, Linear announced an $82 million Series C led by Accel, joined by existing backers Sequoia and 01A, as well as new participants including Seven Seven Six, Designer Fund, Indie.vc, TK Ventures, Soleio, and angel investors like Jeff Weinstein, Ilkka Paananen, and Lauren & Vlad Loktev [3]."
+          ]
+        },
+        {
+          "title": "Linear's Funding and Investor Information | Total Raised",
+          "url": "https://exa.ai/websets/directory/linear-funding",
+          "excerpts": [
+            "Linear's Funding and Investor Information | Total Raised\nSeries C - $82M - 2025-06-10. The Series C round was geared toward late-stage growth and scaling operations. With a significant $82 million raised and a new"
+          ]
+        },
+        {
+          "title": "Linear Raises $82 Million in Series C | The SaaS News",
+          "url": "http://thesaasnews.com/news/linear-raises-82-million-in-series-c",
+          "excerpts": [
+            "Funding Details. Company: Linear Orbit, Inc. Raised: $82 million. Round: Series C. Funding Date: June 2025. Lead Investor: Accel.\nJun 16, 2025 \u2014 Company: Linear Orbit, Inc. Raised: $82 million. Round: Series C. Funding Date: June 2025. Lead Investor: Accel.\nhas raised an $82 million Series C round at a $1.25 billion valuation."
+          ]
+        },
+        {
+          "title": "Linear just hit a $1.25B valuation with 100 employees.",
+          "url": "https://www.linkedin.com/posts/aagupta_linear-just-hit-a-125b-valuation-with-100-activity-7397151074563878912-1I8E",
+          "excerpts": [
+            "Linear just hit a $1.25B valuation with 100 employees.\n$1.25B valuation with 100 employees. Linear has been profitable since 2021, to its 145%+ NRR."
+          ]
+        }
+      ],
+      "reasoning": "",
+      "confidence": ""
+    }
+  ],
+  "latency_s": 518.3
 }
